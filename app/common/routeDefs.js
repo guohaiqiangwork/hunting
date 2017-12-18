@@ -22,9 +22,9 @@ define([
 
                 $stateProvider
 
-                //登录界面
+                    //登录界面
                     .state('login', {
-                        url: "/",
+                        url: "/login",
                         cache: false,
                         resolve: {
                             dummy: $couchPotatoProvider.resolveDependencies(['login/login.ctrl'])
@@ -33,6 +33,20 @@ define([
                             'main': {
                                 templateUrl: "login/login.tpl.html?" + window.NEPTUNE.version,
                                 controller: 'loginCtrl'
+                            }
+                        }
+                    })
+                    //登录界面
+                    .state('home', {
+                        url: "/",
+                        cache: false,
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies(['home/home.ctrl'])
+                        },
+                        views: {
+                            'main': {
+                                templateUrl: "home/home.html?" + window.NEPTUNE.version,
+                                controller: 'homeCtrl'
                             }
                         }
                     })

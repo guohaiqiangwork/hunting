@@ -39,13 +39,17 @@ require.config({
         'jquery-qrcode': 'assets/js/jquery/jquery.qrcode.min',
         'MD5': 'assets/js/MD5',
         'bootstrap-treeview': 'assets/js/bootstrap-treeview/bootstrap-treeview',
-        'echarts': 'assets/js/echart/echarts'
+        'echarts': 'assets/js/echart/echarts',
+        'responsive-menu': 'assets/js/js/responsive-menu'
     },
     shim: {
         'jquery': {
             exports: 'jquery'
         },
         'layer': {
+            deps: ['jquery']
+        },
+        'responsive-menu': {
             deps: ['jquery']
         },
         'angular': {
@@ -115,7 +119,8 @@ require.config({
         'angular',
         'app-init',
         'mainCtrl',
-        'echarts'
+        'echarts',
+        'responsive-menu'
     ]
 });
 require(['jquery',
@@ -123,7 +128,8 @@ require(['jquery',
         'app-init',
         'respond',
         'mainCtrl',
-        'echarts'],
+        'echarts',
+    'responsive-menu'],
     function ($, angular) {
         angular.element().ready(function () {
             angular.bootstrap($('#ng-app'), ['calla']);
