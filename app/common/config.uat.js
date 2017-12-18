@@ -17,16 +17,7 @@ define({
     },
     //请求路径
     backend: {
-        // ip: 'http://10.39.4.56:9000/zipm/zkr/api/v1/',
-        // orderIp:'http://10.39.4.56:9000/ziom/zkr/api/v1/', //订单
-        // loginIp:'http://10.39.4.56:9000/ziam/v1/',//明星
-        // payIp:'http://10.39.4.7:9022/payapi/' //生成批次号 支付码
-
-        ip: 'http://123.58.243.115:9000/zipm/zkr/api/v1/',
-        orderIp: 'http://123.58.243.115:9000/ziom/zkr/api/v1/', //订单
-        loginIp: 'http://123.58.243.115:9000/ziam//v1/',//明星
-        payIp: 'http://123.58.243.115:9022/payapi/', //生成批次号 支付码
-        documentIp: 'http://123.58.243.115:9000/zipm/zkr/api/v1/certify/'
+        ip: 'http://123.58.243.115:9000/zipm/zkr/api/v1/'
     },
     auth: {
         isLogin: false,

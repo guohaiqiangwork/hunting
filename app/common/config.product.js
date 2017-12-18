@@ -17,11 +17,7 @@ define({
     },
     //请求路径
     backend: {
-        ip: 'https://apibaoxian.enn.cn:9002/zkr/api/v1/',
-        orderIp: 'https://apibaoxian.enn.cn:9004/zkr/api/v1/', //订单
-        loginIp: 'https://apibaoxian.enn.cn:9006/v1/',//明星
-        payIp: 'https://baoxian.enn.cn/payapi/', //生成批次号 支付码
-        documentIp: 'https://apibaoxian.enn.cn:9002/zkr/api/v1/certify/'
+        ip: 'https://apibaoxian.enn.cn:9002/zkr/api/v1/'
 
     },
     auth: {

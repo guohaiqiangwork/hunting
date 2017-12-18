@@ -16,16 +16,7 @@
     },
     //请求路径
     backend: {
-        ip: 'http://baoxiantest.enn.cn:9003/zipm/zkr/api/v1/',
-        orderIp:'http://baoxiantest.enn.cn:9050/ziom/zkr/api/v1/', //订单
-        // loginIp:'http://baoxiantest.enn.cn:9004/ziam/v1/',//明星
-        loginIp:'http://10.37.147.168:9004/ziam/v1/',//明星
-        payIp:'http://baoxian.enn.cn/wxapi/', //生成批次号 支付码
-        documentIp:'http://10.37.147.167:9003/zipm/zkr/api/v1/certify/' // 单证ip
-        // ip: 'basicIp/',
-        // orderIp:'orderIp/', //订单
-        // loginIp:'loginIp/',//明星
-        // payIp:'payIp/'
+        ip: 'http://baoxiantest.enn.cn:9003/zipm/zkr/api/v1/'
     },
     auth:{
         isLogin:false,
