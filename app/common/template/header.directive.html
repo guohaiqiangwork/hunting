@@ -1,0 +1,81 @@
+<div>
+    <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0;border: 0">
+        <div class="container-fluid" style="background-color: #1E508F;height: 57px;">
+            <div class="navbar-header">
+                <div class="navbar-brand">
+                    <div class="brand">
+                        <img src="assets/img/xinao_01.png" width="20%">
+
+                    </div>
+                    <div style="color: #fff; position: absolute;top: 14px;left: 5%;">
+                        <span>ENN</span> <br>
+                        <span style="font-size: 16px">新奥</span>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-right">
+                <ul class="nav navbar-nav text-right" style="margin-bottom: 0;border: 0">
+
+                    <li class="products">
+                        <a ng-click="goHtml('products')" style="color: #fff;cursor: pointer">保险产品</a>
+                    </li>
+                    <li class="orders">
+                        <a ng-click="goHtml('orders')" style="color: #fff;cursor: pointer">个人订单</a>
+                    </li>
+                    <li class="statistics">
+                        <a ng-click="goHtml('statistics')" ng-if="identityInformation.indexOf('3')!=-1" style="color: #fff;cursor: pointer">统计分析</a>
+                    </li>
+                    <li class="toExamine">
+                        <a ng-click="goHtml('toExamine')" style="color: #fff;cursor: pointer">订单查询</a>
+                    </li>
+                    <li class="userCenter">
+                        <a ng-click="goHtml('userCenter')"
+                           style="color: #fff;cursor: pointer">个人中心</a>
+                    </li>
+                    <li class="signOut">
+                        <a ng-if="identityInformation.indexOf('2')!=-1" ng-click="goHtml('signOut')"
+                           style="color: #fff;cursor: pointer">退保</a>
+                    </li>
+                    <li class="documentStatistics">
+                        <a ng-if="identityInformation.indexOf('4')!=-1" ng-click="goHtml('documentStatistics')"
+                           style="color: #fff;cursor: pointer">单证管理</a>
+                    </li>
+
+                    <li>
+                        <div class="col-xs-4">
+                            <img width="30px" height="30px" style="margin:10px;" src="assets/img/login_head.png">
+                        </div>
+                        <div class="col-xs-4" style="margin:10px 0">
+                            <span
+                                    style="color: #fff;cursor: pointer;padding-left:2px;font-size: 12px;line-height: 30px">
+                                {{basicInformation.name}}
+                            </span>
+                        </div>
+                        <div class="col-xs-4">
+                            <span class="btn neptune_basic_button" style="color: #ffffff" ng-click="logout()">注销</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--<div class="col-xs-12 text-left subtitle">-->
+    <!--<div class="col-xs-4" style="padding: 10px"></div>-->
+    <!--<div class="col-xs-4" style="padding: 10px">-->
+    <!--<div class="input-group input-group-sm">-->
+    <!--<span class="input-group-addon head_search"-->
+    <!--style="position:relative;border-radius:15px 0 0 15px;behavior:url('assets/css/PIE.htc');"><span-->
+    <!--class="glyphicon glyphicon-search"></span></span>-->
+    <!--<input type="text" class="form-control head_search"-->
+    <!--ng-keypress="goHtml('products',$event)"-->
+    <!--ng-model="headProductName"-->
+    <!--style="position:relative;border-radius:0 15px 15px 0;behavior:url('assets/css/PIE.htc');"-->
+    <!--placeholder="燃气险"-->
+    <!--aria-describedby="sizing-addon3">-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div ng-click="logout()" style="float: right;">-->
+    <!--<button class="btn neptune_basic_button" style="color: #ffffff">注销</button>-->
+    <!--</div>-->
+    <!--</div>-->
+</div>

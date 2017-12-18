@@ -1,0 +1,108 @@
+<div class="col-xs-12 full_height cancel_col_padding neptune_userCenter_color">
+    <header></header>
+
+    <div class="col-xs-2  margin_top3  cancel_col_padding" ng-style="menuHeight">
+        <div class="col-xs-12" style="width: 99%">
+            <div class="background_blue1" style="min-height: 220px;">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-6 cancel_col_padding text-center">
+                    <div class="background_white text-center col-xs-offset-1 margin_top30 neptune_userCenter_circular">
+                        <img src="assets/img/login_head.png" style="width: 108%;margin-top: -3px; margin-left: -3px;">
+                    </div>
+                    <img ng-if="user.approveState=='4'" src="assets/img/user-V.png" class="neptune_userCenter_img">
+                </div>
+                <!--<div class="col-xs-3 text-center color_white neptune_userCenter_out" ng-click="user.logout()">-->
+                <!--注销-->
+                <!--</div>-->
+                <div class="col-xs-12 cancel_col_padding background_blue2 margin_top5" style="margin-top: 20%">
+                    <div class=" col-xs-6 text-center cancel_col_padding color_white margin_top5"
+                         style="font-size: 24px;margin-top: 9%">{{user.name}}
+                    </div>
+                    <div class="col-xs-6 text-center cancel_col_padding color_white">
+                        <img src="assets/img/diamonds.png" width="72px" style="margin-top: -4%">
+                        <div class="neptune_basic_font">上月等级</div>
+                    </div>
+                </div>
+            </div>
+            <!--选择栏-->
+            <div class="background_white" style="height: 68%;min-height: 400px">
+                <div class="padding_top5 neptune_basic_cursor color_gray row"
+                     style="margin-top: 30px"
+                     ng-class="{font_color_black1:active=='basicInfoDefault'}"
+                     ng-click="switchView('basicInfoDefault')">
+                    <img src="assets/img/user.png" class="neptune_small_img" ng-if="active !='basicInfoDefault'"/>
+                    <img src="assets/img/user_o.png" class="neptune_small_img" ng-if="active=='basicInfoDefault'"/>
+                    <!--<i class="icon-user" style="font-size: 20px;margin-left: 6%;"></i>-->
+                    <div class="neptune_color_div">个人中心</div>
+                </div>
+                <div class="padding_top5 neptune_basic_cursor color_gray row"
+                     ng-class="{font_color_black1:active=='basicInfo'}"
+                     ng-click="switchView('basicInfo')">
+                    <img src="assets/img/information.png" class="neptune_small_img" ng-if="active!='basicInfo'"/>
+                    <img src="assets/img/information_o.png" class="neptune_small_img" ng-if="active=='basicInfo'"/>
+                    <!--<i class="icon-information" style="font-size: 20px;margin-left: 6%;"></i>-->
+                    <div class="neptune_color_div">基本信息</div>
+                </div>
+                <div class="padding_top5 neptune_basic_cursor color_gray row"
+                     ng-class="{font_color_black1:active=='bankCard'}"
+                     ng-click="switchView('bankCard')">
+                    <img src="assets/img/myBankCard.png" class="neptune_small_img" ng-if="active!='bankCard'"/>
+                    <img src="assets/img/myBankCard_o.png" class="neptune_small_img" ng-if="active=='bankCard'"/>
+                    <!--<span>我的银行卡</span>-->
+                    <!--<i class="icon-myBankCard" style="font-size: 20px;margin-left: 6%;"></i>-->
+                    <div class="neptune_color_div">我的银行卡</div>
+                </div>
+                <div class="padding_top5 neptune_basic_cursor color_gray row"
+                     ng-class="{font_color_black1:active=='withdrawal'}"
+                     ng-click="switchView('withdrawal')">
+                    <img src="assets/img/cashRegister.png" class="neptune_small_img" ng-if="active!='withdrawal'"/>
+                    <img src="assets/img/cashRegister_o.png" class="neptune_small_img" ng-if="active=='withdrawal'"/>
+                    <!--<span>提现记录</span>-->
+                    <!--<i class="icon-cashRegister" style="font-size: 20px;margin-left: 6%;"></i>-->
+                    <div class="neptune_color_div">提现记录</div>
+                </div>
+                <div class="padding_top5 neptune_basic_cursor color_gray row"
+                     ng-class="{font_color_black1:active=='examination'}"
+                     ng-click="switchView('examination')">
+                    <img src="assets/img/cashRegister.png" class="neptune_small_img" ng-if="active!='examination'"/>
+                    <img src="assets/img/cashRegister_o.png" class="neptune_small_img" ng-if="active=='examination'"/>
+                    <div class="neptune_color_div">执业考试</div>
+                </div>
+                <div class="padding_top5 neptune_basic_cursor color_gray row"
+                     ng-class="{font_color_black1:active=='learningDownload'}"
+                     ng-click="switchView('learningDownload')">
+                    <img src="assets/img/cashRegister.png" class="neptune_small_img"
+                         ng-if="active!='learningDownload'"/>
+                    <img src="assets/img/cashRegister_o.png" class="neptune_small_img"
+                         ng-if="active=='learningDownload'"/>
+                    <div class="neptune_color_div">执业培训课件</div>
+                </div>
+                <div class="padding_top5 neptune_basic_cursor color_gray row"
+                     ng-class="{font_color_black1:active=='serviceAgreement'}"
+                     ng-click="switchView('serviceAgreement')">
+                    <!--ng-if="user.agentKind==='001'"-->
+                    <img src="assets/img/cashRegister.png" class="neptune_small_img"
+                         ng-if="active!='serviceAgreement'"/>
+                    <img src="assets/img/cashRegister_o.png" class="neptune_small_img"
+                         ng-if="active=='serviceAgreement'"/>
+                    <div class="neptune_color_div">代理协议</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--默认展示-->
+    <div ng-if="active=='basicInfoDefault'" ng-include="'userCenter/subPageFrame/basicInfoDefault.html'"></div>
+    <!--基本信息-->
+    <div ng-if="active=='basicInfo'" ng-include="'userCenter/subPageFrame/basicInfo.html'"></div>
+    <!--我的银行卡-->
+    <div ng-if="active=='bankCard'" ng-include="'userCenter/subPageFrame/bankCard.html'"></div>
+    <!--提现记录-->
+    <div ng-if="active=='withdrawal'" ng-include="'userCenter/subPageFrame/withdrawal.html'"></div>
+    <!--认证考试-->
+    <div ng-if="active=='examination'" ng-include="'userCenter/subPageFrame/examination.html'"></div>
+    <!--课件下载-->
+    <div ng-if="active=='learningDownload'" ng-include="'userCenter/learningDownload.html'"></div>
+    <!--劳务协议-->
+    <div ng-if="active=='serviceAgreement'" ng-include="'userCenter/subPageFrame/serviceAgreement.html'"></div>
+</div>

@@ -1,0 +1,79 @@
+<div id="basicInfo" class="col-xs-12 margin_top2 cancel_col_padding">
+    <div class="col-xs-12 background_white docu_content" style="margin-top: -1%">
+
+        <div class="col-xs-12 margin_left_1" ng-if="unDeterminedDocuments&&unDeterminedDocuments.length">
+            <div class="col-xs-12">待上交确认：</div>
+            <table class="operateTable table table-responsive table-condensed table-bordered table_center">
+                <tr>
+                    <th class="neptune_table_th">序号</th>
+                    <!--<th class="neptune_table_th" style="width: 19%">单证名称</th>-->
+                    <th class="neptune_table_th" style="width: 19%">保险公司</th>
+                    <th class="neptune_table_th" style="width: 9%">上交人机构</th>
+                    <th class="neptune_table_th" style="width: 9%">上交人</th>
+                    <!--<th class="neptune_table_th">接收机构</th>-->
+                    <!--<th class="neptune_table_th">领用人</th>-->
+                    <th class="neptune_table_th">起始号码</th>
+                    <th class="neptune_table_th">终止号码</th>
+                    <th class="neptune_table_th">上交份数</th>
+                    <th class="neptune_table_th">操作时间</th>
+                    <th class="neptune_table_th">状态</th>
+                    <th class="neptune_table_th">操作</th>
+                    <th class="neptune_table_th">附件（下载功能）</th>
+                </tr>
+                <tr ng-repeat="document in unDeterminedDocuments">
+                    <td>{{$index+1}}</td>
+                    <!--<td class="neptune_orders_show">{{document.certifyName}}</td>-->
+                    <td class="neptune_orders_show">{{document.supplierName}}</td>
+                    <td class="neptune_orders_show">{{document.sendComName}}</td>
+                    <td class="neptune_orders_show">{{document.sendName}}</td>
+                    <!--<td class="neptune_orders_show">{{document.resComName}}</td>-->
+                    <!--<td>{{document.resName}}</td>-->
+                    <td>{{document.startNo}}</td>
+                    <td>{{document.endNo}}</td>
+                    <td>{{document.sumCount}}</td>
+                    <td>{{document.modifyDateTime}}</td>
+                    <td>{{document.state}}</td>
+                    <td><div class="hand font_color_black1" ng-click="confirmation(document.serialNo)">上交确认</div></td>
+                    <td><div class="hand font_color_black1" ng-if="document.filePath" ng-click="window.open(document.filePath)">下载附件</div></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-xs-12 margin_left_1" ng-if="determinedDocuments&&determinedDocuments.length">
+            <div class="col-xs-12">上交确认历史：</div>
+            <table class="operateTable table table-responsive table-condensed table-bordered table_center">
+                <tr>
+                    <th class="neptune_table_th">序号</th>
+                    <!--<th class="neptune_table_th" style="width: 19%">单证名称</th>-->
+                    <th class="neptune_table_th" style="width: 19%">保险公司</th>
+                    <th class="neptune_table_th">上交人机构</th>
+                    <th class="neptune_table_th">上交人</th>
+                    <!--<th class="neptune_table_th">接收机构</th>-->
+                    <!--<th class="neptune_table_th">领用人</th>-->
+                    <th class="neptune_table_th">起始号码</th>
+                    <th class="neptune_table_th">终止号码</th>
+                    <th class="neptune_table_th">上交份数</th>
+                    <th class="neptune_table_th">操作时间</th>
+                </tr>
+                <tr ng-repeat="document in determinedDocuments">
+                    <td>{{$index+1}}</td>
+                    <!--<td class="neptune_orders_show">{{document.certifyName}}</td>-->
+                    <td class="neptune_orders_show">{{document.supplierName}}</td>
+                    <td class="neptune_orders_show">{{document.sendComName}}</td>
+                    <td class="neptune_orders_show">{{document.sendName}}</td>
+                    <!--<td class="neptune_orders_show">{{document.resComName}}</td>-->
+                    <!--<td>{{document.resName}}</td>-->
+                    <td>{{document.startNo}}</td>
+                    <td>{{document.endNo}}</td>
+                    <td>{{document.sumCount}}</td>
+                    <td>{{document.makeDate}}</td>
+                </tr>
+            </table>
+        </div>
+        <div ng-show="!(unDeterminedDocuments&&unDeterminedDocuments.length)&&!(determinedDocuments&&determinedDocuments.length)"
+             class="text-center" style="font-size: 30px;margin:5% 0">没有待上交确认和上交确认历史的数据</div>
+        <div ng-show="!(unDeterminedDocuments&&unDeterminedDocuments.length)&&(determinedDocuments&&determinedDocuments.length)"
+             class="text-center" style="font-size: 30px;margin:5% 0">没有待上交确认的数据</div>
+        <div ng-show="(unDeterminedDocuments&&unDeterminedDocuments.length)&&!(determinedDocuments&&determinedDocuments.length)"
+             class="text-center" style="font-size: 30px;margin:5% 0">没有上交确认历史的数据</div>
+    </div>
+</div>

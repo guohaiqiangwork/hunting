@@ -1,0 +1,218 @@
+.payWay {
+    height: 50px;
+    line-height: 50px;
+    word-spacing: 20px;
+}
+
+.payWayChild {
+    line-height: 140px;
+}
+
+.qrcode > table {
+    margin: auto;
+}
+
+.neptune_userCenter_color {
+    padding: 0;
+    background-color: #F0F0F2
+}
+
+.neptune_userCenter_left {
+    padding-left: 2%;
+    height: 40px;
+    padding-top: 13px;
+}
+
+.neptune_userCenter_circular {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    behavior: url('assets/css/PIE.htc')
+}
+
+.neptune_userCenter_img {
+    position: absolute;
+    top: 25%;
+    right: -8%;
+    width: 35%;
+}
+
+.neptune_userCenter_out {
+    padding: 2% 1px;
+    font-size: x-small;
+    cursor: pointer;
+}
+
+.neptune_basic_button {
+    background-color: #F5A602;
+    border: none;
+    font-size: 12px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 8px;
+}
+.neptune_basic_button2 {
+    background-color: #F5A602;
+    border: none;
+    font-size: 16px;
+    margin-top: -3%;
+    margin-right: -8%;
+    width: 8%;
+    height: 73%
+}
+
+.neptune_basic_button1 {
+    background-color: #F5A602;
+    border: none;
+    font-size: 12px;
+    float: right;
+    margin-right: 8px;
+}
+
+.neptune_basic_cursor {
+    height: 40px;
+    cursor: pointer;
+    padding-left: 10%;
+    padding-top: 10%
+}
+
+.neptune_small_img {
+    width: 20px;
+    margin-top: -4px
+}
+
+.neptune_basic_font {
+    font-size: 10px;
+    margin-top: -10%
+}
+
+.neptune_default_table {
+    background-color: #ffffff;
+    margin-top: 20%;
+    padding: 2%;
+    width: 98%;
+}
+
+.neptune_my_wealth {
+    min-height: 180px;
+    /*width: 31%;*/
+    background-color: #3FA5FA;
+    color: #ffffff
+}
+
+.neptune_wealth_font {
+    font-size: 32px;
+    text-align: center;
+    padding-top: 6%
+}
+
+.neptune_wealth_top {
+    min-height: 80px;
+    background-color: #48CFAE
+}
+
+.neptune_wealth_money {
+    font-size: 24px;
+    color: #ffffff;
+    margin-left: 5%;
+    padding-top: 8px
+}
+
+.neptune_wealth_button {
+    min-height: 80px;
+    margin-top: 20px;
+    background-color: #5D9BEC
+
+}
+
+.neptune_wealth_size {
+    font-size: 18px;
+    color: #ffffff;
+    margin-left: 5%
+}
+
+.neptune_my_ranking {
+    border: 4px solid #07A084;
+    width: 33%;
+    margin-left: 16px;
+    min-height: 180px;
+    max-height: 180px;
+    background-color: #ffffff
+}
+
+.neptune_ranking_in {
+    background-color: #04A185;
+    min-height: 30px;
+    margin-left: -16px;
+}
+
+.neptune_ranking_left {
+    line-height: 3;
+    margin-left: 0
+}
+
+.neptune_ranking_size {
+    margin-top: 25%;
+    position: absolute;
+    /*margin-left: -5%;*/
+}
+
+.neptune_my_achievement {
+    background-color: #ffffff;
+    margin-top: 2%;
+    padding: 2%;
+    width: 98%;
+}
+
+.neptune_orders_head {
+    margin-top: 8px;
+    margin-left: 1%
+}
+
+.neptune_orders_margin {
+    margin-top: -3px
+}
+
+.neptune_orders_font {
+    font-size: small;
+    margin-left: 8px
+}
+
+.neptune_bankCard_div {
+    background-color: #ffffff;
+    height: 75%;
+    position: absolute;
+    width: 73%;
+    margin-left: 22%;
+    margin-top: 3%;
+}
+
+/*智能分析*/
+.neptune_statistics_ranking {
+    border: 4px solid #07A084;
+    margin-left: 16px;
+    min-height: 180px;
+    max-height: 180px;
+    background-color: #ffffff
+}
+
+.neptune_button_model {
+    border: none;
+    background-color: #F5A602;
+    color: #ffffff;
+}
+
+.neptune_orders_select {
+    width: 90%;
+    border: none;
+    height: 30px;
+    margin-top: 6%;
+    background-color: #ffffff
+}
+
+.neptune_select_div {
+    height: 100%;
+    border-left: 1px solid #E7E7E7
+}

@@ -1,0 +1,200 @@
+<div id="basicInfoDefault" class="col-xs-10 margin_top3" style="width: 82.33333%;">
+    <!--3块-->
+    <div class="col-xs-12 cancel_col_padding" style="width: 98%;">
+        <!--我的财富-->
+        <div class="col-xs-6 neptune_my_wealth">
+            <div class="margin_top2 font_size_12">
+                <img src="assets/img/myWealth.png" style="width: 25px">
+                总佣金
+            </div>
+            <div class="neptune_wealth_font">
+                ¥0
+                <!--{{user.wealth.commission}}   后端数据-->
+                <!--<div class="font_size_12">-->
+                <!--累计金额-->
+                <!--</div>-->
+            </div>
+        </div>
+        <!--提现-->
+        <div class="col-xs-6">
+            <!--style="width:34%;"-->
+            <div class="neptune_wealth_top">
+                <div class="neptune_wealth_money">
+                    ¥0
+                    <!--{{user.wealth.noBalance}} 后端数据-->
+                    <span class="font_size_12">
+                        未确认佣金
+                    </span>
+                </div>
+                <!--<div class="neptune_wealth_size">-->
+                <!--¥{{user.wealth.commission.availableMoney}}-->
+                <!--<span class="font_size_12">-->
+                <!--可提现税后金额-->
+                <!--</span>-->
+                <!--&lt;!&ndash;<button style="width: 30%"&ndash;&gt;-->
+                <!--&lt;!&ndash;class="neptune_basic_button "&ndash;&gt;-->
+                <!--&lt;!&ndash;ng-click="openCommission()">&ndash;&gt;-->
+                <!--&lt;!&ndash;提现&ndash;&gt;-->
+                <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                <!--</div>-->
+            </div>
+            <div class="neptune_wealth_button">
+                <div class="neptune_wealth_money">
+                    ¥0
+                    <!--{{user.wealth.balance}} 后端数据-->
+                    <span class="font_size_12">
+                       可提现余额
+                    </span>
+                </div>
+                <!--<div class="neptune_wealth_size">-->
+                <!--¥{{user.wealth.bonus.availableMoney}}-->
+                <!--<span class="font_size_12">-->
+                <!--可提现税后金额-->
+                <!--</span>-->
+                <!--&lt;!&ndash;<button style="width: 30%"&ndash;&gt;-->
+                <!--&lt;!&ndash;class="neptune_basic_button "&ndash;&gt;-->
+                <!--&lt;!&ndash;ng-click="openWithdrawal()">&ndash;&gt;-->
+                <!--&lt;!&ndash;提现&ndash;&gt;-->
+                <!--&lt;!&ndash;</button>&ndash;&gt;-->
+                <!--</div>-->
+            </div>
+        </div>
+        <!--我的排名-->
+        <!--<div class="col-xs-4 neptune_my_ranking">-->
+        <!-- neptune_my_ranking-->
+        <!--<div class="margin_top2 font_size_12"-->
+        <!--style="min-height: 35px">-->
+        <!--<img src="assets/img/myRanking.png" width="15px">-->
+        <!--我的排名-->
+        <!--</div>-->
+        <!--<div class="neptune_ranking_in">-->
+        <!--<div class="row text-center neptune_ranking_left">-->
+        <!--<div class="col-xs-6"-->
+        <!--style="cursor: pointer"-->
+        <!--ng-class="{background_green1:rankingActive=='national'}"-->
+        <!--ng-click="switchRanking('national')">全国-->
+        <!--</div>-->
+        <!--<div class="col-xs-6"-->
+        <!--style="cursor: pointer"-->
+        <!--ng-class="{background_green1:rankingActive=='organizational'}"-->
+        <!--ng-click="switchRanking('organizational')">企业-->
+        <!--</div>-->
+        <!--&lt;!&ndash;<div class="col-xs-4"&ndash;&gt;-->
+        <!--&lt;!&ndash;style="cursor: pointer"&ndash;&gt;-->
+        <!--&lt;!&ndash;ng-class="{background_green1:rankingActive=='network'}"&ndash;&gt;-->
+        <!--&lt;!&ndash;ng-click="switchRanking('network')">网格&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--全国-->
+        <!--<div class="margin_top5" ng-repeat="(rankingLevel,rankings) in user.userRanking"-->
+        <!--ng-if="rankingActive==rankingLevel">-->
+        <!--<div class="col-xs-3" ng-repeat="ranking in rankings">-->
+        <!--<img src="assets/img/ranking-one.png" height="40px">-->
+        <!--<div class="color_white" style="margin-top: -50%;padding-left: 25%;">-->
+        <!--{{ranking.rankingNmuber}}-->
+        <!--</div>-->
+        <!--<div class="neptune_ranking_size" style="font-size: 8px">{{ranking.angetName}}</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;企业&ndash;&gt;-->
+        <!--<div ng-if="rankingActive=='organizational'" class="margin_top5">-->
+        <!--<div class="col-xs-3" ng-repeat="ranking in user.ranking.organizational">-->
+        <!--<img src="assets/img/medal_V.png" height="20px">-->
+        <!--<div class="userCenter_ranking_circle text-center color_white">{{ranking.rank}}</div>-->
+        <!--<div class="neptune_ranking_size">{{ranking.name}}</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;网络&ndash;&gt;-->
+        <!--<div ng-if="rankingActive=='network'" class="margin_top5">-->
+        <!--<div class="col-xs-3" ng-repeat="ranking in user.ranking.network">-->
+        <!--<img src="assets/img/medal_V.png" height="20px">-->
+        <!--<div class="userCenter_ranking_circle text-center color_white">{{ranking.rank}}</div>-->
+        <!--<div class="neptune_ranking_size">{{ranking.name}}</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+    <!--我的订单-->
+    <div class="neptune_default_table">
+        <div class="font_size_12">
+            <span class="col-xs-4">
+            <img src="assets/img/myOrder.png" width="18px">
+            当天订单
+                </span>
+            <span class="col-xs-7 text-right">
+                合计单数：<span class="color_yellow1 font_size_16">
+                {{ordersCount}}
+            </span>
+            </span>
+        </div>
+        <!--<table class="table table-bordered font_size_12" style="margin-bottom: 0">-->
+        <!--<thead>-->
+        <!--<tr class="background_gray2">-->
+        <!--<th class="text-center" style="width: 30%">订单编码</th>-->
+        <!--<th class="text-center" style="width: 11%">投保人姓名</th>-->
+        <!--<th class="text-center" style="width: 28%">保险产品</th>-->
+        <!--<th class="text-center" style="width: 10%">下单时间</th>-->
+        <!--<th class="text-center">保费</th>-->
+        <!--<th class="text-center" style="width: 21%">状态</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--</table>-->
+        <div class="full_width" style="overflow-y: auto;height: 130px;">
+            <table class="table operateTable table-bordered table_center font_size_14"
+                   style="table-layout: fixed;">
+                <tr class="background_gray2">
+                    <th class="text-center">订单编码</th>
+                    <th class="text-center">投保人姓名</th>
+                    <th class="text-center">保险产品</th>
+                    <th class="text-center">下单时间</th>
+                    <th class="text-center">保费</th>
+                    <th class="text-center">状态</th>
+                </tr>
+                <tr ng-repeat="order in waitRenewOrders">
+                    <td class="text-center">{{order.orderId}}</td>
+                    <td class="text-center" style="width: 10%">{{order.applicantName}}</td>
+                    <td class="text-center">{{order.productName}}</td>
+                    <td class="text-center">{{order.createDate}}</td>
+                    <td class="text-center">¥{{order.orderTotal}}</td>
+                    <td class="text-center">
+                        {{order.payStatus}}
+                        {{order.appStatus}}
+                        <!--{{order.premStatus}}-->
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--我的业绩-->
+    <div class="neptune_my_achievement">
+        <div class="row font_size_12" style="margin-left: 0">
+            <div class="col-xs-6 cancel_col_padding">
+                <img src="assets/img/achievement.png" width="18px">
+                我的业绩
+            </div>
+            <div class="col-xs-6 cancel_col_padding">
+                <div class="col-xs-6" dropdown is-open="dropdownIsopen" style="margin-left: 60%">
+                    <!--<span style="border: 1px solid #E5E5E5;padding: 6px">按周期统计</span>-->
+                    <!--8月份做-->
+                    <!--<span style="border: 1px solid #E5E5E5;padding: 6px">按产品统计</span>-->
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered font_size_12" style="margin-top: 8px">
+            <tr class="background_gray2">
+                <th></th>
+                <th class="text-center">产品份数</th>
+                <th class="text-center">保费</th>
+            </tr>
+            <tr ng-repeat="achievement in achievements">
+                <td class="text-center">
+                    {{achievement.cycle==='D'?'当天':achievement.cycle==='W'?'当周':achievement.cycle==='M'?'当月':achievement.cycle==='T'?'总计':''}}
+                </td>
+                <td class="text-center">{{achievement.totalNumber}}</td>
+                <td class="text-center">{{achievement.totalPremium}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>

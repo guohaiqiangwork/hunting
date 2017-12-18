@@ -1,0 +1,117 @@
+<div id="basicInfo" class="col-xs-12 margin_top2 cancel_col_padding">
+    <div class="col-xs-12 background_white docu_content" style="margin-top: -1%">
+        <div class="row docu_content_bottom" multiple-form cue-way="layer" result="searchDocuments()">
+            <div class="col-xs-6 margin_top2 text-right line_height_30">
+                <div class="col-xs-3 col-xs-offset-2">起始号码</div>
+                <div class="col-xs-6">
+                    <input class="form-control input-sm"
+                           ng-model="myDocument.startNo"/>
+                </div>
+            </div>
+            <div class="col-xs-6 margin_top2 text-right line_height_30">
+                <div class="col-xs-3">终止号码</div>
+                <div class="col-xs-6">
+                    <input class="form-control input-sm"
+                           ng-model="myDocument.endNo"/>
+                </div>
+            </div>
+            <div class="col-xs-6 margin_top2 text-right line_height_30">
+                <div class="col-xs-3 col-xs-offset-2">保险公司</div>
+                <div class="col-xs-6">
+                    <select class="form-control input-sm  ng-pristine ng-valid"
+                            ng-model="docuStatistics.supplier"
+                            ng-options="x.supplierName for x in ListOfCompany"
+                            value="{{docuStatistics.supplier.supplierCode}}">
+                        <option value="">请选择</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6 margin_top2 text-right line_height_30">
+                <div class="col-xs-3">&nbsp;状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态&nbsp;</div>
+                <div class="col-xs-6">
+                    <select class="form-control input-sm"
+                            ng-model="enquiries.state">
+                         <option value="1">全部</option>
+                         <option value="2">已使用</option>
+                         <option value="3">未使用</option>
+                         <option value="4">已上交</option>
+                         <option value="5">待接收确认</option>
+                         <option value="6">待上交确认</option>
+                        <option value="7">已作废</option>
+                        <option value="8">已遗失</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-xs-12 margin_top2 line_height_30 text-center">
+                <button class="btn btn-warning margin_right1" isComplete>搜索</button>
+                <button class="btn btn-warning margin_left1" ng-click="mDocumentsResetting()">重置</button>
+            </div>
+        </div>
+
+        <div class="col-xs-12 margin_left_1" ng-if="documents&&documents.length">
+            <table class="operateTable table table-responsive table-condensed table-bordered table_center">
+                <tr>
+                    <th class="neptune_table_th" style="width: 4%">序号</th>
+                    <th class="neptune_table_th" style="width: 9%">单证名称</th>
+                    <th class="neptune_table_th" style="width: 16%">保险公司</th>
+                    <!--<th class="neptune_table_th" style="width: 12%">发放机构</th>-->
+                    <!--<th class="neptune_table_th">下发人</th>-->
+                    <th class="neptune_table_th" style="width: 7%">起始号码</th>
+                    <th class="neptune_table_th" style="width: 7%">终止号码</th>
+                    <th class="neptune_table_th" style="width: 6%">份数</th>
+                    <th class="neptune_table_th" style="width: 8%">操作时间</th>
+                    <th class="neptune_table_th" style="width: 8%">状态</th>
+                    <th class="neptune_table_th" style="width: 6%">操作</th>
+                </tr>
+                <tr ng-repeat="document in documents">
+                    <td>{{$index+1}}</td>
+                    <td>{{document.certifyName}}</td>
+                    <td class="neptune_orders_show">{{document.supplierName}}</td>
+                    <!--<td class="neptune_orders_show">{{document.sendComName}}</td>-->
+                    <!--<td>{{document.sendName}}</td>-->
+                    <td>{{document.startNo}}</td>
+                    <td>{{document.endNo}}</td>
+                    <td>{{document.sumCount}}</td>
+                    <td>{{document.modifyDateTime}}</td>
+                    <td>{{document.state}}</td>
+                    <td class="hand font_color_black1">
+                        <span id="browse{{$index}}"
+                                ng-show="document.state==='未使用'"
+                                ng-click="openModal('作废',document)"
+                                class="margin_left_right1">
+                            <!--ng-init="initUpload($index,document)"-->
+                            作废
+                        </span>
+                        <span ng-if="document.state==='未使用'"
+                                ng-click="openModal('遗失',document)" class="margin_left_right1">遗失
+                        </span>
+                        <span ng-if="document.state==='已作废'||document.state==='已使用'||document.state==='已遗失'"
+                                ng-click="openHandInModal(document)" class="margin_left_right1">上交
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--分页-->
+        <div ng-if="documents&&documents.length"
+             class="col-xs-12 row margin_top2 text-center background_white margin_left0">
+            <pagination
+                    ng-model="pagination.pageIndex"
+                    total-items="pagination.totalItems"
+                    page="pagination.pageIndex"
+                    items-per-page="pagination.pageSize"
+                    max-size="pagination.maxSize"
+                    previous-text="{{pagination.previousText}}"
+                    next-text="{{pagination.nextText}}"
+                    first-text="{{pagination.firstText}}"
+                    last-text="{{pagination.lastText}}"
+                    class="pagination-small"
+                    boundary-links="true"
+                    ng-click="checkMyDocuments()">
+            </pagination>
+        </div>
+       <div ng-show="!documents&&!documents.length"
+            class="text-center" style="font-size: 30px;margin:5% 0">没有我的订单数据</div>
+    </div>
+</div>

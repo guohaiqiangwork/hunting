@@ -1,0 +1,45 @@
+<div class="background_white" style="height:540px;width:700px">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="closeUploadSign()"> &times;</button>
+        <h4>凭证上传</h4>
+    </div>
+    <div class="modal-body">
+        <div style="height:300px" plupload-file="uploadfiles9" uploadType="sign" pickfiles="pickfiles9" fileShowList="filelist9" fileImg="pickfilesImg9" fileText="pickfilesText9">
+            <div id="filelist9" >
+                <div id="pickfiles9" class="text-center" style="width: 80%;height: 300px;margin-left:10%;border:1px dashed">
+                    <img id="pickfilesImg9" src="">
+                    <div id="pickfilesText9"
+                         style="font-size: xx-large;margin-top: 19%;text-align:center;cursor: pointer">点击添加凭证
+                    </div>
+                </div>
+                <img ng-show="imgSrc" height="200px" width="100%" ng-src="{{imgSrc}}">
+            </div>
+        </div>
+        <form name="signForm">
+            <div class="col col-xs-12">
+                <div class="col-xs-6 margin_top2">
+                    <div class="col-xs-4">付款人姓名</div>
+                    <div class="col-xs-8">
+                        <input ng-model="signData.paymentName" placeholder="请输入付款人姓名" required class="form-control input-sm"/>
+                    </div>
+                </div>
+                <div class="col-xs-6 margin_top2">
+                    <div class="col-xs-4">付款金额</div>
+                    <div class="col-xs-8">
+                        <input ng-model="signData.paymentAmount" placeholder="请输入付款金额" type="number" required class="form-control input-sm"/>
+                    </div>
+                </div>
+                <div class="col-xs-6 margin_top2">
+                    <div class="col-xs-4">付款账号</div>
+                    <div class="col-xs-8">
+                        <input ng-model="signData.paymentAccount" placeholder="请输入付款账号" required class="form-control input-sm"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+        <div class="text-center">
+            <button class="btn background_yellow1 color_white margin_top_10" ng-click="closeUploadSign()">取消</button>
+            <button class="btn background_yellow1 color_white margin_top_10" ng-disabled="!signForm.$valid" id="uploadfiles9">上传</button>
+        </div>
+</div>

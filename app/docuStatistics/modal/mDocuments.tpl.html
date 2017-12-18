@@ -1,0 +1,27 @@
+<div class="background_white" multiple-form result="successResult()" style="border-radius: 8px;position: relative;behavior:url('assets/css/PIE.htc');">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()"> &times;</button>
+        <h4 class="modal-title">单证{{titleText}}</h4>
+    </div>
+    <div class="modal-body row">
+        <div class="col-xs-12 margin_top2">
+            <div class="col-xs-4">起始号码</div>
+            <div class="col-xs-8"><input rule="require" ng-model="myDocument.startNo" class="form-control input-small" placeholder="请输入单证起始号码"/></div>
+        </div>
+        <div class="col-xs-12 margin_top2">
+            <div class="col-xs-4">终止号码</div>
+            <div class="col-xs-8"><input rule="require" ng-model="myDocument.endNo" class="form-control input-small" placeholder="请输入单证终止号码"/></div>
+        </div>
+        <div class="col-xs-12 margin_top2">
+            <div class="col-xs-4"><button id="browse" class="btn btn-primary">选择文件</button></div>
+            <div class="col-xs-8">
+                <input type="text" class="form-control input-small" id="condolences1" disabled="true"/>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="full_width text-center">
+            <button type="button" class="btn btn-primary" isComplete>确定</button>
+        </div>
+    </div>
+</div>

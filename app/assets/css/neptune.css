@@ -1,0 +1,431 @@
+.full_height {
+    height: 100%;
+}
+
+.full_width {
+    width: 100%;
+}
+
+.border_grey_full {
+    border: 1px #EBEBEB solid;
+}
+.docu_Statistics_width98{
+    width: 99%
+}
+
+/*margin_top40是百分比的;margin_top_40是px的*/
+
+.margin_top12 {
+    margin-top: 12%;
+}
+
+.margin_top30 {
+    margin-top: 30%;
+}
+.margin_top_30{
+    margin-top: 30px
+}
+
+.margin_top5 {
+    margin-top: 5%;
+}
+
+.margin_top3 {
+    margin-top: 3%;
+}
+
+.margin_top1 {
+    margin-top: 1%;
+}
+
+.margin_top2 {
+    margin-top: 2%;
+}
+
+.margin_top_10 {
+    margin-top: 10px;
+}
+.margin_left0{
+    margin-left:0;
+}
+
+.margin_left2 {
+    margin-left: 2%;
+}
+
+.margin_left_1{
+    margin-left: -1%
+}
+.margin_right1 {
+    margin-right: 1%;
+}
+
+.margin_left1 {
+    margin-left: 1%;
+}
+.margin_top10 {
+    margin-top: 10%;
+}
+
+.margin_top20 {
+    margin-top: 20%;
+}
+
+.margin_left_right10 {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.margin_left_right1 {
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.padding_left_right10 {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.padding_top_bottom5 {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.padding_top5 {
+    padding-top: 5%;
+}
+
+.padding_top_10 {
+    padding-top: 10px;
+}
+
+.padding_bottom5 {
+    padding-bottom: 5%;
+}
+
+.padding_bottom3 {
+    padding-bottom: 3%;
+}
+
+.padding_top_bottom_6 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+.padding_left_right6 {
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+.padding_10 {
+    padding: 10px;
+}
+
+.cancel_col_padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.bankCard_radius {
+    height: 200px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.orders_switch_yellow1 {
+    color: #FFB950;
+    border-bottom: 3px solid #FFB950;
+}
+
+.bankCard_radius {
+    height: 200px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    position: relative;
+    border: 1px grey dashed;
+    behavior: url('assets/css/PIE.htc');
+    width: 330px;
+    margin-top: 15%;
+    margin-left: 33%
+}
+
+.line_height_30 {
+    line-height: 30px;
+}
+
+.head_search {
+    background-color: #0A97DF;
+    border-color: #0A97DF;
+    color: black;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 16px solid white;
+    bottom: -5px;
+    position: absolute;
+    margin-left: 18%;
+}
+
+.userCenter_ranking_circle {
+    width: 30px;
+    height: 30px;
+    background: #F8931F;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    behavior: url('assets/css/PIE.htc');
+    top: 76%;
+    /*margin-left: -6%;*/
+}
+
+.userCenter_ranking_circle_2 {
+    width: 30px;
+    height: 30px;
+    background: #999999;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 76%;
+    /*margin-left: -6%;*/
+    behavior: url('assets/css/PIE.htc');
+    line-height: 2;
+}
+
+.userCenter_ranking_circle_3 {
+    width: 30px;
+    height: 30px;
+    background: #C68545;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 76%;
+    /*margin-left: -6%;*/
+    behavior: url('assets/css/PIE.htc');
+    line-height: 2;
+}
+
+.userCenter_ranking_circle_4 {
+    width: 30px;
+    height: 30px;
+    background: #C9AE81;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    position: absolute;
+    top: 76%;
+    /*margin-left: -6%;*/
+    behavior: url('assets/css/PIE.htc');
+    line-height: 2;
+}
+
+.withdrawal_redPack_bg {
+    background: url('../img/redPack-bg.png');
+    width: 340px;
+    height: 430px;
+}
+
+.withdrawal_commission_bg {
+    background: url('../img/commission_bg.png');
+    width: 340px;
+    height: 430px;
+}
+
+.font_size_12 {
+    font-size: 12px;
+}
+
+.hand {
+    cursor: pointer;
+}
+
+.hand_prize {
+    height: 24px;
+    line-height: 0
+}
+
+.neptune_card_div {
+    height: 180px;
+    width: 90%;
+    border: 1px grey dashed;
+}
+
+.neptune_up_span {
+    margin-left: -10.5%;
+    color: #FF9E54
+}
+
+.btn_type_default {
+    background-color: #fff;
+    border: 1px solid #cecece;
+    color: black;
+}
+
+.btn_type_default:hover {
+    background-color: #fff;
+    border: 1px solid #FDBB1A;
+    color: #FDBB1A;
+}
+
+.btn_type_change {
+    background-color: #fff;
+    border: 1px solid #FDBB1A;
+    color: #FDBB1A;
+}
+
+.product_choose_default {
+    border: 1px solid #bbb;
+}
+
+.product_choose_default:hover:active {
+    border: 1px solid #FDBB1A;
+}
+
+.product_choose {
+    border: 5px solid #FDBB1A;
+}
+
+.neptune_table_th {
+    background-color: #F2F2F2;
+}
+
+.add_circle {
+    width: 20px;
+    height: 20px;
+    color: #0A97DF;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px #0A97DF solid;
+    position: relative;
+    top: 60%;
+    margin-top: 1%;
+    margin-left: 50%;
+    cursor: pointer;
+    behavior: url('assets/css/PIE.htc');
+}
+
+.neptune_color_div {
+    font-size: 16px;
+    width: 80%;
+    float: right;
+    text-align: left;
+}
+
+.neptune_orders_size {
+    font-size: 8px;
+}
+
+/*登录*/
+.neptune_login_number {
+    background-color: #B3B3B3;
+    text-align: center;
+    width: 34%;
+    margin-left: 56%;
+    margin-top: 5%;
+    color: #ffffff;
+}
+
+.operateTable tr td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/*显示*/
+
+.neptune_orders_show:hover {
+    position: absolute;
+    background-color: #F0F0F2;
+}
+
+.neptune_order_detail{
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+}
+
+.neptune_order_detail:hover {
+    position: absolute;
+    width: 400px;
+    z-index: 99;
+    left: 40%;
+    background-color: #F0F0F2;
+}
+
+.neptune_products_title {
+    padding: 0;
+    cursor: pointer;
+    width: 65%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: keep-all;
+}
+
+.neptune_products_title_width {
+    padding: 0;
+    cursor: pointer;
+    width: 98%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: keep-all;
+}
+
+.neptune_products_titles {
+    padding: 0;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: keep-all;
+}
+.neptune_height30{
+    height: 30px !important;
+}
+.docu_content{
+  width: 98%;
+    margin-left: 10px;
+
+}
+.docu_content_head{
+    height: 50px;
+    color: #ffffff
+}
+.docu_content_bottom{
+    padding-bottom: 2%
+}
+.docu_nav{
+    height: 68%;
+    min-height: 400px
+}
+.float_frame{
+    position: relative;
+}
+.float_frame_div{
+    width: 88%;
+    height: 80px;
+    position: absolute;
+    z-index: 99;
+    background-color: white;
+    border: 1px grey solid;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    padding: 3px;
+    border-radius: 3px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    behavior: url('assets/css/PIE.htc');
+}
+.float_frame_item:hover{
+    background-color: dodgerblue;
+    cursor: hand;
+}
+.padding_0{
+    padding:0;
+}

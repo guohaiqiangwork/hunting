@@ -1,0 +1,190 @@
+<div class="background_gray2">
+    <header></header>
+    <div class="col-xs-12">
+        <div class="text-center" style="margin-top: 20px">
+            <div mc-step-guide step='2' ng-if="step=='2'">
+                <ul>
+                    <li>订单确认</li>
+                    <li>支付</li>
+                    <li>完成投保</li>
+                </ul>
+            </div>
+            <div mc-step-guide step='3' ng-if="step=='3'">
+                <ul>
+                    <li>订单确认</li>
+                    <li>支付</li>
+                    <li>完成投保</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 第二步选择支付方式 -->
+    <div class="col-xs-12" ng-if="step=='2'&& !editDate" style="min-height:300px;padding:10px">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10">
+            <div class="col-xs-12 text-left background_white" style="margin: 10px 0;padding:0 10px">
+                <div class="col-xs-12 text-left" style="line-height: 50px;padding: 0">
+                    <div class="col-xs-4">
+                        需支付金额<span class="font_size_20 color_red">￥{{total_fee}}</span>元
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 payWay background_white" ng-click="clickPayWay('weixin')">
+                <div class="col-xs-12" style="padding: 0">
+                    <div class="col-xs-4" style="padding: 0">
+                        <img width="40px" src="assets/img/weChat.png">
+                        <label for="weixin">微信</label>
+                    </div>
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4 text-right">
+                        <input type="radio" style="margin-right: 20px;" class="text-right" id="weixin" name="payWay"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 background_white " ng-show="checkPayWay=='weixin'" style="padding: 0">
+                <div class="col-xs-5 text-right" style="padding-top: 35px">
+                    <div class="col-xs-12 payWayChild">
+                        <div class="col-xs-8"></div>
+                        <div class="col-xs-4">
+                            <div id="qrCodeDivweixin" class="qrcode" style="padding: 10px;"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12" style="border-top:0">
+                        <div class="col-xs-8"></div>
+                        <div class="col-xs-4 text-center">
+                            <div class="btn background_yellow1 disabled">请在10分钟内支付</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-2 text-center">
+                    <img src="assets/img/img_right.png" style="margin-top: 100px">
+                </div>
+                <div class="col-xs-5 text-left">
+                    <img src="assets/img/img_mobile.png" style="margin: 15px 0">
+                </div>
+            </div>
+            <div class="col-xs-12 payWay background_white" style="margin: 10px 0 0 0" ng-click="clickPayWay('alipay')">
+                <div class="col-xs-12" style="padding: 0">
+                    <div class="col-xs-4" style="padding: 0">
+                        <img width="40px" src="assets/img/alipay.png">
+                        <label for="alipay">支付宝</label>
+                    </div>
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4 text-right">
+                        <input type="radio" style="margin-right: 20px" class="text-right" id="alipay" name="payWay"/>
+                    </div>
+                </div>
+            </div>
+            <!--现金-->
+            <!--<div class="col-xs-12 payWay background_white" ng-if="isA == 'Y'" style="margin: 10px 0 0 0" ng-click="clickPayWay('cash')">-->
+            <!--<div class="col-xs-12" style="padding: 0">-->
+            <!--<div class="col-xs-4" style="padding: 0">-->
+            <!--<img width="40px" src="assets/img/cash_money.png">-->
+            <!--<label for="cash">现金</label>-->
+            <!--</div>-->
+            <!--<div class="col-xs-4"></div>-->
+            <!--<div class="col-xs-4 text-right">-->
+            <!--<input type="radio" style="margin-right: 20px" class="text-right" id="cash" name="payWay"/>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="col-xs-12 background_white " ng-show="checkPayWay=='alipay'" style="padding: 0">
+            <div class="col-xs-5 text-right" style="padding-top: 35px">
+                <div class="col-xs-12 payWayChild">
+                    <div class="col-xs-8"></div>
+                    <div class="col-xs-4">
+                        <div id="qrCodeDivalipay" class="qrcode" style="padding: 10px"></div>
+                    </div>
+                </div>
+                <div class="col-xs-12" style="border-top:0">
+                    <div class="col-xs-8"></div>
+                    <div class="col-xs-4 text-center">
+                        <button class="btn background_yellow1 color_white">请在10分钟内完成支付</button>
+                        <!--ng-click="editEffectiveDate()"-->
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2 text-center">
+                <img src="assets/img/img_right.png" style="margin-top: 100px">
+            </div>
+            <div class="col-xs-5 text-left">
+                <img src="assets/img/img_mobile.png" style="margin: 15px 0">
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="col-xs-12 payWay" ng-click="clickPayWay('cash')">-->
+    <!--<input type="radio" id="cash" name="payWay"/>-->
+    <!--<label for="cash">现金</label>-->
+    <!--</div>-->
+
+</div>
+<div class=" text-center" ng-if="step=='2'&& !editDate && isA=='Y'" style="margin: 20px 0;padding: 20px">
+    <button class="btn btn-primary" ng-click="editEffectiveDate()">提交</button>
+</div>
+
+<div ng-if="step=='2'&& editDate" style="min-height:300px;padding:10px">
+    请选择订单生效日期
+    <input class="form-control" type="text" id="effectiveDate"/>
+</div>
+<div class=" text-center" ng-if="step=='2'&& editDate" style="margin: 20px 0;padding: 20px">
+    <button class="btn btn-primary" ng-click="payFinish()">确定</button>
+</div>
+
+<!-- 第三步支付完成-->
+<div ng-if="step=='3'" style="min-height:300px;padding:10px">
+    <div class="col-xs-12 text-center">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10 background_white">
+            <div class="col-xs-12 text-center margin_top_10" ng-if="payStatus=='PAY_SUCCESS'">
+                <img src="assets/img/pay_success.png" style="width: 150px;height: 150px">
+            </div>
+            <div class="col-xs-12 text-center margin_top_10" ng-if="payStatus=='PAY_FAILURE'">
+                <img src="assets/img/pay_error.png" style="width: 150px;height: 150px">
+            </div>
+            <div class="col-xs-12 text-center margin_top_10">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4" ng-if="payStatus=='PAY_SUCCESS'">
+                    恭喜您，支付成功！
+                </div>
+                <div class="col-xs-4" ng-if="payStatus=='PAY_FAILURE'">
+                    很遗憾，支付失败！
+                </div>
+            </div>
+            <div class="col-xs-12 text-left" ng-if="total_fee" style="margin-top: 20px">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4">
+                    <div class="col-xs-2"></div>
+                    <div class="col-xs-10">
+                        支付金额：<span>￥{{total_fee}}</span>元
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 text-left" ng-if="out_trade_no && isA!='Y'">
+                <div class="col-xs-4"></div>
+                <div class="col-xs-4">
+                    <div class="col-xs-2"></div>
+                    <div class="col-xs-10">
+                        订单编号：<span ng-click="openOrderDetails()"
+                                   style="cursor: pointer;"
+                                   class="color_yellow1">{{out_trade_no}}</span>&nbsp;&nbsp;
+                        <!--<span class="color_yellow1" style="cursor: pointer;"-->
+                        <!--ng-click="openOrderDetails()">查看订单</span>-->
+                    </div>
+                </div>
+            </div>
+            <div class=" text-center">
+                <button class="btn background_yellow1 color_white" style="margin: 20px 0" ng-click="goOrders()">
+                    返回个人订单
+                    <!--{{backLocation}}-->
+                </button>
+                <button class="btn background_yellow1 color_white" style="margin: 20px 0" ng-click="goBack()">
+                    返回
+                    <!--{{backLocation}}-->
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="paymentPackage" class="col-xs-12"> </div>
+

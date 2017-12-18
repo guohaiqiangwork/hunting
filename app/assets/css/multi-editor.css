@@ -1,0 +1,122 @@
+.multi-editor-tabset {
+    font-size: 13px;
+    background-color: #F4F5F6;
+    border-bottom: solid 1px #F4F5F6;
+}
+
+.multi-editor-tabset-inner-wrapper {
+    border-bottom: solid 3px #e5e5e5;
+}
+
+.multi-editor-tabset .tab {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    /*border: 1px solid #8f8f8f;*/
+    background-color: #c8c8c8;
+}
+
+.multi-editor-tabset .tab.active {
+    background-color: #D6F1FF;
+    border-bottom-color: #D6F1FF;
+}
+
+.multi-editor-tabset .tab .glyphicon {
+    font-size: 12px;
+    color: #8d8d8d;
+}
+
+.multi-editor-tabset .tab-container{
+    background : none;
+    margin: 0;
+    padding: 0;
+    max-height: 30px;
+}
+
+.multi-editor-tabset ul.tabs{
+    margin: 0;
+    list-style-type : none;
+    line-height : 35px;
+    max-height: 30px;
+    overflow: hidden;
+    display: inline-block;
+    padding-right: 20px
+}
+
+.multi-editor-tabset ul.tabs > li.active{
+    z-index: 2;
+    background: #CEF0FA;
+}
+
+.multi-editor-tabset ul.tabs > li.active:before{
+    border-color : transparent #CEF0FA transparent transparent;
+}
+
+
+.multi-editor-tabset ul.tabs > li.active:after{
+    border-color : transparent transparent transparent #CEF0FA;
+}
+
+.multi-editor-tabset ul.tabs > li{
+    float : left;
+    margin : 5px -10px 0;
+    border-top-right-radius: 25px 170px;
+    border-top-left-radius: 20px 90px;
+    padding : 0 30px 0 25px;
+    height: 170px;
+    background: #ddd;
+    position : relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,.5);
+    max-width : 200px;
+}
+
+.multi-editor-tabset ul.tabs > li > a{
+    display: inline-block;
+    max-width:100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    color: #222;
+}
+
+/*.multi-editor-tabset ul.tabs > li:before, ul.tabs > li:after{*/
+    /*content : '';*/
+    /*background : transparent;*/
+    /*height: 20px;*/
+    /*width: 20px;*/
+    /*border-radius: 100%;*/
+    /*border-width: 10px;*/
+    /*top: 0px;*/
+    /*border-style : solid;*/
+    /*position : absolute;*/
+/*}*/
+
+/*.multi-editor-tabset ul.tabs > li:before{*/
+    /*border-color : transparent #ddd transparent transparent;*/
+    /*-webkit-transform : rotate(48deg);*/
+    /*left: -23px;*/
+/*}*/
+
+/*.multi-editor-tabset ul.tabs > li:after{*/
+    /*border-color : transparent transparent transparent #ddd;*/
+    /*-webkit-transform : rotate(-48deg);*/
+    /*right: -17px;*/
+/*}*/
+
+/* Clear Fix took for HTML 5 Boilerlate*/
+
+.multi-editor-tabset .clearfix:before, .clearfix:after { content: ""; display: table; }
+.multi-editor-tabset .clearfix:after { clear: both; }
+.multi-editor-tabset .clearfix { zoom: 1; }
+

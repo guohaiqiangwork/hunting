@@ -1,0 +1,273 @@
+<!--未完成订单-->
+<div class="col-xs-12 background_white margin_top1" style="padding-left:0;">
+    <!--查询条件 ng-if="!texts[isSwitchOrder].isAdvanced"-->
+    <!--<div ng-if="texts[isSwitchOrder].isAdvanced">-->
+    <div class="col-xs-12" style="margin: 10px 0 0 0;">
+        <div class="row col-xs-6">
+            <div class="col-xs-2 text-right" style="padding-top: 10px">
+                投保人查询
+            </div>
+            <div class="col-xs-8">
+                <input class="form-control input-sm"
+                       ng-model="searchOrderKeywords.applicantName " ng-change="searchOrders()"
+                       placeholder="输入投保人姓名"/>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="col-xs-2 text-right" style="padding-top: 6px">
+                订单号查询
+            </div>
+            <div class="col-xs-8">
+                <input class="form-control input-sm"
+                       ng-model="searchOrderKeywords.orderId " ng-change="searchOrders()"
+                       placeholder="请输入订单号"/>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12" style="margin: 10px 0 0 0;">
+        <div class="row col-xs-6">
+            <!--<div class="col-xs-2 text-right" style="padding-top: 6px">-->
+            <!--支付状态-->
+            <!--</div>-->
+            <!--<div class="col-xs-8">-->
+            <!--<select type="text" ng-model="searchOrderKeywords.orderStatus"-->
+            <!--ng-options="orderType.code as orderType.value for orderType in orderTypes"-->
+            <!--class="form-control input-sm">-->
+            <!--</select>-->
+            <!--</div>-->
+            <div class="col-xs-2 text-right" style="padding-top: 6px">
+                待操作类型
+            </div>
+            <div class="col-xs-8">
+                <select ng-model="searchOrderKeywords.orderStatus" class="form-control input-sm"
+                        ng-change="changeOrderStatus()">
+                    <option value="pay">支付</option>
+                    <option value="underwriting">承保</option>
+                    <option value="delete">作废</option>
+                    <option value="update">修改</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="col-xs-2 text-right" style="padding-top: 6px">
+                保险产品
+            </div>
+            <div class="col-xs-8">
+                <input type="text" ng-model="searchOrderKeywords.productName" class="form-control input-sm"/>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12" style="margin: 10px 0 0 0;">
+        <!--<div class="row col-xs-6">-->
+        <!--<div class="col-xs-2 text-right" style="padding-top: 6px">-->
+        <!--下单时间-->
+        <!--</div>-->
+        <!--<div class="col-xs-8">-->
+        <!--<input id="searchDate" type="text" ng-model="searchOrderKeywords.searchDate" placeholder="请选择日期"-->
+        <!--ng-click="chooseOperateDate('searchDate')" class="form-control input-sm"/>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="row col-xs-6">
+            <div class="col-xs-2 text-right" style="padding-top: 6px">
+                <div> 下单时间</div>
+            </div>
+            <div class="col-xs-8">
+                <div class="col-xs-5">
+                    <input id="create_date_start"
+                           placeholder="请选择起期"
+                           ng-model="searchOrderKeywords.create_date_start"
+                           ng-click="setYearDate('create_date_start')"
+                           class="form-control input-sm"
+                           style="cursor:pointer;margin-left: -8%" readonly/></div>
+                <div class="col-xs-2" style="padding-left: 0;width: 10%;line-height: 29px">至</div>
+                <div class="col-xs-5" style="padding-left: 0">
+                    <input id="create_date_end"
+                           placeholder="请选择止期"
+                           ng-model="searchOrderKeywords.create_date_end"
+                           ng-click="setYearDate('create_date_end')"
+                           class="form-control input-sm"
+                           style="cursor:pointer " readonly/>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="col-xs-2 text-right" style="padding-top: 6px">
+                订单来源
+            </div>
+            <div class="col-xs-4" style="padding-top: 1%">
+                <input type="checkbox" ng-click="searchOrders()" ng-true-value="OFFLINE" ng-false-value="ONLINE"
+                       ng-model="searchOrderKeywords.orderSource">批导
+            </div>
+            <!--<div class="col-xs-4" style="padding-top: 1%" ng-if="searchOrderKeywords.orderStatus == 'pay'">-->
+                <!--<input type="checkbox" ng-click="searchOrders()" ng-true-value="1" ng-false-value=""-->
+                       <!--ng-model="searchOrderKeywords.procesee">支付中-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="col-xs-12 text-center" style="margin:15px 0 15px 0">
+        <button id="search0" type="button" class="btn btn-default" ng-click="searchOrders(isSwitchOrder)"
+                style="width: 100px;">搜索
+            <!--|| switchAdvanced()-->
+        </button>
+    </div>
+    <div class="col-xs-12" style="border-bottom: 1px solid #bbb;width: 96%;margin-left: 2%"></div>
+    <!--</div>-->
+    <!--<div ng-if="!texts[isSwitchOrder].isAdvanced" ng-click="switchAdvanced()" class="text-center" style="border-bottom: 10px solid #F0F0F2;">-->
+    <!--<img src="assets/img/Arrow_botton.png" width="1%">-->
+    <!--</div>-->
+    <div class="col-xs-12" style="height: 40px">
+        <div class="col-xs-5  neptune_orders_head">
+            <img src="assets/img/file.png" width="13px" class="neptune_orders_margin">
+            <span class="neptune_orders_font">待操作订单</span>
+        </div>
+        <div class=" text-right" style="margin-top: 8px;margin-right: 4%">
+
+            <span ng-if="orderStatus.orderNumber" style="padding: 0 10px" class="font_size_12">
+                <span ng-if="!_policyNo.length > 0">合计单数：<span class="color_yellow1 font_size_16">{{waitOperateOrders.length}}</span>&nbsp;&nbsp;</span>
+                <span ng-if="_policyNo.length > 0">选中单数：<span
+                        class="color_yellow1 font_size_16">{{_policyNo.length}}</span>&nbsp;&nbsp;</span>
+                <span ng-if="!_policyNo.length > 0">合计金额：<span class="color_yellow1 font_size_16">{{orderTotal}}</span></span>
+                <span ng-if="_policyNo.length > 0">选中金额：<span class="color_yellow1 font_size_16">{{orderTotalCount}}</span></span>
+            </span>
+
+            <button type="button"
+                    style="background-color: #F5A602;border: none;" ng-if="orderStatus.orderPay"
+                    ng-click="orderPays()" class="btn btn-default btn-sm color_white">支付
+            </button>
+            <button type="button"
+                    style="background-color: #F5A602;border: none;" ng-if="orderStatus.orderUnderwriter"
+                    ng-click="orderUnderwriters()" class="btn btn-default btn-sm color_white">承保
+            </button>
+            <button type="button"
+                    style="background-color: #F5A602;border: none;" ng-if="orderStatus.orderDelete"
+                    ng-click="ordersToVoid()" class="btn btn-default btn-sm color_white">作废
+            </button>
+            <!--<button type="button"-->
+            <!--style="background-color: #F5A602;border: none;" ng-if="orderStatus.orderCash && orderStatus.cashSure"-->
+            <!--ng-click="cteateBetch()" class="btn btn-default btn-sm color_white">-->
+            <!--<span ng-if="orderStatus.cashPay"> 现金支付</span>-->
+            <!--<span ng-if="orderStatus.cashSure"> 现金确认</span>-->
+            <!--</button>-->
+            <!--<button  style="background-color: #F5A602;border: none;" ng-if="orderStatus.orderCash"-->
+            <!--ng-click="cteateBetch()" class="btn btn-default btn-sm color_white">-->
+            <!--<span ng-if="orderStatus.cashSure"> 现金确认</span>-->
+            <!--</button>-->
+            <!--<button type="button"-->
+            <!--style="background-color: #F5A602;border: none;" ng-if="orderStatus.notCashPay"-->
+            <!--ng-click="orderPays()" class="btn btn-default btn-sm color_white">非现金支付-->
+            <!--</button>-->
+            <button type="button"
+                    style="background-color: #F5A602;border: none;" ng-if="orderStatus.uploadOrderSign"
+                    ng-click="uploadOrderSign()" class="btn btn-default btn-sm color_white">上缴
+            </button>
+            <a id="pickfiles" style="color: black;text-decoration: none;cursor:pointer"
+               ng-show="orderStatus.downloadOrder">
+                <img src="assets/img/1upload.png" style="margin-top: -5px">
+                上传保单
+            </a>
+            <a style="color: black;text-decoration: none;cursor:pointer"
+               ng-if="orderStatus.downloadOrder"
+               href="assets/docs/orderInput.xlsx">
+                <img src="assets/img/2download.png" style="margin-top: -5px">
+                下载模版
+            </a>
+        </div>
+    </div>
+    <div ng-if="waitOperateOrders.length">
+        <table class="operateTable table table-responsive table-condensed table-bordered table_center"
+               style="width: 94%;table-layout: fixed;margin-left: 3%;margin-top: 2px">
+            <tr>
+                <th style="width: 5%" ng-if="!orderStatus.orderUpdate" class="neptune_table_th">
+                    <input type="checkbox"
+                           ng-model="checkStatus.checkedAll"
+                           ng-change="selectedAll()">
+                    <span ng-if="!orderStatus.orderUpdate">全选</span>
+                </th>
+                <th class="neptune_table_th" style="width: 180px">订单编码</th>
+                <th class="neptune_table_th">投保人姓名</th>
+                <th class="neptune_table_th">保险产品</th>
+                <th class="neptune_table_th">下单时间</th>
+                <th class="neptune_table_th" width="200px">地址</th>
+                <th class="neptune_table_th">有效期</th>
+                <th class="neptune_table_th">支付方式</th>
+                <th class="neptune_table_th">金额</th>
+                <th ng-if="orderStatus.orderUpdate" class="neptune_table_th">操作</th>
+                <th class="neptune_table_th" style="width: 13%">状态</th>
+            </tr>
+            <tr ng-repeat="waitOperateOrder in waitOperateOrders | orderBy: 'createDate' :sorts">
+                <td ng-if="!orderStatus.orderUpdate">
+                    <input type="checkbox"
+                           ng-value="waitOperateOrder.fileId"
+                           name="policyCheck"
+                           ng-model="waitOperateOrder.checked"
+                           ng-change="selectedOne()">
+                </td>
+                <td>
+                    <span ng-click="openOrderDetails(waitOperateOrder.orderId,'订单')"
+                          style="color: blue;cursor: pointer;">
+                        {{waitOperateOrder.orderId}}
+                    </span>
+                </td>
+                <td class="neptune_orders_show">{{waitOperateOrder.applicantName}}</td>
+                <td class="neptune_orders_show">{{waitOperateOrder.productName}}</td>
+                <td class="neptune_orders_show">{{waitOperateOrder.createDate}}</td>
+                <td class="neptune_orders_show">{{waitOperateOrder.applicantAddress}}</td>
+                <td class="neptune_orders_show">{{waitOperateOrder.effectiveDate}}-{{waitOperateOrder.expiryDate}}</td>
+                <td>{{waitOperateOrder.paymentMethod}}</td>
+                <td>{{waitOperateOrder.orderTotal}}</td>
+                <td class="hand font_color_black1" ng-if="orderStatus.orderUpdate"
+                    ng-click="goToRenewal(waitOperateOrder.productId,waitOperateOrder.orderId)">修改
+                </td>
+                <!--<td class="hand font_color_black1" ng-if="goBuyText"-->
+                <!--ng-click="goToRenewalBuy(waitOperateOrder.productId,waitOperateOrder.orderId)">续保-->
+                <!--</td>-->
+                <td class="neptune_orders_show">
+                    {{waitOperateOrder.payStatus}}
+                    {{waitOperateOrder.appStatus}}
+                    {{waitOperateOrder.Isrefund}}
+                    <!--{{waitOperateOrder.premStatus}}-->
+                </td>
+            </tr>
+        </table>
+        <!--<div class="col-xs-12 text-right" style="padding-right:35px">-->
+        <!--<button type="button"-->
+        <!--style="background-color: #F5A602;border: none;" ng-if="searchOrderKeywords.orderStatus=='1'&& searchOrderKeywords.orderSource=='OFFLINE' || searchOrderKeywords.orderStatus=='3'"-->
+        <!--class="btn btn-default btn-sm color_white" >批量承保-->
+        <!--</button>-->
+        <!--<button type="button"-->
+        <!--style="background-color: #F5A602;border: none;" ng-if="searchOrderKeywords.orderStatus=='1'&& searchOrderKeywords.orderSource=='ONLINE' || searchOrderKeywords.orderStatus=='2'"-->
+        <!--class="btn btn-default btn-sm color_white">批量支付-->
+        <!--</button>-->
+        <!--<button type="button"-->
+        <!--style="background-color: #F5A602;border: none;" ng-if="searchOrderKeywords.orderStatus=='4'"-->
+        <!--class="btn btn-default btn-sm color_white" >批量上缴-->
+        <!--</button>-->
+        <!--&lt;!&ndash;<button type="button" class="btn btn-default btn-sm" ng-click="confirm()">批量支付</button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<button type="button" class="btn btn-default btn-sm" ng-click="openVoucherUpload()">批量上缴</button>&ndash;&gt;-->
+        <!--</div>-->
+    </div>
+    <div ng-if="!waitOperateOrders.length">
+        <div class="text-center" style="padding: 30px;">
+            没有待操作订单
+        </div>
+    </div>
+    <!--分页-->
+
+    <!--<div ng-if="waitOperateOrders.length" class="col-xs-12 row margin_top2 text-center background_white" style="margin-left: 0">-->
+    <!--<pagination-->
+    <!--ng-model="pagination.pageIndex"-->
+    <!--total-items="pagination.totalItems"-->
+    <!--page="pagination.pageIndex"-->
+    <!--items-per-page="pagination.pageSize"-->
+    <!--max-size="pagination.maxSize"-->
+    <!--previous-text="{{pagination.previousText}}"-->
+    <!--next-text="{{pagination.nextText}}"-->
+    <!--first-text="{{pagination.firstText}}"-->
+    <!--last-text="{{pagination.lastText}}"-->
+    <!--class="pagination-small"-->
+    <!--boundary-links="true"-->
+    <!--ng-click="searchOrders()">-->
+    <!--</pagination>-->
+    <!--</div>-->
+
+</div>

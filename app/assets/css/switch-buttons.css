@@ -1,0 +1,124 @@
+/* toggle switch css start */
+.switch-btn {
+    position: relative;
+    vertical-align: top;
+    width: 46px;
+    height: 23px;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+.checked-switch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.text-switch {
+    background-color: #fdfdfd;
+    border: 1px solid #dfdfdf;
+    border-radius: inherit;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    height: inherit;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.text-switch:before, .text-switch:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -.5em;
+    line-height: 1;
+    -webkit-transition: inherit;
+    -moz-transition: inherit;
+    -o-transition: inherit;
+    transition: inherit;
+    behavior: url(ie-css3.htc); /* 通知IE浏览器调用脚本 */
+}
+
+.text-switch:before {
+    content: attr(data-no);
+    right: 11px;
+}
+
+.text-switch:after {
+    content: attr(data-yes);
+    left: 11px;
+    color: #FFFFFF;
+    opacity: 0;
+}
+
+.checked-switch:checked ~ .text-switch {
+    background-color: dodgerblue;
+    border: 1px solid dodgerblue;
+}
+
+.checked-switch:checked ~ .text-switch:before {
+    opacity: 0;
+}
+
+.checked-switch:checked ~ .text-switch:after {
+    opacity: 1;
+}
+
+.toggle-btn {
+    background: #fdfdfd;
+    border-radius: 100%;
+    height: 21px;
+    left: 1px;
+    position: absolute;
+    top: 1px;
+    width: 21px;
+    box-shadow: #dfdfdf 0 0 0 0 inset;
+    behavior: url(ie-css3.htc); /* 通知IE浏览器调用脚本 */
+}
+
+.toggle-btn::before {
+    content: '';
+    width: 21px;
+    height: 21px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    behavior: url(ie-css3.htc); /* 通知IE浏览器调用脚本 */
+}
+
+.checked-switch:checked ~ .toggle-btn {
+    left: 25px;
+}
+
+.text-switch, .toggle-btn {
+    transition: All 0.3s ease;
+    -webkit-transition: All 0.3s ease;
+    -moz-transition: All 0.3s ease;
+    -o-transition: All 0.3s ease;
+    behavior: url(ie-css3.htc); /* 通知IE浏览器调用脚本 */
+}
+
+/*= add for "no-radius" =*/
+.no-radius, .no-radius .toggle-btn {
+    border-radius: 0;
+}
+
+/*= add for "no-radius" end =*/
+
+/*= add for "top-to-bottom" =*/
+/*.circle-style .toggle-btn::before {*/
+    /*background: linear-gradient(#dedede, #cacaca);*/
+    /*border-radius: 50%;*/
+    /*content: "";*/
+    /*height: 14px;*/
+    /*margin-top: 6px;*/
+    /*padding: 0;*/
+    /*width: 14px;*/
+/*}*/
+
+/* add for "top-to-bottom" end */
+
+/* toggle switch css end */

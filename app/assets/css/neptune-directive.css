@@ -1,0 +1,21 @@
+.div-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.div-group .div-item {
+    position: relative;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 2;
+}
+.orders_switch_yellow1 {
+    color: #FFA800;
+    border-bottom: 3px solid #FFA800;
+}

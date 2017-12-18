@@ -1,0 +1,22 @@
+<div id="basicInfo" class="col-xs-10 margin_top3 cancel_col_padding">
+    <div class="col-xs-12 background_white" style="width: 98%;margin-left: 10px">
+        <table class="table operateTable table-bordered table_center font_size_14">
+            <tr class="background_gray2">
+                <th>课件名称</th>
+                <th>预览</th>
+                <th>操作</th>
+            </tr>
+            <tr ng-repeat="item in learningList">
+                <td>{{item.name}}</td>
+                <td style="cursor: pointer;color: #FFA300" ng-click="downloadLearn(item.docs_pdf)">打开</td>
+                <td style="cursor: pointer;color: #FFA300" ng-click="downloadLearn1(item.docs_url)">下载</td>
+            </tr>
+            <tr>
+                <td>执业培训课程.rar</td>
+                <td colspan="2">
+                    <a href="assets/docs/zxkj.rar">全部下载</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

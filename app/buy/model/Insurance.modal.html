@@ -1,0 +1,80 @@
+
+<div style="width: 1230px;margin-left: -50%">
+    <div class="background_white">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="close()"> &times;</button>
+            <h5 class="modal-title text-center">投保查询</h5>
+        </div>
+        <div class=" text-right"  ng-if="!insuranceList.lenght" style="margin-right: 4%">
+             <span  style="padding: 0 10px" class="font_size_12">
+                合计单数：<span class="color_yellow1 font_size_16">{{ordersNum}}</span>
+
+            </span>
+        </div>
+        <!--表格-->
+        <div style="padding: 8px;" ng-if="!insuranceList.lenght">
+            <table  class="operateTable table table-responsive table-condensed table-bordered table_center"
+                   style="table-layout: fixed;margin-top: 2px">
+                <tr>
+                    <th class="neptune_table_th" style="width: 180px">订单编码</th>
+                    <th class="neptune_table_th" style="width: 180px">保单号</th>
+                    <th class="neptune_table_th">投保人</th>
+                    <th class="neptune_table_th">保险产品</th>
+                    <th class="neptune_table_th">下单时间</th>
+                    <th class="neptune_table_th" width="200px">地址</th>
+                    <th class="neptune_table_th">有效期</th>
+                    <th class="neptune_table_th">金额</th>
+                    <th class="neptune_table_th" style="width: 13%">状态</th>
+                </tr>
+                <tr ng-repeat="item in insuranceList">
+                    <td class="neptune_orders_show">
+                    <span ng-click="openOrderDetails(waitOperateOrder.orderId,'订单')"
+                          style="color: blue;cursor: pointer;">
+                        {{item.orderId}}
+                    </span>
+                    </td>
+                    <td class="neptune_orders_show">
+                    <span ng-click="openOrderDetails(waitOperateOrder.orderId,'保单')"
+                          style="color: blue;cursor: pointer;">
+                        {{item.policyNo}}
+                    </span>
+                    </td>
+                    <td class="neptune_orders_show">{{item.applicantName}}</td>
+                    <td class="neptune_orders_show">{{item.productName}}</td>
+                    <td class="neptune_orders_show">{{item.createDate}}</td>
+                    <td class="neptune_orders_show">{{item.applicantAddress}}</td>
+                    <td class="neptune_orders_show">{{item.effectiveDate}}-{{item.expiryDate}}</td>
+                    <td>{{item.premium}}</td>
+                    <td>
+                        <!--{{item.payStatus}}-->
+                        {{item.appStatus}}
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div  class="col-xs-12 row  text-center background_white"
+              ng-if="!insuranceList.lenght"
+             style="margin-left: 0">
+            <pagination
+                    ng-model="pagination.pageIndex"
+                    total-items="pagination.totalItems"
+                    page="pagination.pageIndex"
+                    items-per-page="pagination.pageSize"
+                    max-size="pagination.maxSize"
+                    previous-text="{{pagination.previousText}}"
+                    next-text="{{pagination.nextText}}"
+                    first-text="{{pagination.firstText}}"
+                    last-text="{{pagination.lastText}}"
+                    class="pagination-small"
+                    boundary-links="true"
+                    ng-click="getQueryDetails()">
+            </pagination>
+        </div>
+        <!--<div ng-if="insuranceList.lenght">-->
+            <!--没有查询结果-->
+        <!--</div>-->
+
+    </div>
+</div>

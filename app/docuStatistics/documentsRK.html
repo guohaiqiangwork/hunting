@@ -1,0 +1,206 @@
+<div id="basicInfo" class="col-xs-12 margin_top2 cancel_col_padding" >
+    <div class="col-xs-12 background_white docu_content" style="margin-top: -1%"  multiple-form cue-way="layer" result="documentPutInStorage()">
+        <div class="row docu_content_bottom">
+            <div class="row col-xs-12">
+                <div class="col-xs-4 margin_top2 text-right line_height_30">
+                    <div class="col-xs-3 col-xs-offset-2">保险公司</div>
+                    <div class="col-xs-7">
+                        <select class="form-control input-sm  ng-pristine ng-valid"
+                                ng-model="docuStatistics.supplier"
+                                ng-change="queryDocumentName()"
+                                ng-options="x.supplierName for x in ListOfInsurers"
+                                rule="require"
+                                err-text="请选择保险公司"
+                                value="{{docuStatistics.supplier.supplierCode}}">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-4 margin_top2 text-right line_height_30">
+                    <div class="col-xs-3">单证名称</div>
+                    <div class="col-xs-7">
+                        <select class="form-control input-sm ng-pristine ng-valid"
+                                ng-model="docuStatistics.certify"
+                                ng-options="x.certifyName for x in ListOfQueryDocumentName"
+                                ng-change="acquiringLength()"
+                                rule="require"
+                                err-text="请选择单证名称"
+                                value="{{docuStatistics.certify.certifyCode}}">
+                            <option value="" >请选择</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-4 margin_top2 text-right line_height_30">
+                    <div class="col-xs-3">起始号码</div>
+                    <div class="col-xs-7">
+                        <input class="form-control input-sm"
+                               maxlength="{{docuStatistics.certifyLength}}"
+                               ng-model="docuStatistics.startNo"
+                               ng-change="getCopies()"
+                               rule="require;{{docuStatistics.certifyLength?docuStatistics.certifyLength>0?'minLength:'+docuStatistics.certifyLength:'':''}}"
+                               err-text="单证起始号码不能为空"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-xs-12">
+                <div class="col-xs-4 margin_top2 text-right line_height_30">
+                    <div class="col-xs-3 col-xs-offset-2">终止号码</div>
+                    <div class="col-xs-7">
+                        <input
+                                class="form-control input-sm"
+                                ng-model="docuStatistics.endNo"
+                                maxlength="{{docuStatistics.certifyLength}}"
+                                ng-change="getCopies()"
+                                rule="require;{{docuStatistics.certifyLength?docuStatistics.certifyLength>0?'minLength:'+docuStatistics.certifyLength:'':''}}"
+                                err-text="单证终止号码不能为空"/>
+                    </div>
+                </div>
+                <div class="col-xs-4 margin_top2 text-right line_height_30">
+                    <div class="col-xs-3">份数</div>
+                    <div class="col-xs-7">
+                        <input disabled class="form-control input-sm disabled" ng-model="docuStatistics.sumCount"/>
+                    </div>
+                </div>
+                <div class="col-xs-4 margin_top2 text-right line_height_30">
+                    <div class="col-xs-3">操作人</div>
+                    <div class="col-xs-7">
+                        <input disabled class="form-control input-sm" value="{{user.name}}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-xs-12">
+                <div class="col-xs-4 margin_top2 text-right line_height_30">
+                    <div class="col-xs-3 col-xs-offset-2">操作日期</div>
+                    <div class="col-xs-7">
+                        <input disabled class="form-control input-sm" value="{{formatDate}}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="docu_content_head col-xs-12 text-center">
+                <button class="btn" style="background-color: #F5A602;font-size: 12px;" isComplete>单证入库</button>
+            </div>
+            <!--<div class="col-xs-6 margin_top2 text-right line_height_30">-->
+                <!--<div class="col-xs-3 col-xs-offset-2">保险公司</div>-->
+                <!--<div class="col-xs-6">-->
+                    <!--<select class="form-control input-sm  ng-pristine ng-valid"-->
+                            <!--ng-model="docuStatistics.supplier"-->
+                            <!--ng-change="queryDocumentName()"-->
+                            <!--ng-options="x.supplierName for x in ListOfInsurers"-->
+                            <!--rule="require"-->
+                            <!--err-text="请选择保险公司"-->
+                            <!--value="{{docuStatistics.supplier.supplierCode}}">-->
+                        <!--<option value="">请选择</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-xs-6 margin_top2 text-right line_height_30">-->
+                <!--<div class="col-xs-3">单证名称</div>-->
+                <!--<div class="col-xs-6">-->
+                    <!--<select class="form-control input-sm ng-pristine ng-valid"-->
+                            <!--ng-model="docuStatistics.certify"-->
+                            <!--ng-options="x.certifyName for x in ListOfQueryDocumentName"-->
+                            <!--ng-change="acquiringLength()"-->
+                            <!--rule="require"-->
+                            <!--err-text="请选择单证名称"-->
+                            <!--value="{{docuStatistics.certify.certifyCode}}">-->
+                        <!--<option value="" >请选择</option>-->
+                    <!--</select>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-xs-6 margin_top2 text-right line_height_30">-->
+                <!--<div class="col-xs-3 col-xs-offset-2">起始号码</div>-->
+                <!--<div class="col-xs-6">-->
+                    <!--<input class="form-control input-sm"-->
+                           <!--maxlength="{{docuStatistics.certifyLength}}"-->
+                           <!--ng-model="docuStatistics.startNo"-->
+                           <!--ng-change="getCopies()"-->
+                           <!--rule="require"-->
+                           <!--err-text="单证起始号码不能为空"/>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-xs-6 margin_top2 text-right line_height_30">-->
+                <!--<div class="col-xs-3">终止号码</div>-->
+                <!--<div class="col-xs-6">-->
+                    <!--<input-->
+                        <!--class="form-control input-sm"-->
+                        <!--ng-model="docuStatistics.endNo"-->
+                        <!--maxlength="{{docuStatistics.certifyLength}}"-->
+                        <!--ng-change="getCopies()"-->
+                        <!--rule="require"-->
+                        <!--err-text="单证终止号码不能为空"/>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-xs-6 margin_top2 text-right line_height_30">-->
+                <!--<div class="col-xs-3 col-xs-offset-2">份数</div>-->
+                <!--<div class="col-xs-6">-->
+                    <!--<input disabled class="form-control input-sm disabled" ng-model="docuStatistics.sumCount"/>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-xs-6 margin_top2 text-right line_height_30">-->
+                <!--<div class="col-xs-3">操作人</div>-->
+                <!--<div class="col-xs-6">-->
+                    <!--<input disabled class="form-control input-sm" value="{{user.name}}"/>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-xs-6 margin_top2 text-right line_height_30">-->
+                <!--<div class="col-xs-3 col-xs-offset-2">操作日期</div>-->
+                <!--<div class="col-xs-6">-->
+                    <!--<input disabled class="form-control input-sm" value="{{formatDate}}"/>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+
+        <div class="col-xs-12 margin_left_1" ng-if="singleCardList&&singleCardList.length">
+            <table class="operateTable table table-responsive table-condensed table-bordered table_center"
+                   style="table-layout:fixed;">
+                <tr>
+                    <th class="neptune_table_th" style="width: 4%">序号</th>
+                    <th class="neptune_table_th" style="width: 19%">保险公司</th>
+                    <th class="neptune_table_th" style="width: 15%">单证名称</th>
+                    <th class="neptune_table_th">起始号码</th>
+                    <th class="neptune_table_th">终止号码</th>
+                    <th class="neptune_table_th" style="width: 4%">份数</th>
+                    <th class="neptune_table_th" style="width: 8%">状态</th>
+                    <th class="neptune_table_th">操作人</th>
+                    <th class="neptune_table_th" style="width: 13%">操作时间</th>
+                    <th class="neptune_table_th">操作</th>
+                </tr>
+                <tr  ng-repeat="list in singleCardList"
+                     ng-hide="list.state==='无效'">
+                    <td>{{$index+1}}</td>
+                    <td class="neptune_orders_show">{{list.supplierName}}</td>
+                    <td class="neptune_orders_show">{{list.certifyName}}</td>
+                    <td>{{""+list.startNo}}</td>
+                    <td>{{""+list.endNo}}</td>
+                    <td>{{list.sumCount}}</td>
+                    <td class="neptune_orders_show">{{list.state}}</td>
+                    <td class="neptune_orders_show">{{list.sendName}}</td>
+                    <td class="neptune_orders_show">{{list.modifyDateTime|date:"yyyy-MM-dd hh:mm:ss"}}</td>
+                    <td>
+                       <div ng-show="list.state==='未使用'"
+                            class="hand font_color_black1"
+                            ng-click="goToRevocation(list.serialNo,list.state)">撤销</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--分页-->
+        <div ng-if="singleCardList&&singleCardList.length"
+             class="col-xs-12 row margin_top2 text-center background_white margin_left0">
+            <pagination
+                    ng-model="pagination.pageIndex"
+                    total-items="pagination.totalItems"
+                    page="pagination.pageIndex"
+                    items-per-page="pagination.pageSize"
+                    max-size="pagination.maxSize"
+                    previous-text="{{pagination.previousText}}"
+                    next-text="{{pagination.nextText}}"
+                    first-text="{{pagination.firstText}}"
+                    last-text="{{pagination.lastText}}"
+                    class="pagination-small"
+                    boundary-links="true"
+                    ng-click="checkAllDocuments()">
+            </pagination>
+        </div>
+    </div>
+</div>

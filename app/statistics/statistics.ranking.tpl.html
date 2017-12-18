@@ -1,0 +1,116 @@
+<div class="base_div_border" ng-if="user.role_id!='1'&&user.role_id!='2'">
+    <div class="col-xs-10" style="line-height: 30px">综合排名</div>
+    <div class="col-xs-2 base_image" ng-click="openTable('complex')">
+        <img src="assets/img/Arrow_botton.png" ng-if="isTableOne == 'complex'"/>
+        <img src="assets/img/Arrow_top.png" ng-if="isTableOne != 'complex'"/>
+    </div>
+</div>
+<div ng-if="isTableOne == 'complex'&&user.role_id!='1'&&user.role_id!='2'">
+    <table class="table table-bordered table_center" style="width: 94%;margin-left: 3%;margin-top: 2px">
+        <tr>
+            <th class="neptune_table_th">区域</th>
+            <th class="neptune_table_th">保单</th>
+            <th class="neptune_table_th">保费</th>
+            <th class="neptune_table_th">时间</th>
+        </tr>
+        <tr ng-repeat="complex in rankings.complex">
+            <td>{{complex.organizationName}}</td>
+            <td>{{complex.policyNumber}}</td>
+            <td>{{complex.premium}}</td>
+            <td>{{complex.policyDate}}</td>
+        </tr>
+    </table>
+</div>
+<div class="base_div_border" ng-if="user.role_id!='1'">
+    <div class="col-xs-10" style="line-height: 30px">组织排名</div>
+    <div class="col-xs-2 base_image" ng-click="openTable('organization')">
+        <img src="assets/img/Arrow_botton.png" ng-if="isTableOne == 'organization'"/>
+        <img src="assets/img/Arrow_top.png" ng-if="isTableOne != 'organization'"/>
+    </div>
+</div>
+<div ng-if="isTableOne == 'organization'&&user.role_id!='1'">
+    <table class="table table-bordered table_center" style="width: 94%;margin-left: 3%;margin-top: 2px">
+        <tr>
+            <td colspan="3" class="text-center  background_blue color_white">保费</td>
+        </tr>
+        <tr>
+            <th class="neptune_table_th">保费</th>
+            <th class="neptune_table_th">公司排名</th>
+            <th class="neptune_table_th"> 区域</th>
+        </tr>
+        <tr ng-repeat="organizationPremium in rankings.organization.organizationPremium">
+            <td>{{organizationPremium.premium}}</td>
+            <td>{{organizationPremium.area}}</td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<div ng-if="isTableOne == 'organization'&&user.role_id!='1'">
+    <table class="table table-bordered table_center" style="width: 94%;margin-left: 3%;margin-top: 2px">
+        <tr>
+            <td colspan="3" class="text-center background_blue color_white">保单</td>
+        </tr>
+        <tr>
+            <th class="neptune_table_th">保单量</th>
+            <th class="neptune_table_th">公司排名</th>
+            <th class="neptune_table_th">区域</th>
+        </tr>
+        <tr ng-repeat="organizationNumber in rankings.organization.organizationNumber">
+            <td>{{organizationNumber.policyNumber}}</td>
+            <td>{{organizationNumber.area}}</td>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<div class="base_div_border" ng-if="user.role_id=='1'">
+    <div class="col-xs-10" style="line-height: 30px">个人排名</div>
+    <div class="col-xs-2 base_image" ng-click="openTable('personal')">
+        <img src="assets/img/Arrow_botton.png" ng-if="isTableOne == 'personal'"/>
+        <img src="assets/img/Arrow_top.png" ng-if="isTableOne != 'personal'"/>
+    </div>
+</div>
+<div ng-if="isTableOne == 'personal'&&user.role_id=='1'">
+    <table class="table table-bordered table_center" style="width: 94%;margin-left: 3%;margin-top: 2px">
+        <tr>
+            <th class="neptune_table_th">集团名称</th>
+            <th class="neptune_table_th">区域</th>
+            <th class="neptune_table_th">公司</th>
+            <th class="neptune_table_th">姓名</th>
+            <th class="neptune_table_th">保单</th>
+            <th class="neptune_table_th">保费</th>
+        </tr>
+        <tr ng-repeat="personal in rankings.personal">
+            <td>{{personal.groupName}}</td>
+            <td>{{personal.area}}</td>
+            <td>{{personal.companyName}}</td>
+            <td>{{personal.angetName}}</td>
+            <td>{{personal.policyNumber}}</td>
+            <td>{{personal.premium}}</td>
+        </tr>
+    </table>
+</div>
+<div class="base_div_border" ng-if="user.role_id!='1'">
+    <div class="col-xs-10" style="line-height: 30px">组织产品排名</div>
+    <div class="col-xs-2 base_image" ng-click="openTable('product')">
+        <img src="assets/img/Arrow_botton.png" ng-if="isTableOne == 'product'"/>
+        <img src="assets/img/Arrow_top.png" ng-if="isTableOne != 'product'"/>
+    </div>
+</div>
+<div ng-if="isTableOne == 'product'&&user.role_id!='1'">
+    <table class="table table-bordered table_center" style="width: 94%;margin-left: 3%;margin-top: 2px">
+        <tr>
+            <th class="neptune_table_th">产品名称</th>
+            <th class="neptune_table_th">保单量</th>
+            <th class="neptune_table_th">保费</th>
+            <th class="neptune_table_th">时间</th>
+        </tr>
+        <tr ng-repeat="product in rankings.product">
+            <td>{{product.productName}}</td>
+            <td>{{product.policyNumber}}</td>
+            <td>{{product.premium}}</td>
+            <td>{{product.policyDate}}</td>
+        </tr>
+    </table>
+</div>
+
+

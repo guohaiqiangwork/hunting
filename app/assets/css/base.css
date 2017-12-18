@@ -1,0 +1,53 @@
+.button_grey {
+    border-bottom: 3px solid #F1B047 !important;
+}
+
+.button_white {
+    background-color: white;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+    color: #fff;
+    background-color: #999999;
+    border-color: #999999;
+}
+
+.table_center tr th {
+    text-align: center;
+}
+
+.table_center tr td {
+    text-align: center;
+}
+
+.base_image img {
+    width: 15px;
+    margin-top: 8px;
+    cursor: pointer
+}
+
+.base_div_border {
+    border: 1px solid #bbbbbb;
+    height: 34px;
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+.subtitle {
+    background-color: #2E72CF;
+    margin: 0;
+}
+
+.font_size_20 {
+    font-size: 20px;
+}
+.font_size_25 {
+    font-size: 25px;
+}
+
+.font_size_16 {
+    font-size: 16px;
+}
+.font_size_14 {
+    font-size: 14px;
+}

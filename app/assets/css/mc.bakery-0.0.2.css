@@ -1,0 +1,120 @@
+/*mc-toggle start*/
+.toggle {
+    background-color: #3f85cc;
+    border-radius: 60px;
+    color: white;
+    height: 27px;
+    margin: 0 12px 12px 0;
+    overflow: hidden;
+    *zoom: 1;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    -webkit-backface-visibility: hidden;
+    cursor: pointer;
+}
+.toggle:before, .toggle:after {
+    display: table;
+    content: "";
+}
+.toggle:after {
+    clear: both; }
+.toggle.toggle-off {
+    background-color: #cbd2d8; }
+.toggle.toggle-off .toggle-radio {
+    background-position: 0 0;
+    color: white;
+    left: 0;
+    margin-left: 0.5px;
+    margin-right: -13px;
+    z-index: 1; }
+.toggle.toggle-off .toggle-radio:first-child {
+    left: -72%; }
+.toggle .toggle-radio {
+    color: #1abc9c;
+    display: block;
+    font-weight: 700;
+    height: 21px;
+    left: -2%;
+    margin-left: -13px;
+    padding: 5px 32px 3px;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    -webkit-backface-visibility: hidden;
+}
+
+.toggle .toggle-handle {
+    width:22px;
+    height:22px;
+    background-color:#fff;
+    border-radius: 50%;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    cursor: pointer;
+}
+/*mc-toggle end*/
+
+/*mc-stepGuide start*/
+.mc-step-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.mc-step-wrapper ul {
+    list-style: none;
+    padding: 0;
+}
+
+.mc-step-wrapper ul > li {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin-right: 32px;
+    min-width: 80px;
+}
+
+.mc-step-wrapper ul > li:last-child {
+    margin-right: 0;
+}
+
+.mc-step-wrapper .mc-step {
+    position:relative;
+    width: 36px;
+    height: 36px;
+    background-color: #9f9f9f;
+    color: #fff;
+    border-radius: 50%;
+    behavior: url('assets/css/PIE.htc');
+    margin: 4px auto;
+    padding: 8px 0;
+}
+
+.mc-step-wrapper .mc-step.active {
+    background-color: #20c71f;
+}
+
+.mc-step-wrapper .mc-step-label {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.mc-step-wrapper .mc-step-line {
+    position: absolute;
+    background-color: #bfbfbf;
+    top: 22px;
+    left: 40px;
+    right: 40px;
+    right: 60px\9;
+    height: 2px;
+}
+/*mc-stepGuide end*/

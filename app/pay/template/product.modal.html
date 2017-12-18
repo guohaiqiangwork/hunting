@@ -1,0 +1,55 @@
+<div class="background_white" style="min-width: 700px">
+    <div class="modal-header">
+        {{product.insCompanyName}}
+        <button type="button" class="close" data-dismiss="modal" ng-click="closeProduct()" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+    </div>
+    <div class="modal-body" style="min-width: 700px;max-height:500px;overflow-y:scroll;border: 0">
+        <div class="col-xs-12" style="padding-left:0;background-color: #fff">
+            <div class="col-xs-12 text-left" style="margin: 10px -0">
+                <div class="col-xs-6">   {{product.productName}}</div>
+                <div ng-if="product.additionalElements.length>0" class="col-xs-6">{{productTextDesc.textValue}}</div>
+            </div>
+            <table class="table-bordered col-xs-12">
+                <tr ng-repeat="duty in product.dutys">
+                    <td>{{duty.dutyName}}</td>
+                    <td>{{duty.dutyDesc}}</td>
+                </tr>
+                <tr ng-if="product.productFactors.length>0">
+                    <td>{{product.productFactors[0].factorTypeName}}</td>
+                    <td>{{product.productFactors[0].productFactorValues[0].factorDisplayValue}}</td>
+                </tr>
+            </table>
+
+
+            <hr/>
+
+            <!--<div class="col-xs-12 text-left">-->
+                <!--产品方案－险种保障-->
+            <!--</div>-->
+            <!--<ul style="list-style-type: none">-->
+                <!--<li>保险责任：家用燃气使用过程中引起的火灾和爆炸造成保险标的的损失</li>-->
+                <!--<li>-->
+                    <!--<pre>-->
+    <!--赔偿范围：-->
+    <!--（1）房屋及其室内附属设备；-->
+    <!--（2）室内装潢；-->
+    <!--（3）家用电器和文体娱乐用品；-->
+    <!--（4）衣物和床上用品；-->
+    <!--（5）家具及其他生活用品；-->
+    <!--（6）燃气灶，燃气热水器，燃气用表，燃气管道和液化石油气罐；总计：66万元-->
+    <!--（7）被保险人本人或在中国境内的配偶，父母及子女；84万／人，无人数限制；-->
+    <!--（8）第三者的人身伤亡互殴财产损失。84万／人，无人数限制-->
+                    <!--</pre>-->
+                <!--</li>-->
+
+            <!--</ul>-->
+
+        <!--</div>-->
+        <div class="text-center">
+            <button class="btn btn-primary" ng-click="closeProduct()">关闭</button>
+        </div>
+    </div>
+</div>
+
+

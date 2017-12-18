@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head id="head">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="0"><!--清缓存测试-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/><!--清缓存测试ie9-->
+    <meta name="renderer" content="webkit">
+
+
+    <title>新奥e保</title>
+
+    <script>
+        (function () {
+            //统一版本管理，更改版本后可以防止缓存问题
+            window.NEPTUNE = {
+                version: '7.2.8',//切换统一接口环境，需调整配置文件
+                runMode: 'dev'//运行模式选择dev（测试环境）| uat（预生产环境） |  product（生产环境）
+            };
+
+            var loadStylesWithVersion = function (styles, version) {
+                for (var i = 0; i < styles.length; i++) {
+                    var link = document.createElement("link");
+                    link.rel = "stylesheet";
+                    link.href = styles[i] + "?v=" + version;
+                    document.getElementById('head').appendChild(link);
+                }
+            };
+
+            loadStylesWithVersion([
+
+                    'assets/css/bootstrap.3.1.1.css',
+                    'assets/css/jedate.css',
+                    'assets/css/switch-buttons.css',
+                    'assets/css/multi-editor.css',
+                    'assets/css/font-awesome.min.css',
+                    'assets/css/neptune.css',
+                    'assets/css/color.css',
+                    'assets/css/mc.bakery-0.0.2.css',
+                    'assets/css/neptune_base.css',
+                    'assets/css/neptune_fonts.css',
+                    'assets/css/color.css',
+                    'assets/css/base.css',
+                    'assets/css/login.css',
+                    'assets/css/neptune-directive.css'
+
+                ],
+                window.NEPTUNE.version);
+        })();
+    </script>
+    <script type="text/javascript"
+            src="https://webapi.amap.com/maps?v=1.3&key=0639fcf111c4c1b149042dce6f9e3539"></script>
+    <!--兼容ie8-->
+    <script src="assets/js/es5-shim.js"></script>
+    <script src="assets/js/es5-sham.min.js"></script>
+    <!--Ie8浏览器下样式-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="assets/css/ie8.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome-ie7.min.css"/>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/PIE_IE678.js"></script>
+    <![endif]-->
+    <!--if lt IE 9-->
+    <!--<script src="http://www.AngularJS.cn/wp-content/themes/angularjs/js/HTML5.js" type="text/JavaScript"></script>-->
+</head>
+
+<body id="ng-app" ng-controller="MainCtrl"
+      style="height: 100%;background-color: #F0F0F2;min-width: 1340px;overflow-x: auto;">
+
+<div class="col-xs-12 cancel_col_padding background_gray2" style="position: relative;width:100%;height:100%">
+    <!--<mc-multi-editor class="multi-editor-tabset" label="{{labelName}}"></mc-multi-editor>-->
+    <div ui-view="main"></div>
+
+</div>
+<!--动态加载js  -->
+<script>
+    (function () {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "assets/js/requirejs/require.js";
+        script.setAttribute('data-main', 'common/main.js?v=' + window.NEPTUNE.version);
+        document.body.appendChild(script);
+    })();
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<div class="background_white" style="border-radius: 8px;position: relative;behavior:url('assets/css/PIE.htc');" multiple-form result="successResult()" cue-way="layer">
+    <div class="modal-header">
+        <button type="button" class="close" ng-click="close()"> &times;</button>
+        <h4 class="modal-title">添加银行卡</h4>
+    </div>
+    <div class="modal-body row">
+        <div class="col-xs-12 margin_top2">
+            <div class="col-xs-4">银行卡号</div>
+            <div class="col-xs-8">
+                <input type="{{cardType}}" maxlength="25" rule="require;minLength:15" ng-model="bankCard.bank_no" class="form-control input-small" placeholder="请输入银行卡号" err-text="银行卡号填写错误"/>
+                <span ng-click="displayCardNo()" style="margin-top: -27px;float: right" class="color_blue hand">{{cardVisbileText}}</span>
+                <div style="color: red">请输入正确的银行卡号,否则可能出现提现错误！</div>
+            </div>
+        </div>
+        <div class="col-xs-12 margin_top2">
+            <div class="col-xs-4">持卡人</div>
+            <div class="col-xs-8">
+                <input rule="require" maxlength="10" ng-model="bankCard.name" class="form-control input-small" placeholder="请输入持卡人" err-text="持卡人填写错误"/>
+            </div>
+        </div>
+        <div class="col-xs-12 margin_top2">
+            <div class="col-xs-4">开户行</div>
+            <div class="col-xs-8">
+                <input rule="require" maxlength="15" ng-model="bankCard.bankName" class="form-control input-small" placeholder="请输入开户行" err-text="开户行填写错误"/>
+            </div>
+        </div>
+        <div class="col-xs-12 margin_top2">
+            <div class="col-xs-4">开户行地址</div>
+            <div class="col-xs-8">
+                <input rule="require" maxlength="25" ng-model="bankCard.address" class="form-control input-small" placeholder="请输入开户行地址" err-text="开户行地址填写错误"/>
+                <img style="margin-top: -27px;float: right"
+                     src="assets/img/prompt.png" ng-click="openPrompted()" class="neptune_small_img">
+            </div>
+        </div>
+        <div class="col-xs-12 margin_top2">
+            <div class="col-xs-4">身份证号</div>
+            <div class="col-xs-8">
+                <input rule="require;cardCode" ng-model="bankCard.cardCode" class="form-control input-small" placeholder="请输入身份号" err-text="身份号填写错误"/>
+            </div>
+        </div>
+        <div class="col-xs-12 margin_top2">
+            <div class="col-xs-4">手机号码</div>
+            <div class="col-xs-8">
+                <input rule="require;phone" ng-model="bankCard.phone" class="form-control input-small" type="tel" placeholder="请输入手机号" err-text="手机号填写错误"/>
+            </div>
+        </div>
+        <div class="col-xs-12 margin_top2">
+            <div class="col-xs-4">提现密码</div>
+            <div class="col-xs-8">
+                <input type="password" rule="require" ng-model="bankCard.bank_pwd" class="form-control input-small" placeholder="请输入提现密码" err-text="请输入提现密码"/>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <div class="full_width text-center">
+            <button type="button" class="btn btn-primary" isComplete>确定</button>
+        </div>
+    </div>
+</div>
