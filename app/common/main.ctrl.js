@@ -41,66 +41,6 @@ define([
                     $rootScope.labelName = labelName;
             };
 
-            //产品弹窗
-            $scope.browseProduct = function (productId, categoryId, $event) {
-                if ($event) {
-                    $event.stopPropagation();
-                }
-                var productModal = $modal.open({
-                    backdrop: 'static',
-                    animation: true,
-                    resolve: {
-                        productId: function () {
-                            return productId;
-                        }
-                    },
-                    templateUrl: 'pay/template/product.modal.html',
-                    controller: function ($scope, $modalInstance, $state, $timeout, productId) {
-
-                        var init = function () {
-                            var keyWords = {
-                                productId: productId || '',
-                                categoryId: categoryId || ''
-                            };
-                            //这里添加获取产品信息的方法
-                            $$neptune.$product.Product(keyWords, {
-                                onSuccess: function (data) {
-                                    var productTest = data.additionalElements;
-                                    angular.forEach(productTest, function (productTest, index) {
-                                        if (productTest.eleCode == "productShortDesc") {
-                                            $scope.productTextDesc = productTest
-                                        }
-                                    });
-                                    $scope.product = data;
-                                },
-                                onError: function (e) {
-                                    layer.msg("网络缓慢,请稍后重试", {time: 2333});
-                                }
-                            });
-                        };
-
-                        $scope.closeProduct = function () {
-                            $modalInstance.dismiss();
-                        };
-
-                        init();
-                    }
-                });
-
-                productModal.result.then(function (result) {
-                }, function (reason) {
-                    if (reason) {
-                        // console.log(reason);
-
-                    }
-                });
-                return false;
-            };
-
-            $scope.collectProducts = [
-                'P0001',
-                'P0003'
-            ];
 
             var init = function () {
 
