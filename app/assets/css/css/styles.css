@@ -160,7 +160,7 @@ h1 {
 #lazyload_3 .content ul li {
     width: 100%;
     height: 410px;
-    /*background: url(images/loading.gif) no-repeat center center;*/
+    background: url(../../../images/loading.gif) no-repeat center center;
 }
 
 #lazyload_3 .content ul li a {
@@ -216,7 +216,7 @@ h1 {
     height: 60px;
     margin-top: -50px;
     background: #000;
-    /*url(images/slide_arrow7.png) no-repeat -187px center;*/
+    url(../../../images/slide_arrow7.png) no-repeat -187px center;
     opacity: 0.3;
     filter: alpha(opacity=30);
     -webkit-transition: all .3s linear;
