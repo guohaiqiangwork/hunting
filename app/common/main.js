@@ -41,7 +41,8 @@ require.config({
         'bootstrap-treeview': 'assets/js/bootstrap-treeview/bootstrap-treeview',
         'echarts': 'assets/js/echart/echarts',
         'responsive-menu': 'assets/js/js/responsive-menu',
-        'slide': 'assets/js/jquery.slide'
+        'slide': 'assets/js/jquery.slide',
+        'snippet': 'assets/js/jquery.snippet.min'
     },
     shim: {
         'jquery': {
@@ -116,6 +117,9 @@ require.config({
         },
         'slide': {
             deps: ['jquery']
+        },
+        'snippet': {
+            deps: ['jquery']
         }
     },
     priority: [
@@ -125,7 +129,8 @@ require.config({
         'mainCtrl',
         'echarts',
         'responsive-menu',
-        'slide'
+        'slide',
+        'snippet'
     ]
 });
 require(['jquery',
@@ -135,7 +140,8 @@ require(['jquery',
         'mainCtrl',
         'echarts',
         'responsive-menu',
-        'slide'],
+        'slide',
+        'snippet'],
     function ($, angular) {
         angular.element().ready(function () {
             angular.bootstrap($('#ng-app'), ['calla']);

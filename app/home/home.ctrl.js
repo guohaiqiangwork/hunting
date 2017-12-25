@@ -10,6 +10,9 @@ define([
 
             var init = function () {
                 $("#lazyload_3").slide({ trigger: "click", effect: "fade",auto: true,duration: 50, lazyload: true });
+                $("pre.jsCode").snippet("javascript", {style: "custom_js", showNum: false});
+                $("pre.jsCodeNum").snippet("javascript", {style: "custom_js"});
+
 
                 $('.rm-nav').rMenu({
                     minWidth: '960px'
