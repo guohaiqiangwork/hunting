@@ -242,17 +242,22 @@ b.ico5 {
 }
 
 /* 头部 */
-#head {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    background: url(../images/bg.gif) repeat-x 0 0;
-    padding-top: 12px;
-    _padding-top: 9px;
-    _position: absolute;
-    _top: expression(eval(document.documentElement.scrollTop)+0);
+#heads {
+    /*position: fixed;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*top: 0;*/
+    /*z-index: 10;*/
+    /*background: url(../images/bg.gif) repeat-x 0 0;*/
+    /*padding-top: 12px;*/
+    /*_padding-top: 9px;*/
+    /*_position: absolute;*/
+    /*_top: expression(eval(document.documentElement.scrollTop)+0);*/
+    background-color: #171719;
+    padding-left: 0;
+    margin-left: -2%;
+    padding-bottom: 1%;
+    padding-top: 1%;
 }
 
 #headBtn {
@@ -339,8 +344,8 @@ b.ico5 {
     text-align: center;
     color: #fff;
     text-shadow: -1px -1px 0 #21546d;
-    color: #fff;
     cursor: pointer;
+    font-size: 16px;
 }
 
 #nav dd a:hover {
@@ -349,7 +354,7 @@ b.ico5 {
 
 #nav dd b {
     overflow: hidden;
-    background: url(../images/ico2.gif) no-repeat;
+    /*background: url(../images/ico2.gif) no-repeat;*/
     display: block;
     height: 20px;
     width: 18px;
