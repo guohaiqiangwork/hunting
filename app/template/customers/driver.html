@@ -1,0 +1,51 @@
+<div  style="display:inline-block;">
+
+    <div ng-if="data.status!==3" style="width:188px;border-right:dashed 1px gray;margin:8px;position:relative">
+        <div class="icon-error" style="font-size: 24px;color: #00b638;position: absolute;right: 0;z-index: 2" ng-click="deleteDriver(data)"></div>
+        <!--ng-class="{'changed':options.highlightChanges && data.status!==constants.STATUS.NEW && data.drivingLicenseNo!==data.original.drivingLicenseNo}"-->
+
+        <div style="width: 198px">
+            <ng-form name="trialRequired7">
+                <input type="text" ng-model="data.driverName" class="form-control"
+                       affect="BI,CI"
+
+                       ng-disabled="mode===constants.EDITOR_MODE.READONLY"
+                       placeholder="姓名"
+                       >
+
+                <input type="text"
+                       ng-model="data.acceptLicenseDate"
+                       class="form-control issueDate1"
+                       ng-click="dateTimeShow()"
+                       affect="BI,CI"
+                       ng-blur="manualDate()"
+                       placeholder="初次领证日期"
+                       ng-disabled="mode===constants.EDITOR_MODE.READONLY"
+                       >
+                <span ng-if="issueDateError" style="color:red">录入日期格式错误</span>
+
+                <input type="text" ng-model="data.drivingLicenseNo" class="form-control"
+                       placeholder="驾驶证号"
+                       affect="BI,CI"
+                       ng-disabled="mode===constants.EDITOR_MODE.READONLY"
+                       ng-blur="searchDriver(data)"
+                       >
+
+            </ng-form>
+            <code-type
+                    ng-model="data.drivingCarType"
+                    base-code="DrivingCarType"
+                    local-code="true"
+            ></code-type>
+            <code-type
+                    ng-model="data.vehicleStyle"
+                    base-code="vehicleStyle"
+                    local-code="true"
+            ></code-type>
+            <!--<div class="glyphicon glyphicon-plus">-->
+
+            <!--</div>-->
+        </div>
+    </div>
+
+</div>

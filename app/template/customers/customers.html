@@ -1,0 +1,6 @@
+<div>
+    <ul class="list-group">
+        <customer ng-repeat="customer in data track by $index" data="customer" mode="mode" allow-delete="{{data.length>1}}">
+        </customer>
+    </ul>
+</div>

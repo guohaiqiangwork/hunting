@@ -1,0 +1,18 @@
+<div class="mc-select-container dropdown" ng-class="{open: $select.open}">
+    <div class="mc-select-match" ng-hide="$select.open">
+        <span ng-hide="$select.selected" class="form-control">
+            选择或者查询
+        </span>
+        <span ng-show="$select.selected" class="form-control">
+            {{$select.selected.value}}
+        </span>
+    </div>
+    <input type="search" ng-model="$select.search" class="form-control mc-select-search" ng-show="$select.open">
+    <ul class="mc-select-choices dropdown-menu" ng-show="$select.open">
+        <li>
+            <div class="mc-select-choices-row" ng-class="{active:$select.isActive(item)}" ng-repeat="item in $select.items | filter: $select.search" ng-click="$select.select(item);">
+                <span class="mc-select-choices-row-inner">{{item.value}}</span>
+            </div>
+        </li>
+    </ul>
+</div>

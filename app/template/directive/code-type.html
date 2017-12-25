@@ -1,0 +1,10 @@
+
+<!--allow-clear 控制删除是不是显示  hideCode 控制顯示不顯示 code-->
+<ui-select ng-hide="ngDisabled" focus-on="{{model}}">
+    <ui-select-match style="overflow: hidden" ng-model="ngModel" allow-clear="{{isClear}}" placeholder="查询或选择..."><span ng-hide="true">{{$select.selected.code}}</span> {{$select.selected.value}}</ui-select-match>
+    <ui-select-choices repeat="code.code as code in codeList | propsFilter: {code: $select.search, value: $select.search}">
+        <span ng-hide="true" ng-bind-html="code.code | highlight: $select.search"></span>
+        <span ng-bind-html="code.value | highlight: $select.search"></span>
+    </ui-select-choices>
+</ui-select>
+<input ng-show="ngDisabled" type="text" class="form-control" ng-value="modalValue | mcCode:baseCode" ng-disabled="disableReady || ngDisabled">

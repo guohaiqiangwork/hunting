@@ -1,0 +1,15 @@
+<div style="position:relative;padding:48px;overflow:auto">
+    <div style="position:relative;border:1px solid #999;height:48px;">
+        <div class="policyPeriod" id="style"
+             style="width:{{policyPeriod.end-policyPeriod.start}}%;top:16px;height:12px;left:{{policyPeriod.start}}%;z-index:3"></div>
+        <!--<div class="policyPeriod suspended" style="width:{{suspendPeriod.end-suspendPeriod.start}}%;left:{{suspendPeriod.start}}%"></div>-->
+        <div style="width:2px;height:47px;background-color:#ff103f;position:absolute;top:0;left:{{today}}%;z-index:4"></div>
+    </div>
+
+    <div style="position:relative;">
+        <div style="top:2px">{{riskType | mcCode:'riskType'}}</div>
+        <div ng-repeat="month in months" style="position:absolute;left:{{month.left}}%;border-left:solid 1px #D0D0D0;padding-left:8px;height:69px;top:-70px;font-size:12px;color:#A0A0A0">
+            {{month.label}}月
+        </div>
+    </div>
+</div>

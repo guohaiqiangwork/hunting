@@ -1,0 +1,59 @@
+
+<div>
+    <span ng-transclude></span>
+    <div class="maintop">
+
+        <div class="pull-left" style="position: absolute;top: 0;">
+            <div style="position: relative">
+                <div  style="position: absolute;top: 18px;">
+                    <a ng-if="menu" ng-click="openMenu()">
+                        <i class="icon-menu" style="font-size: 20px"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div style="padding-left: 36px">
+                <div class="row" style="margin-left: 0;font-size:15px;line-height:35px;text-align:center;color: #8297ad"><span>{{checkCarCode}}</span></div>
+                <div class="row" style="margin-left: 0;font-size:15px;color: #8297ad">{{nowDate}}&nbsp;验车码</div>
+            </div>
+
+        </div>
+        <div style="text-align: center">{{title}}</div>
+        <div class="pull-right" style="margin-top: -28px">
+            <a ng-if="close" ng-click="goback()">
+                <span class="icon-error" style="font-size: 32px;color: #ffffff"></span>
+            </a>
+            <a ng-if="whiteclose" ng-click="waitPayList()">
+                <span class="icon-error" style="font-size:32px;color: #ffffff"></span>
+            </a>
+            <a ng-if="waitpay" ng-click="payList()">
+                <span class="icon-error" style="font-size:32px;color: #ffffff"></span>
+            </a>
+            <!--<a ng-if="choice">-->
+                <!--<span class="glyphicon glyphicon-minus" style="position: absolute;top: 24px;right: 60px;font-size:10px;color: #ffffff"></span>-->
+            <!--</a>-->
+            <a ng-if="choice" ng-click="goback()">
+                <span class="icon-error" style="font-size:32px;color: #ffffff"></span>
+            </a>
+            <a ng-if="return1" ng-click="returnback()">
+                <span class="icon-error" style="font-size:32px;color: #ffffff"></span>
+            </a>
+            <a ng-if="gohome" ng-click="goback()">
+               <span class="icon-error" style="font-size: 32px;color: #ffffff"></span>
+            </a>
+        </div>
+
+        <div class="pull-right" style="margin-top: -28px">
+            <timer ng-if="choice" style="font-size: 16px;color: #8297ad;font-weight:bold;margin-right:115px;" interval="1000">{{hhours}}{{hhoursS}}:{{mminutes}}{{minutesSs}}:{{sseconds}}{{secondsSs}}</timer>
+            <span ng-if="schedule">
+                <i class="icon-schedule" style="position: absolute;top: 16px;font-size: 24px;right:180px;"></i>
+            </span>
+            <!--<span ng-if="message" ng-mouseover="showtop()" ng-mouseleave="nonetop()" style="height: 42px;width: 64px">-->
+            <span ng-if="refresh" ng-click="refresh()">
+               <i class="icon-cherry-ui-refresh"></i>
+            </span>
+        </div>
+    </div>
+
+
+</div>

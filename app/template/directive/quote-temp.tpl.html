@@ -1,0 +1,9 @@
+<div class="quota"  ng-class="{'changeBackground':x.mark==='1'}">
+    <ul style="padding:4px">
+        <li class="list-type-none">总保费:{{(x.premiums1+x.premiums2+x.annualTaxAmount).toFixed(2)}}</li>
+        <li class="list-type-none">交强保费:{{x.premiums1}}<span style="font-size: 12px">(税{{x.annualTaxAmount}})</span></li>
+        <li class="list-type-none">商业保费:{{x.premiums2}}</li>
+        <li class="list-type-none">报价时间:{{x.operateDateTime}}</li>
+        <li class="list-type-none">操作员:{{x.operatorCode}}</li>
+    </ul>
+</div>

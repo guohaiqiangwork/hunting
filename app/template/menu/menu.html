@@ -1,0 +1,20 @@
+<nav id="push-menu" class="push-menu push-menu-vertical push-menu-left" style="overflow: auto;max-height: 800px">
+    <div>
+        <a class="icon-home" style="float: left;font-size: 30px;color: #ffffff" ng-href="#/dashboard" ></a>
+        <a class="icon-install" style="font-size: 30px;margin-top: 2px;color: #ffffff;float: right;" ng-href="#/permissions/personnel/"></a>
+    </div>
+    <div style="padding-top: 32px">
+        <div ng-repeat="menu in treeMenuAuthors" style="text-align: center"><a ng-if="menu.mark==='2'" ng-href="{{menu.url}}" style="color: red">{{menu.name}}</a>
+            <div class="menu " id="qwe" ng-repeat="menu1 in menu.node" ng-click="transferIdent(menu1.identification,$index)" ng-if="menu1.mark==='2'">
+                <a href  ng-href="{{menu1.url}}" class="white">{{menu1.name}}</a>
+                <i class="fa fa-chevron-right white" style="float:right;padding-right: 8px" ></i>
+                <ul  class="menu-two" ng-repeat="menu2 in menu1.node" ng-if="firstIdentification==menu1.identification" ng-click="transferIdent2(menu2.identification2)" >
+                    <a href ng-if="menu2.mark==='2'" ng-href="{{menu2.url}}" class="white">{{menu2.name}}</a>
+                    <li ng-repeat="menu3 in menu2.node" ng-if="secondIdentification==menu2.identification2">
+                        <a href class="white" ng-if="menu.mark==='2'" ng-href="{{menu3.url}}" >{{menu3.name}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

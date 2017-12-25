@@ -1,0 +1,15 @@
+<div style="position:relative;padding:64px 32px;overflow:auto">
+    <div style="position:relative;border:1px solid #999;height:58px;">
+        <div class="policyPeriod" style="width:{{policyPeriod.end-policyPeriod.start}}%;left:{{policyPeriod.start}}%"></div>
+        <div class="policyPeriod suspended" style="width:{{suspendPeriod.end-suspendPeriod.start}}%;left:{{suspendPeriod.start}}%"></div>
+    </div>
+
+    <div style="position:relative">
+        <div class="annotation" style="position:absolute;top:32px;left:{{suspendPeriod.start}}%">始</div>
+        <div class="annotation" style="position:absolute;top:32px;left:{{suspendPeriod.end}}%">终</div>
+
+        <div ng-repeat="month in months" style="position:absolute;left:{{month.left}}%;border-left:solid 1px #999;padding-left:8px;color:#A0A0A0">
+            {{month.label}}月
+        </div>
+    </div>
+</div>

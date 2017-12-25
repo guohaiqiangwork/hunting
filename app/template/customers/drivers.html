@@ -1,0 +1,8 @@
+<div>
+    <!--<input type="checkbox" ng-model="options.manageDrivers">指定驾驶人-->
+    <div ng-if="options.manageDrivers && data.length>0" style="border-top:solid 1px #c0c0c0;">
+        <driver ng-repeat="driver in data track by $index" data="driver" mode="mode"></driver>
+        <div ng-show="data.length <= options.driversMaxCount" style="display:inline-block;width:200px">
+        </div>
+    </div>
+</div>

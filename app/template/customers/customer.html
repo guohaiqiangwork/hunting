@@ -1,0 +1,646 @@
+<li class="list-group-item"
+    ng-class="{'new':data.status===constants.STATUS.NEW,'deleted':data.status===constants.STATUS.DELETED}"
+    style="padding:0">
+
+    <div class="row" style="margin-left: 0px!important;">
+        <ng-form name="customerForm">
+            <div id="customerIcon" class="col-sm-2" style="padding-top: 4%;transition: all 0.5s;">
+                <!--<div style="margin-top:15%;text-align: center" ng-if="data.personal.name">-->
+                <div style="margin-top:15%;text-align: center">
+                    <!--wangyanmei- 图片默认绿色->
+                    <!--<img src="assets/img/vip.svg" width="60px" height="25px" /><br>-->
+                    <img src="assets/img/customer.svg" width="60px"/>
+                    <p style="line-height: 28px;">客户信息</p>
+                    <!--<div class="icon icon-lg icon-invalid"-->
+                    <!--ng-class="{'cherry-icon-customer':!data.isOrganization,'cherry-icon-institute':data.isOrganization,'male':!data.isOrganization && data.sex==='1','female':!data.isOrganization && data.sex==='2'}"-->
+                    <!-->
+                    <!--</div>-->
+                    <!--<div style="height:32px;padding:4px">{{data.name}}</div>-->
+                </div>
+
+                <!--<div style="margin-top:15%;margin-bottom: 15%;text-align: center" ng-if="!data.personal.name">-->
+                    <!--&lt;!&ndash;<img src="assets/img/vip.svg" width="60px" height="25px" /><br>&ndash;&gt;-->
+                    <!--<img src="assets/img/customer_default.svg" width="60px"/>-->
+                <!--</div>-->
+            </div>
+            <div class="col-sm-10 col-xs-10 background-wathet" style="padding-bottom: 8px" collapse="showFlod">
+                <div style="float: right;margin-top:7px;margin-right: 10px;color: #808BA5;">
+                    <div class="btn-group" dropdown >
+                         <span id="single-button"  dropdown-toggle >
+                             <span class="glyphicon glyphicon-chevron-down" style="font-size: 12px;cursor:pointer;margin-right:-4px;"></span>
+                             <span class="glyphicon glyphicon-align-justify" style="font-size: 12px;cursor:pointer;margin-right:14px;"></span>
+                         </span>
+                        <!--<ul class="dropdown-menu" dropdown-menu  style="margin-left: -77px;margin-top: -3px;">-->
+                            <!--&lt;!&ndash;<li ><a href="" ng-click="addDriver()">添加驾驶员</a></li>&ndash;&gt;-->
+                        <!--</ul>-->
+                    </div>
+                    <div class="glyphicon glyphicon-minus" ng-click="fold()" style="cursor:pointer;"></div>
+                </div>
+                <div style="padding:10px 8px 8px 12px;">
+                    <div class="row">
+                        <div class="col-xs-11 col-sm-9">
+                            <div ng-if="data.status!==constants.STATUS.DELETED">
+                                <div style="margin-left: 17%;margin-right: 62px;">
+                                    <span class="riskMain">
+                                        <input type="radio"
+                                               ng-value= false
+                                               ng-model="data.isOrganization"
+                                               ng-click="replaceOrganize('1')"
+                                        >个人
+                                         <input type="radio"
+                                                ng-value= true
+                                                ng-model="data.isOrganization"
+                                                ng-click="replaceOrganize('2')"
+                                                style="margin-left: 7%"
+                                         >单位
+                                    </span>
+                                </div>
+
+                                <div style="margin-top: -18px;margin-left: 48%;">
+                                   <span class="riskMain" ng-repeat="role in config.displayRoles track by $index">
+
+                                        <input style="margin-bottom: 2px;margin-right: 4px" type="checkbox"
+                                               history
+                                               history-info-type="customer"
+                                               history-info-id="{{data.name}}"
+                                               affect="BI,CI"
+                                               ng-click="onRoleChange(role)"
+                                               ng-disabled="data.roles.length===1 && data.rolesMatrix[$index] || mode === constants.EDITOR_MODE.READONLY"
+                                               ng-required="findInfoToView.calculateAfter"
+                                               ng-model="data.rolesMatrix[$index]">{{role | mcCode:"role"}}
+                                   </span>
+                                    <span class="riskMain" ng-if="options.manageDrivers" style="margin-right: 15px">
+                                    <!--<input style="margin-bottom: 2px;margin-right: 4px" type="checkbox"  ng-if="options.manageDrivers"-->
+                                           <!--history-->
+                                           <!--history-info-type="customer"-->
+                                           <!--history-info-id="{{data.name}}"-->
+                                           <!--affect="BI,CI"-->
+                                           <!--ng-click="onSelectDriverFromCustomer(data)"-->
+                                           <!--ng-model="data.isDriver"-->
+                                           <!--ng-disabled="mode === constants.EDITOR_MODE.READONLY">驾驶人-->
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-1 col-sm-3">
+                        </div>
+                    </div>
+                    <div>
+                        <!--客户是个人-->
+                        <div ng-if="!data.isOrganization" class="fontColor-content">
+                            <div  class="col-xs-12">
+
+                                <div class="col-xs-3 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-4 text-right line_height28">姓名</div>
+                                    <div class="col-xs-8">
+                                        <input class="form-control "
+                                               warnText="请输入姓名"
+                                               required
+                                               ng-model="data.personal.name"
+                                               ng-change="changeEditUser()"
+                                               ng-blur="searchCustomer123(data,'name')">
+                                    </div>
+                                    <span class="glyphicon glyphicon-star"
+                                          style="color: #EA712A;position: absolute;margin-left: 12px;margin-top: 8px;"></span>
+                                </div>
+                                <div class="col-xs-1">
+                                        <div>
+                                            <span style="display: inline-block;padding-top: 23px;padding-left: 18px">VIP</span>
+                                             <input type="checkbox"
+                                                    ng-model="data.personal.vipFlag"
+                                                    ng-true-value="1"
+                                                    ng-false-value="0"
+                                                    >
+                                        </div>
+                                </div>
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-4 text-right line_height28">证件类型</div>
+                                    <div class="col-xs-8">
+                                        <code-type base-code="{{constants[clientFlagCode].IDNTIFYTYPE1}}"
+                                                   history
+                                                   history-info-type="basic"
+                                                   affect="BI,CI"
+                                                   ng-model='data.personal.identifyType'
+                                                   warnText="请选择证件类型"
+                                                   required
+                                                   name="ittcalculate"
+                                                   local-code="true">
+                                        </code-type>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-3 text-right line_height28">证件号码</div>
+                                    <div class="col-xs-8">
+
+                                        <!--添加正则-->
+                                        <input class="form-control "
+                                               ng-blur="searchCustomer123(data,'idCard')"
+                                               warnText="请输入证件号"
+                                               placeholder="请输入证件号"
+                                               required
+                                               ng-change="changeEditUser()"
+                                               ng-if="data.personal.identifyType!=01"
+                                               onkeyup="this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')"
+                                               this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')
+                                               name="ifncalculate"
+                                               ng-model="data.personal.identifyNumber"
+                                        />
+
+                                        <!--添正则-->
+                                        <input class="form-control "
+
+                                               ng-blur="validIdCard(data.personal.identifyNumber);searchCustomer123(data,'idCard')"
+                                               warnText="请输入证件号"
+                                               placeholder="请输入证件号"
+                                               required
+                                               ng-if="data.personal.identifyType==01"
+                                               name="ifncalculate"
+                                               ng-model="data.personal.identifyNumber"/>
+                                        <span class="errMsg ng-scope" ng-if="!isValidCardCode&&data.personal.identifyType==01">身份证号格式错误</span>
+                                    </div>
+                                    <span class="errMsg" ng-if=""></span>
+                                    <div class="col-xs-1" style="margin-left: -41px;font-size: 19px;margin-top: 3px;">
+                                        <div class="glyphicon glyphicon-camera" style="color: #C1BCB6"></div>
+                                    </div>
+                                    <span class="glyphicon glyphicon-star"
+                                          style="color: #EA712A;position: absolute;margin-left: 12px;margin-top: 8px;"></span>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="col-xs-4 padding_left_0" style="margin-top:10px;">
+                                    <!--显示性别-->
+                                    <div class="col-xs-3 text-right line_height28" style="padding-top: 5px">性别</div>
+                                    <div class="col-xs-9">
+                                        <label  style="font-size: 16px;">男&nbsp;<input type="radio" ng-value="true" ng-model="data.personal.sex" name="sex"/></label>
+                                        <label  style="font-size: 16px;padding-left: 24px">女&nbsp;<input type="radio" ng-value="false" ng-model="data.personal.sex" name="sex"/></label>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-4 text-right line_height28">生日</div>
+                                    <div class="col-xs-8">
+                                        <!--<input class="form-control " ng-model="data.personal.birthday" />-->
+                                        <input
+                                                class="form-control  personalBirthday"
+                                                ng-click="dateTimeShow('.personalBirthday')"
+                                                ng-model="data.personal.birthday" style="background-color: #ffffff;cursor: pointer;" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                        <div class="col-xs-3 text-right line_height28">移动电话</div>
+                                        <div class="col-xs-8">
+                                            <input class="form-control "
+                                                   warnText="请输入移动电话"
+                                                   name="perMobile"
+                                                   required
+                                                   ng-model="data.personal.mobile"
+                                                   ng-pattern=/^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/>
+                                            <span class="errMsg" ng-if="customerForm.perMobile.$error.pattern">移动电话格式错误</span>
+                                        </div>
+
+                                        <!--郭东玉-->
+                                        <span class="glyphicon glyphicon-star"
+                                              style="color: #EA712A;position: absolute;margin-left: 12px;margin-top: 8px;"></span>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-3 text-right line_height28">地址</div>
+                                    <div class="col-xs-9">
+                                        <input class="form-control  "
+                                               warnText="请输入地址"
+                                               required
+                                               ng-model="data.personal.address">
+                                    </div>
+                                    <!--郭东玉-->
+                                    <span class="glyphicon glyphicon-star"
+                                          style="color: #EA712A;position: absolute;margin-left: 12px;margin-top: 8px;"></span>
+                                </div>
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-4 text-right line_height28">邮箱</div>
+                                    <div class="col-xs-8">
+                                        <input class="form-control " ng-model="data.personal.email"
+                                               name="email"
+                                               ng-pattern="/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/"/>
+                                        <span class="errMsg" ng-if="customerForm.email.$error.pattern">邮箱格式不正确</span>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-3 text-right line_height28">固定电话
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <div class="col-xs-12 padding_left_0">
+                                            <input class="form-control "
+                                                   ng-model="data.personal.phoneNumber"
+                                                   name="perPhoneNumber">
+                                            <!--ng-pattern=/^.{11,}$/-->
+                                            <span class="errMsg" ng-if="customerForm.perPhoneNumber.$error.pattern">固定电话格式错误</span>
+                                        </div>
+
+                                    </div>
+
+                            </div>
+                        </div>
+                        </div>
+                        <!--客户是机构-->
+                        <div ng-if="data.isOrganization" class="fontColor-content">
+                            <div  class="col-xs-12">
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-4 text-right line_height28">单位名称</div>
+                                    <div class="col-xs-8">
+                                        <input class="form-control "
+                                               required
+                                               ng-blur="searchCustomer123(data,'name')"
+                                               ng-model="data.company.name">
+                                    </div>
+                                    <span class="glyphicon glyphicon-star"
+                                          style="color: #EA712A;position: absolute;margin-left: 8px;margin-top: 8px;"></span>
+                                </div>
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-4 text-right line_height28">单位证件类型</div>
+                                    <div class="col-xs-8">
+                                        <code-type base-code="{{constants[clientFlagCode].IDNTIFYTYPE2}}"
+                                                   history
+                                                   history-info-type="basic"
+                                                   affect="BI,CI"
+                                                   ng-model='data.company.identifyType'
+                                                   warnText="请选择证件类型"
+                                                   required
+                                                   onkeyup="this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')"
+                                                   this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')
+                                                   name="ittcalculate"
+                                                   local-code="true">
+                                        </code-type>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-3 text-right line_height28">证件号</div>
+                                    <div class="col-xs-8" ng-if="data.company.identifyType != '64' && data.company.identifyType != '62' && data.company.identifyType != '61'">
+                                        <!--郭东玉-->
+                                        <input class="form-control "
+                                               ng-blur="searchCustomer123(data,'idCard')"
+                                               warnText="请输入证件号"
+                                               placeholder="请输入证件号"
+                                               required
+                                               onkeyup="this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')"
+                                               this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')
+                                               name="ifncalculate"
+                                               ng-model="data.company.identifyNumber"/>
+                                    </div>
+                                    <div class=" col-xs-8" ng-if="data.company.identifyType == '64'">
+                                        <input class="form-control "
+                                               ng-blur="searchCustomer123(data,'idCard')"
+                                               warnText="请输入证件号"
+                                               placeholder="请输入证件号"
+                                               required
+                                               ng-pattern="/^[a-zA-Z\d]{18}$/"
+                                               onkeyup="this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')"
+                                               this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')
+                                               name="ifncalculate64"
+                                               ng-model="data.company.identifyNumber"/>
+                                        <span class="errMsg" ng-if="customerForm.ifncalculate64.$error.pattern">统一社会信用代码长度为18位</span>
+                                    </div>
+                                    <div class=" col-xs-8" ng-if="data.company.identifyType == '62'">
+                                        <input class="form-control "
+                                               ng-blur="searchCustomer123(data,'idCard')"
+                                               warnText="请输入证件号"
+                                               placeholder="请输入证件号"
+                                               required
+                                               ng-pattern="/^[a-zA-Z\d]{0,20}$/"
+                                               onkeyup="this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')"
+                                               this.value=this.value.replace(/[^u4e00-u9fa5w]/g,'')
+                                               name="ifncalculate62"
+                                               ng-model="data.company.identifyNumber"/>
+                                        <span class="errMsg" ng-if="customerForm.ifncalculate62.$error.pattern">税务登记证号长度不大于20位</span>
+                                    </div>
+                                    <div class=" col-xs-8" ng-if="data.company.identifyType == '61'">
+                                        <input class="form-control "
+                                               ng-blur="searchCustomer123(data,'idCard');isValidCompanyType(data.company.identifyNumber)"
+                                               warnText="请输入证件号"
+                                               placeholder="请输入证件号"
+                                               required
+                                               name="ifncalculate63"
+                                               ng-model="data.company.identifyNumber"/>
+                                        <span class="errMsg" ng-if="!isValidOrgCode">组织机构代码不正确</span>
+                                    </div>
+                                    <div class="col-xs-1" style="margin-left: -41px;font-size: 19px;margin-top: 3px;">
+                                        <div class="glyphicon glyphicon-camera" style="color: #C1BCB6"></div>
+                                    </div>
+                                    <span class="glyphicon glyphicon-star"
+                                          style="color: #EA712A;position: absolute;margin-left: 12px;margin-top: 8px;"></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-4 text-right line_height28">单位性质</div>
+                                    <div class="col-xs-8">
+                                        <code-type base-code="{{constants[clientFlagCode].BUSINESSDETAIL}}"
+                                                   history
+                                                   history-info-type="basic"
+                                                   affect="BI,CI"
+                                                   ng-model='data.company.businessSort'
+                                                   local-code="true"
+                                                   required>
+                                        </code-type>
+                                        <!--<select class="form-control " ng-model="data.company.group">-->
+                                        <!--<option value="1" checked>党政机关团体</option>-->
+                                        <!--</select>-->
+                                    </div>
+                                    <span class="glyphicon glyphicon-star"
+                                          style="color: #EA712A;position: absolute;margin-left: 8px;margin-top: 8px;"></span>
+                                </div>
+                           
+                                                    <!--郭东玉 样式排列-->
+
+
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-4 text-right line_height28">联系人</div>
+                                    <div class="col-xs-8">
+                                        <input class="form-control " ng-model="data.company.contact">
+                                    </div>
+                                    <!--<span class="glyphicon glyphicon-star"-->
+                                    <!--style="color: #EA712A;position: absolute;margin-left: 8px;margin-top: 8px;"></span>-->
+                                </div>
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-3 text-right line_height28">移动电话</div>
+                                    <div class="col-xs-8">
+                                        <input class="form-control "
+                                               warnText="请输入移动电话"
+                                               name="comMobile"
+                                               required
+                                               ng-pattern=/^0?(13[0-9]|15[012356789]|17[013678]|18[0-9]|14[57])[0-9]{8}$/
+                                                   ng-model="data.company.mobile">
+                                        <span class="errMsg" ng-if="customerForm.comMobile.$error.pattern">移动电话格式错误</span>
+
+                                    </div>
+                                    <span class="glyphicon glyphicon-star"
+                                          style="color: #EA712A;position: absolute;margin-left: 12px;margin-top: 8px;"></span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="col-xs-12">
+                                <!--<div class="col-xs-3 padding_left_0" style="margin-top: 15px">-->
+                                    <!--<div class="col-xs-4 text-right line_height28">地址</div>-->
+                                    <!--<div class="col-xs-8">-->
+                                        <!--<input class="form-control "-->
+                                               <!--warnText="请输入地址"-->
+                                               <!--required-->
+                                               <!--ng-model="data.company.addr">-->
+                                    <!--</div>-->
+                                    <!--<span class="glyphicon glyphicon-star"-->
+                                          <!--style="color: #EA712A;position: absolute;margin-left: 8px;margin-top: 8px;"></span>-->
+                                <!--</div>-->
+
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px">
+                                    <div class="col-xs-4 text-right line_height28">地址</div>
+                                    <div class="col-xs-8">
+                                        <input class="form-control "
+                                               warnText="请输入地址"
+                                               required
+                                               ng-model="data.company.addr">
+                                    </div>
+                                    <span class="glyphicon glyphicon-star"
+                                          style="color: #EA712A;position: absolute;margin-left: 8px;margin-top: 8px;"></span>
+                                </div>
+
+                                <!--郭东玉-->
+                                <div class="col-xs-4 padding_left_0" style="margin-top: 15px;">
+                                    <div class="col-xs-4 text-right line_height28">固定电话
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input class="form-control "
+                                               ng-model="data.company.phoneNumber"
+                                               name="comPhoneNumber">
+                                        <!--ng-pattern=/^.{11,}$/-->
+                                        <span class="errMsg" ng-if="customerForm.comPhoneNumber.$error.pattern">固定电话格式错误</span>
+
+                                    </div>
+                                </div>
+
+                                <!--<div class="col-xs-3 padding_left_0" style="margin-top: 15px">-->
+                                <!--<div class="col-xs-3 text-right line_height28">地址</div>-->
+                                <!--<div class="col-xs-7">-->
+                                <!--<input class="form-control " ng-model="data.company.addr">-->
+                                <!--</div>-->
+                                <!--<span class="glyphicon glyphicon-star"-->
+                                <!--style="color: #EA712A;position: absolute;margin-left: 8px;margin-top: 8px;"></span>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--<ul ng-if="!data.isOrganization" class="list-group">-->
+
+                    <!--<li ng-class="{'list-group-item':data.roles[0]!='3'}" style="display: block">-->
+
+                    <!--<div class="row">-->
+                    <!--<ng-form name="trialRequired3">-->
+                    <!--<div class="col-sm-4" ng-class="{'onlyDriver' :data.roles[0]==='3'}">-->
+                    <!--<label class="col-sm-4">姓名</label>-->
+                    <!--<div class="col-sm-8">-->
+                    <!--<input class="form-control"-->
+                    <!--required-->
+                    <!--affect="BI,CI"-->
+                    <!--ng-model="data.name"-->
+                    <!--ng-change="setTaxPayer(data)"-->
+                    <!--history-->
+                    <!--history-info-type = "customer"-->
+                    <!--history-info-id="{{data.name}}"-->
+                    <!--ng-disabled="mode===constants.EDITOR_MODE.READONLY || data.status===constants.STATUS.DELETED">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-sm-4" ng-class="{'onlyDriver' :data.roles[0]=='3'}">-->
+                    <!--<label class="col-sm-4">证件类型</label>-->
+                    <!--<div class="col-sm-8">-->
+                    <!--<code-type base-code="IdentifyType"-->
+                    <!--history-->
+                    <!--history-info-type="customer"-->
+                    <!--history-info-id="{{data.name}}"-->
+                    <!--affect = "BI,CI"-->
+                    <!--ng-model='data.identifyType'-->
+                    <!--ng-change="setTaxPayer(data)"-->
+                    <!--ng-disabled="mode==constants.EDITOR_MODE.READONLY"-->
+                    <!--required></code-type>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</ng-form>-->
+                    <!--<ng-form name="trialRequired1">-->
+                    <!--<div ng-if="data.roles[0]!='3'" class="col-sm-4">-->
+                    <!--<label class="col-sm-4">-->
+                    <!--<input type="radio" affect = "BI,CI"-->
+                    <!--history ng-model="data.sex"-->
+                    <!--value="1"-->
+                    <!--style="padding:0px"-->
+                    <!--history-info-type = "customer"-->
+                    <!--history-info-id = "{{data.name}}"-->
+                    <!--ng-required="!data.sex"-->
+                    <!--ng-disabled="mode === constants.EDITOR_MODE.READONLY || data.status===constants.STATUS.DELETED||data.identifyType==='01' || data.identifyType==='05'">男</label>-->
+                    <!--<label class="col-sm-4">-->
+                    <!--<input type="radio" affect = "BI,CI"-->
+                    <!--history ng-model="data.sex"-->
+                    <!--history-info-type = "customer"-->
+                    <!--history-info-id = "{{data.name}}"-->
+                    <!--value="2"-->
+                    <!--style="padding:0px"-->
+                    <!--ng-required="!data.sex"-->
+                    <!--ng-disabled="mode === constants.EDITOR_MODE.READONLY || data.status===constants.STATUS.DELETED||data.identifyType==='01' || data.identifyType==='05'">女</label>-->
+                    <!--</div>-->
+                    <!--</ng-form>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="list-group-item" >-->
+                    <!--<div class="row">-->
+
+                    <!--<div class="col-sm-4" ng-class="{'onlyDriver' :data.roles[0]=='3'}">-->
+                    <!--<label class="col-sm-4">证件号码</label>-->
+                    <!--<ng-form name="trialRequired6">-->
+                    <!--<div class="col-sm-8" ng-show="data.identifyType==='01' || data.identifyType==='05'">-->
+                    <!--<input class="form-control" name="personID"-->
+                    <!--ng-blur="identifyDate(data);searchName(data)"-->
+                    <!--uppercase-->
+                    <!--id-card-->
+                    <!--affect = "BI,CI"-->
+                    <!--history-->
+                    <!--ng-change="setTaxPayer(data)"-->
+                    <!--history-info-type = "customer"-->
+                    <!--history-info-id = "{{data.name}}"-->
+                    <!--ng-model="data.identifyNumber"-->
+                    <!--ng-required="data.identifyType==='01' || data.identifyType==='05'"-->
+                    <!--ng-disabled="!data.identifyType || mode === constants.EDITOR_MODE.READONLY || data.status===constants.STATUS.DELETED">-->
+                    <!--</div>-->
+                    <!--<div class="col-sm-8" ng-show="data.identifyType!='01' && data.identifyType!='05'">-->
+                    <!--<input class="form-control" name="personID"-->
+                    <!--ng-blur="identifyDate(data);searchName(data)"-->
+                    <!--uppercase-->
+                    <!--history-->
+                    <!--history-info-type = "customer"-->
+                    <!--history-info-id = "{{data.name}}"-->
+                    <!--affect = "BI,CI"-->
+                    <!--ng-model="data.identifyNumber"-->
+                    <!--ng-required="data.identifyType!='01' && data.identifyType!='05'"-->
+                    <!--ng-disabled="!data.identifyType || mode===constants.EDITOR_MODE.READONLY || data.status===constants.STATUS.DELETED">-->
+                    <!--</div>-->
+                    <!--</ng-form>-->
+                    <!--</div>-->
+                    <!--<ng-form name="trialRequired5">-->
+                    <!--<div ng-show="data.roles[0]!='3'"  class="col-sm-4">-->
+                    <!--<label class="col-sm-4">生日</label>-->
+                    <!--<div class="col-sm-8">-->
+                    <!--<input class="form-control birthday"-->
+                    <!--history-->
+                    <!--affect = "BI,CI"-->
+                    <!--history-info-type = "customer"-->
+                    <!--history-info-id = "{{data.name}}"-->
+                    <!--ng-click="dateTimeShow('.birthday')"-->
+                    <!--ng-blur="manualDate()"-->
+                    <!--ng-model="data.birthday"-->
+                    <!--ng-required="data.roles[0]!='3'"-->
+                    <!--ng-disabled="mode===constants.EDITOR_MODE.READONLY || data.status===constants.STATUS.DELETED || data.identifyType==='01' || data.identifyType==='05'">-->
+                    <!--<span ng-if="birthdayError" style="color:red">录入日期格式错误</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</ng-form>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--<li ng-if="data.roles[0]!='3'" class="list-group-item not-ness" >-->
+                    <!--<ng-form name="trialRequired2">-->
+                    <!--<div class="row">-->
+                    <!--<div class="col-sm-4">-->
+                    <!--<label class="col-sm-4">地址</label>-->
+                    <!--<div class="col-sm-8" style="margin-top: 6px">-->
+                    <!--<input class="form-control"-->
+                    <!--name="addr"-->
+                    <!--ng-change="selectAddr(data.contact[0].addr)"-->
+                    <!--required-->
+                    <!--history-->
+                    <!--history-info-type="customer"-->
+                    <!--history-info-id="{{data.name}}"-->
+                    <!--affect="BI,CI"-->
+                    <!--ng-model="data.contact[0].addr"-->
+                    <!--ng-readonly="mode===constants.EDITOR_MODE.READONLY || data.status===constants.STATUS.DELETED">-->
+                    <!--<div ng-if="findInfoToView.checkError1" style="color: red">地址长度需要大于等于6个字符</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div ng-if="data.roles[0]!='3'" class="col-sm-4">-->
+                    <!--<label class="col-sm-4">手机</label>-->
+                    <!--<div class="col-sm-8">-->
+                    <!--<input  type="text" class="form-control"-->
+                    <!--name="Mobile"-->
+                    <!--id="mobile2"-->
+                    <!--maxlength="11"-->
+                    <!--history-->
+                    <!--affect = "BI,CI"-->
+                    <!--history-info-type = "customer"-->
+                    <!--history-info-id = "{{data.name}}"-->
+                    <!--ng-model="data.contact[0].mobile"-->
+                    <!--ng-pattern="/^1[3|4|5|7|8]\d{9}$/"-->
+                    <!--ng-disabled="mode===constants.EDITOR_MODE.READONLY || data.status===constants.STATUS.DELETED"-->
+                    <!--number-only="true">-->
+                    <!--<span ng-if="trialRequired.Mobile.$error.pattern" style="color: #ff0000">不是正确的手机号</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</ng-form>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="list-group" ng-if="data.isOrganization">-->
+                    <!--<ng-form name="trialRequired4">-->
+                    <!--<li class="list-group-item" style="padding: 44px;">-->
+                    <!--<div class="row">-->
+                    <!--<div class="col-sm-4">-->
+                    <!--<label class="col-sm-4">机构名称</label>-->
+                    <!--<div class="col-sm-8">-->
+                    <!--<input class="form-control"-->
+                    <!--history-->
+                    <!--history-info-type = "customer"-->
+                    <!--history-info-id = "{{data.name}}"-->
+                    <!--affect = "BI,CI"-->
+                    <!--ng-model="data.name"-->
+                    <!--required-->
+                    <!--ng-disabled="mode === constants.EDITOR_MODE.READONLY">-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-sm-4">-->
+                    <!--<label class="col-sm-4">组织机构代码</label>-->
+                    <!--<div class="col-sm-8">-->
+                    <!--<input class="form-control"-->
+                    <!--ng-blur="checkOrganizationNumber(data);searchOrganization(data)"-->
+                    <!--history-->
+                    <!--history-info-type = "customer"-->
+                    <!--history-info-id = "{{data.name}}"-->
+                    <!--affect = "BI,CI"-->
+                    <!--ng-model="data.identifyNumber"-->
+                    <!--ng-disabled="mode === constants.EDITOR_MODE.READONLY" required>-->
+                    <!--<span ng-if="OrganizationNumberError" style="color: #ff0000">组织机构代码长度不能小于8或者大于18</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                    <!--</ng-form>-->
+                    <!--</ul>-->
+                </div>
+            </div>
+            <div class="col-sm-10 col-xs-10 text-center" collapse="!showFlod">
+                <div style="float: right;margin-top:7px;margin-right: 10px;color: #808BA5;">
+                    <div class="btn-group" dropdown >
+                         <span id=""  dropdown-toggle >
+                             <span class="glyphicon glyphicon-chevron-down" style="font-size: 12px;cursor:pointer;margin-right:-4px;"></span>
+                             <span class="glyphicon glyphicon-align-justify" style="font-size: 12px;cursor:pointer;margin-right:14px;"></span>
+                         </span>
+                        <!--<ul class="dropdown-menu" dropdown-menu  style="margin-left: -77px;margin-top: -3px;">
+                            &lt;!&ndash;<li ><a href="" ng-click="addDriver()">添加驾驶员</a></li>&ndash;&gt;
+                        </ul>-->
+                    </div>
+                    <div ng-if="showFlod" class="glyphicon glyphicon glyphicon-plus" ng-click="fold()"
+                         style="cursor:pointer;"></div>
+                </div>
+                <h5 style="margin-top: 3%;">客户信息</h5>
+            </div>
+        </ng-form>
+    </div>
+</li>
