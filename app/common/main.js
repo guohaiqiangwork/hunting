@@ -40,7 +40,8 @@ require.config({
         'MD5': 'assets/js/MD5',
         'bootstrap-treeview': 'assets/js/bootstrap-treeview/bootstrap-treeview',
         'echarts': 'assets/js/echart/echarts',
-        'responsive-menu': 'assets/js/js/responsive-menu'
+        'responsive-menu': 'assets/js/js/responsive-menu',
+        'slide': 'assets/js/jquery.slide'
     },
     shim: {
         'jquery': {
@@ -112,6 +113,9 @@ require.config({
         },
         'echarts': {
             exports: 'echarts'
+        },
+        'slide': {
+            deps: ['jquery']
         }
     },
     priority: [
@@ -120,7 +124,8 @@ require.config({
         'app-init',
         'mainCtrl',
         'echarts',
-        'responsive-menu'
+        'responsive-menu',
+        'slide'
     ]
 });
 require(['jquery',
@@ -129,7 +134,8 @@ require(['jquery',
         'respond',
         'mainCtrl',
         'echarts',
-    'responsive-menu'],
+        'responsive-menu',
+        'slide'],
     function ($, angular) {
         angular.element().ready(function () {
             angular.bootstrap($('#ng-app'), ['calla']);

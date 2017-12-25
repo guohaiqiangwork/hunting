@@ -9,7 +9,7 @@ define([
 
 
             var init = function () {
-
+                $("#lazyload_3").slide({ trigger: "click", effect: "fade",auto: true,duration: 50, lazyload: true });
 
                 $('.rm-nav').rMenu({
                     minWidth: '960px'
