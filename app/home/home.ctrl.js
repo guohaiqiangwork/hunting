@@ -20,6 +20,10 @@ define([
                 console.log(id);
                 $scope.nihao_calss = id;
             };
+            //资质跳转
+            $scope.goToQualifications = function (id) {
+                $state.go('qualifications', {id:id});
+            };
             var init = function () {
                 carouselFigure();//初始化加载轮播图
 
@@ -55,45 +59,6 @@ define([
                             return $(null);
                         }
                     }
-
-                    //返回顶部
-                    // function fnGoTop(Dom, s) {
-                    //     $(window).scroll(function () {
-                    //         if ($(this).scrollTop() > 400) {
-                    //             Dom.fadeIn(s / 4);
-                    //             Dom.click(function () {
-                    //                 sfnSrollTop($("html,body"), s, "easeInOutQuart", 0);
-                    //                 return false;
-                    //             });
-                    //         } else {
-                    //             Dom.fadeOut(s / 4);
-                    //         }
-                    //     });
-                    //     return false;
-                    // }
-
-                    // //锚点
-                    // function fnGoFarme(o, eo, s) {
-                    //     var i, eoLen = eo.length,
-                    //         oePosArr = [];
-                    //     for (i = 0; i < eoLen; i++) {
-                    //         debugger;
-                    //         var curr = eo.eq(i);
-                    //         oePosArr.push(curr.offset().top - 40);
-                    //     }
-                    //     o.click(function () {
-                    //         var IDX = $(this).index();
-                    //         $(this).addClass("curr").siblings().removeClass("curr");
-                    //         sfnSrollTop($("html,body"), s, "easeInOutQuart", oePosArr[IDX]);
-                    //     });
-                    // }
-
-                    //scrollTop
-                    // function sfnSrollTop(o, d, e, v) {
-                    //     o.stop().animate({scrollTop: v}, {duration: d, easing: e});
-                    //     return false;
-                    // }
-
                     //tips
                     function fnTips(list, speed) {
                         if (list.length === 0) {

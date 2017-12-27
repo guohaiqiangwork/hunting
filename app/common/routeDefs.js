@@ -36,7 +36,7 @@ define([
                             }
                         }
                     })
-                    //登录界面
+                    //首页
                     .state('home', {
                         url: "/",
                         cache: false,
@@ -47,6 +47,20 @@ define([
                             'main': {
                                 templateUrl: "home/home.html?" + window.NEPTUNE.version,
                                 controller: 'homeCtrl'
+                            }
+                        }
+                    })
+                    //首页
+                    .state('qualifications', {
+                        url: "/qualifications/:id",
+                        cache: false,
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies(['qualifications/qualifications.ctrl'])
+                        },
+                        views: {
+                            'main': {
+                                templateUrl: "qualifications/qualifications.html?" + window.NEPTUNE.version,
+                                controller: 'qualificationsCtrl'
                             }
                         }
                     })
