@@ -1,4 +1,4 @@
-<div class="col-xs-12">
+<div class="col-xs-12" style="padding: 0">
     <div class="col-xs-12" style="background-color: #f1f1f1">
         <div class="col-xs-4 text-center">
             <img src="../images/lazyload/slide-1.jpg" style="width: 50%;margin-top: 2%">
@@ -27,7 +27,8 @@
             <!-- 菜单列表 name值对应导航索引 -->
             <div id="navmenu">
                 <dl name="1">
-                    <dd ng-click="goToQualifications('建设部资质')"><a href="" class="linkscroll" target="_blank" title="建设部资质">建设部资质</a></dd>
+                    <dd ng-click="goToQualifications('建设部资质')"><a href="" class="linkscroll" target="_blank"
+                                                                  title="建设部资质">建设部资质</a></dd>
                     <dd ng-click="goToQualifications('北京资质')"><a href="#" class="linkscroll" title="北京资质">北京资质</a></dd>
                     <dd ng-click="goToQualifications('上海资质')"><a href="#" class="linkscroll" title="上海资质">上海资质</a></dd>
                     <dd ng-click="goToQualifications('山西资质')"><a href="#" class="linkscroll" title="山西资质">山西资质</a></dd>
@@ -47,7 +48,6 @@
                     <dd><a href="#" class="linkscroll" title="其他资质">其他资质</a></dd>
                     <dt></dt>
                 </dl>
-
                 <dl name="3">
                     <dd><a href="#" class="linkscroll" title="建筑企业信息查询">建筑企业信息查询</a></dd>
                     <dd><a href="#" class="linkscroll" title="建筑企业信息查询">企业办事指南</a></dd>
@@ -81,8 +81,8 @@
             </div>
         </div>
     </div>
+    <!--轮播图-->
     <div class="col-xs-12">
-        <!--轮播图-->
         <div id="lazyload_3" class="slide">
             <div class="content">
                 <ul class="j_slideLists">
@@ -118,8 +118,50 @@
                 </a>
             </div>
         </div>
-        <div>
-            <button ng-click="qqChat()">在线聊天</button>
+    </div>
+    <!--聊天-->
+    <div style="position: fixed;top: 40%;">
+        <button ng-click="qqChat()">在线聊天</button>
+    </div>
+    <!--底部信息-->
+    <div class="col-xs-12" style="background-color: #4d4dc5;">
+        <!--导航栏-->
+        <div class="text-center" style="margin: 2%">
+            <span class="color_white">关于我们</span>
+            <span class="color_white"
+                  style="border-right: 1px solid blue; width:2px;height: 30px;margin-left: 1%"></span>
+            <span class="color_white" style="padding-left: 1%">代办资质服务</span>
+            <span class="color_white"
+                  style="border-right: 1px solid blue; width:2px;height: 30px;margin-left: 1%"></span>
+            <span class="color_white" style="padding-left: 1%">猎头服务</span>
+            <span class="color_white"
+                  style="border-right: 1px solid blue; width:2px;height: 30px;margin-left: 1%"></span>
+            <span class="color_white" style="padding-left: 1%">证书培训</span>
+            <span class="color_white"
+                  style="border-right: 1px solid blue; width:2px;height: 30px;margin-left: 1%"></span>
+            <span class="color_white" style="padding-left: 1%">联系我们</span>
+        </div>
+        <!--展示信息-->
+        <div class="text-right">
+            <div class="col-xs-4">
+                <img src="../images/lazyload/slide-2.jpg" alt="" style="width: 50%">
+            </div>
+            <div class="col-xs-8">
+                <div class="color_white" style="font-size: 8px;text-align: left;">
+                    北京代办资质总公司座机：010-57196063手机：13552029641地址：北京市朝阳区红军营南路傲城融富中心
+                </div>
+                <div class="color_white" style="font-size: 8px;text-align: left;">
+                    上海代办资质分公司座机：021-60527333手机：15921583493地址：上海市浦东新区世纪大道东方大厦
+                </div>
+                <div class="color_white" style="font-size: 8px;text-align: left;">
+                    山西资质代办分公司座机：0351-7856226手机：18903465553地址：太原市新晋祠路147号尚德峰国际
+                </div>
+                <div class="color_white" style="font-size: 8px;text-align: left;">
+                    陕西资质代办分公司座机：029-87402182手机：18149041059地址：西安市新城区民乐园万达3号楼
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+
