@@ -22,11 +22,19 @@ define([
             };
             //资质动态跳转
             $scope.goToQualifications = function (id) {
-                $state.go('qualifications', {id:id});
+                $state.go('qualifications', {id: id});
             };
             //代办资质跳转
             $scope.goToQualifications = function (id) {
-                $state.go('qualificationDynamics', {id:id});
+                $state.go('qualificationDynamics', {id: id});
+            };
+            //代办资质跳转
+            $scope.goToQualificationProcess = function (id) {
+                $state.go('qualificationProcess', {id: id});
+            };
+            //代办资质跳转
+            $scope.goToEnterpriseService = function (id) {
+                $state.go('enterpriseService', {id: id});
             };
             var init = function () {
                 carouselFigure();//初始化加载轮播图
@@ -63,6 +71,7 @@ define([
                             return $(null);
                         }
                     }
+
                     //tips
                     function fnTips(list, speed) {
                         if (list.length === 0) {
@@ -102,7 +111,6 @@ define([
                                 nPosX = othis.position().left, z;
                             arrListInfo.push([sText, nPosX, sPath]);
                             if (othis.hasClass(defClass) && bool) {
-                                console.log(defClass);
                                 Dom.append("<dt style=\"display:none;left:" + nPosX + "px;\"><a href=\"" + sPath + "\"><span>" + sText + "</span><em></em></a></dt>")
                                     .find(curr)
                                     .fadeIn(200);
