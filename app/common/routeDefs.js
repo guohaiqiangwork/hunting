@@ -50,7 +50,7 @@ define([
                             }
                         }
                     })
-                    //首页
+                    //资质动态
                     .state('qualifications', {
                         url: "/qualifications/:id",
                         cache: false,
@@ -61,6 +61,20 @@ define([
                             'main': {
                                 templateUrl: "qualifications/qualifications.html?" + window.NEPTUNE.version,
                                 controller: 'qualificationsCtrl'
+                            }
+                        }
+                    })
+                    //代办资质
+                    .state('qualificationDynamics', {
+                        url: "/qualificationDynamics/:id",
+                        cache: false,
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies(['qualificationDynamics/qualificationDynamics.ctrl'])
+                        },
+                        views: {
+                            'main': {
+                                templateUrl: "qualificationDynamics/qualificationDynamics.html?" + window.NEPTUNE.version,
+                                controller: 'qualificationDynamicsCtrl'
                             }
                         }
                     })

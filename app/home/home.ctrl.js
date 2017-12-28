@@ -20,9 +20,13 @@ define([
                 console.log(id);
                 $scope.nihao_calss = id;
             };
-            //资质跳转
+            //资质动态跳转
             $scope.goToQualifications = function (id) {
                 $state.go('qualifications', {id:id});
+            };
+            //代办资质跳转
+            $scope.goToQualifications = function (id) {
+                $state.go('qualificationDynamics', {id:id});
             };
             var init = function () {
                 carouselFigure();//初始化加载轮播图
