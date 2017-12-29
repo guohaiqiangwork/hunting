@@ -106,6 +106,20 @@ define([
                             }
                         }
                     })
+                    //关于我们
+                    .state('aboutUs', {
+                        url: "/aboutUs/:id",
+                        cache: false,
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies(['aboutUs/aboutUs.ctrl'])
+                        },
+                        views: {
+                            'main': {
+                                templateUrl: "aboutUs/aboutUs.html?" + window.NEPTUNE.version,
+                                controller: 'aboutUsCtrl'
+                            }
+                        }
+                    })
 
 
             }

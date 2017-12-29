@@ -36,6 +36,10 @@ define([
             $scope.goToEnterpriseService = function (id) {
                 $state.go('enterpriseService', {id: id});
             };
+            //关于我们
+            $scope.goToAboutUs = function (id) {
+                $state.go('aboutUs', {id: id});
+            };
             var init = function () {
                 carouselFigure();//初始化加载轮播图
 
