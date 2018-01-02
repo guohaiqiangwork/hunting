@@ -81,7 +81,8 @@
             <!-- 导航 -->
             <dl id="nav">
                 <dd class="curr" ng-click="goToHome() || selectedMenu('curr')"><a href="" title="首页">首页</a></dd>
-                <dd class="curr_1" ng-click="goToQualifications() || selectedMenu('curr_1')"><a href="" title="JS代码">资质动态</a></dd>
+                <dd class="curr_1" ng-click="goToQualifications() || selectedMenu('curr_1')"><a href="" title="JS代码">资质动态</a>
+                </dd>
                 <dd class="curr_2" ng-click="goToCationList('代办资质') || selectedMenu('curr_2')">
                     <a href="" title="代办资质">代办资质</a><b></b>
                 </dd>
@@ -94,7 +95,8 @@
                 </dd>
                 <dd class="curr_6" ng-click="goToCationList('个人挂靠') || selectedMenu('curr_6')"><a href="" title="个人挂靠">个人挂靠</a><b></b>
                 </dd>
-                <dd class="curr_7" ng-click="goToAboutUs('关于我们') || selectedMenu('curr_7')"><a href="" title="关于我们">关于我们</a>
+                <dd class="curr_7" ng-click="goToAboutUs('关于我们') || selectedMenu('curr_7')"><a href=""
+                                                                                               title="关于我们">关于我们</a>
                 </dd>
             </dl>
             <!-- 菜单列表 name值对应导航索引 -->
@@ -147,12 +149,12 @@
                     <dt></dt>
                 </dl>
                 <dl name="5">
-                    <dd><a href="#" class="linkscroll" title="资质常识">资质常识</a></dd>
-                    <dd><a href="#" class="linkscroll" title="资质政策">资质政策</a></dd>
-                    <dd><a href="#" class="linkscroll" title="资质专栏">资质专栏</a></dd>
                     <dt></dt>
                 </dl>
                 <dl name="6">
+                    <dt></dt>
+                </dl>
+                <dl name="7">
                     <dd ng-click="goToAboutUs('公司简介')"><a href="#" class="linkscroll" title="公司简介">公司简介</a></dd>
                     <dd ng-click="goToAboutUs('公司文化')"><a href="#" class="linkscroll" title="公司文化">公司文化</a></dd>
                     <dd ng-click="goToAboutUs('公司团队')"><a href="#" class="linkscroll" title="公司团队">公司团队</a></dd>
@@ -166,7 +168,6 @@
         </div>
     </div>
     <div ui-view="main"></div>
-    <!--菜单栏-->
     <div class="col-xs-12" style="background-color: #4d4dc5;">
         <!--导航栏-->
         <div class="text-center" style="margin: 2%">
