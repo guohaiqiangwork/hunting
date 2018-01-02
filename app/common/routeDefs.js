@@ -38,7 +38,7 @@ define([
                     })
                     //首页
                     .state('home', {
-                        url: "/",
+                        url: "/home",
                         cache: false,
                         resolve: {
                             dummy: $couchPotatoProvider.resolveDependencies(['home/home.ctrl'])
@@ -65,34 +65,34 @@ define([
                         }
                     })
                     //代办资质
-                    .state('qualificationDynamics', {
-                        url: "/qualificationDynamics/:id",
+                    .state('dynamicsList', {
+                        url: "/dynamicsList/:id",
                         cache: false,
                         resolve: {
-                            dummy: $couchPotatoProvider.resolveDependencies(['qualificationDynamics/qualificationDynamics.ctrl'])
+                            dummy: $couchPotatoProvider.resolveDependencies(['qualificationDynamics/dynamicsList.ctrl'])
                         },
                         views: {
                             'main': {
-                                templateUrl: "qualificationDynamics/qualificationDynamics.html?" + window.NEPTUNE.version,
-                                controller: 'qualificationDynamicsCtrl'
+                                templateUrl: "qualificationDynamics/dynamicsList.html?" + window.NEPTUNE.version,
+                                controller: 'dynamicsListCtrl'
                             }
                         }
                     })
+                    // //资质流程  此页面有待确认
+                    // .state('qualificationProcess', {
+                    //     url: "/qualificationProcess/:id",
+                    //     cache: false,
+                    //     resolve: {
+                    //         dummy: $couchPotatoProvider.resolveDependencies(['qualificationProcess/qualificationProcess.ctrl'])
+                    //     },
+                    //     views: {
+                    //         'main': {
+                    //             templateUrl: "qualificationProcess/qualificationProcess.html?" + window.NEPTUNE.version,
+                    //             controller: 'qualificationProcessCtrl'
+                    //         }
+                    //     }
+                    // })
                     //资质流程
-                    .state('qualificationProcess', {
-                        url: "/qualificationProcess/:id",
-                        cache: false,
-                        resolve: {
-                            dummy: $couchPotatoProvider.resolveDependencies(['qualificationProcess/qualificationProcess.ctrl'])
-                        },
-                        views: {
-                            'main': {
-                                templateUrl: "qualificationProcess/qualificationProcess.html?" + window.NEPTUNE.version,
-                                controller: 'qualificationProcessCtrl'
-                            }
-                        }
-                    })
-                    //企业办事
                     .state('enterpriseService', {
                         url: "/enterpriseService/:id",
                         cache: false,
@@ -106,6 +106,21 @@ define([
                             }
                         }
                     })
+                    //证书培训
+                    .state('certificateTraining', {
+                        url: "/certificateTraining/:id",
+                        cache: false,
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies(['certificateTraining/certificateTraining.ctrl'])
+                        },
+                        views: {
+                            'main': {
+                                templateUrl: "certificateTraining/certificateTraining.html?" + window.NEPTUNE.version,
+                                controller: 'certificateTrainingCtrl'
+                            }
+                        }
+                    })
+
                     //关于我们
                     .state('aboutUs', {
                         url: "/aboutUs/:id",

@@ -1,10 +1,11 @@
 .background_white {
-    background-color:#FFFFFF;
+    background-color: #FFFFFF;
 }
 
 .background_gray1 {
     background-color: #ABA9AB
 }
+
 .background_gray6 {
     background-color: #B6B6B6
 }
@@ -18,7 +19,8 @@
 }
 
 .font_color_black1 {
-    color: #FFA300 !important;
+    color: #fff !important;
+    background-color: #2f73ce;
 }
 
 .background_blue {
@@ -54,12 +56,13 @@
 }
 
 .color_gray {
-    color:#989898;
+    color: #989898;
 }
 
 .color_yellow1 {
     color: #FDBB1A;
 }
+
 .color_green {
     color: #00B536;
 }
@@ -67,9 +70,11 @@
 .color_red {
     color: #FC0001;
 }
-.color_blue{
+
+.color_blue {
     color: #00B8E9;
 }
-.background_login{
+
+.background_login {
     background-color: #378FD7;
 }

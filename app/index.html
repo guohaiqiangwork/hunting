@@ -42,7 +42,6 @@
                     'assets/css/neptune_base.css',
                     'assets/css/neptune_fonts.css',
                     'assets/css/color.css',
-                    'assets/css/base.css',
                     'assets/css/login.css',
                     'assets/css/neptune-directive.css',
                     'assets/css/css/responsive-menu.css',
@@ -62,9 +61,6 @@
     <script src="assets/js/js/modernizr.min.js"></script>
     <script src="assets/js/js/modernizr-custom.js"></script>
     <script src="assets/js/js/jquery-1.8.3.min.js"></script>
-    <!--<script src="assets/js/js/jQuery-jcContact.js"></script>-->
-    <!--<script src="assets/js/js/responsive-menu.js"></script>-->
-    <!--<script src="assets/js/js/responsive-menu.min.js"></script>-->
     <!--Ie8浏览器下样式-->
     <!--[if lte IE 8]>
     <link rel="stylesheet" type="text/css" href="assets/css/ie8.css"/>
@@ -85,18 +81,30 @@
         <div id="navwraper" class="center">
             <!-- 导航 -->
             <dl id="nav">
-                <dd class="curr"   ng-click="nihao('curr')"><a href="" title="首页">首页</a></dd>
-                <dd class="curr_1" ng-click="nihao('curr_1')"><a href="" title="JS代码">资质动态</a></dd>
-                <dd class="curr_2" ng-click="nihao('curr_2')"><a href="" title="DIV+CSS样式">代办资质</a><b></b></dd>
-                <dd class="curr_3" ng-click="nihao('curr_3')"><a href="" title="资源工具">证书培训</a></dd>
-                <dd class="curr_4" ng-click="goToCompaniesFind()"><a href="" title="资源工具1">企业寻证</a></dd>
-                <dd class="curr_5" ng-click="goToIndividualCallings()"><a href="" title="开源框架">个人挂靠</a><b></b></dd>
-                <dd class="curr_6" ng-click="nihao('curr_6')"><a href="" title="资源工具2">关于我们</a></dd>
+                <dd class="curr" ng-click="goToHome() || selectedMenu('curr')"><a href="" title="首页">首页</a></dd>
+                <dd class="curr_1" ng-click="goToQualifications() || selectedMenu('curr_1')"><a href="" title="JS代码">资质动态</a>
+                </dd>
+                <dd class="curr_2" ng-click="goToCationList('代办资质') || selectedMenu('curr_2')">
+                    <a href="" title="代办资质">代办资质</a><b></b>
+                </dd>
+                <dd class="curr_3" ng-click="goToEnterpriseService('资质流程') || selectedMenu('curr_3')">
+                    <a href="" title="资质流程">资质流程</a><b></b>
+                </dd>
+                <dd class="curr_4" ng-click="goToTraining('证书培训') || selectedMenu('curr_4')"><a href="" title="证书培训">证书培训</a>
+                </dd>
+                <dd class="curr_5" ng-click="goToCationList('企业寻证') || selectedMenu('curr_5')"><a href="" title="企业寻证">企业寻证</a>
+                </dd>
+                <dd class="curr_6" ng-click="goToCationList('个人挂靠') || selectedMenu('curr_6')"><a href="" title="个人挂靠">个人挂靠</a><b></b>
+                </dd>
+                <dd class="curr_7" ng-click="goToAboutUs('关于我们') || selectedMenu('curr_7')"><a href=""
+                                                                                               title="关于我们">关于我们</a>
+                </dd>
             </dl>
             <!-- 菜单列表 name值对应导航索引 -->
             <div id="navmenu">
                 <dl name="1">
-                    <dd ng-click="goToQualifications('建设部资质')"><a href="" class="linkscroll" target="_blank" title="建设部资质">建设部资质</a></dd>
+                    <dd ng-click="goToQualifications('建设部资质')"><a href="" class="linkscroll" target="_blank"
+                                                                  title="建设部资质">建设部资质</a></dd>
                     <dd ng-click="goToQualifications('北京资质')"><a href="#" class="linkscroll" title="北京资质">北京资质</a></dd>
                     <dd ng-click="goToQualifications('上海资质')"><a href="#" class="linkscroll" title="上海资质">上海资质</a></dd>
                     <dd ng-click="goToQualifications('山西资质')"><a href="#" class="linkscroll" title="山西资质">山西资质</a></dd>
@@ -106,21 +114,21 @@
                     <dt></dt>
                 </dl>
                 <dl name="2">
-                    <dd ng-click="goToQualifications('总承包资质标准')"><a href="#" class="linkscroll"
-                                                                    title="总承包资质标准">总承包资质标准</a></dd>
-                    <dd ng-click="goToQualifications('专业承包资质标准')"><a href="#" class="linkscroll" title="专业承包资质标准">专业承包资质标准</a>
+                    <dd ng-click="goToCationList('总承包')"><a href="" class="linkscroll"
+                                                            title="总承包资质标准">总承包资质标准</a></dd>
+                    <dd ng-click="goToCationList('专业承包')"><a href="" class="linkscroll" title="专业承包资质标准">专业承包资质标准</a>
                     </dd>
-                    <dd ng-click="goToQualifications('劳务包资质标准')"><a href="#" class="linkscroll"
-                                                                    title="劳务包资质标准">劳务包资质标准</a></dd>
-                    <dd ng-click="goToQualifications('安全生产许可证')"><a href="#" class="linkscroll"
-                                                                    title="安全生产许可证">安全生产许可证</a></dd>
-                    <dd ng-click="goToQualifications('房地产开发资质')"><a href="#" class="linkscroll"
-                                                                    title="房地产开发资质">房地产开发资质</a></dd>
-                    <dd ng-click="goToQualifications('园林绿化资质')"><a href="#" class="linkscroll" title="园林绿化资质">园林绿化资质</a>
+                    <dd ng-click="goToCationList('劳务分包')"><a href="" class="linkscroll"
+                                                             title="劳务包资质标准">劳务包资质标准</a></dd>
+                    <dd ng-click="goToCationList('安全生产')"><a href="" class="linkscroll"
+                                                             title="安全生产许可证">安全生产许可证</a></dd>
+                    <dd ng-click="goToCationList('房地产')"><a href="" class="linkscroll"
+                                                            title="房地产开发资质">房地产开发资质</a></dd>
+                    <dd ng-click="goToCationList('园林绿化')"><a href="" class="linkscroll" title="园林绿化资质">园林绿化资质</a>
                     </dd>
-                    <dd ng-click="goToQualifications('设计资质标准')"><a href="#" class="linkscroll" title="设计资质标准">设计资质标准</a>
+                    <dd ng-click="goToCationList('设计资质')"><a href="" class="linkscroll" title="设计资质标准">设计资质标准</a>
                     </dd>
-                    <dd ng-click="goToQualifications('其他资质')"><a href="#" class="linkscroll" title="其他资质">其他资质</a></dd>
+                    <dd ng-click="goToCationList('其他资质')"><a href="" class="linkscroll" title="其他资质">其他资质</a></dd>
                     <dt></dt>
                 </dl>
                 <dl name="3">
@@ -134,9 +142,18 @@
                     </dd>
                     <dt></dt>
                 </dl>
-                <dl name="4"></dl>
+                <dl name="4">
+                    <dd><a href="#" class="linkscroll" title="建造师培训">建造师培训</a></dd>
+                    <dd><a href="#" class="linkscroll" title="工程师评审">工程师评审</a></dd>
+                    <dd><a href="#" class="linkscroll" title="岗位证报名">岗位证报名</a></dd>
+                    <dd><a href="#" class="linkscroll" title="技工证办理">技工证办理</a></dd>
+                    <dt></dt>
+                </dl>
                 <dl name="5"></dl>
                 <dl name="6">
+                    <dt></dt>
+                </dl>
+                <dl name="7">
                     <dd ng-click="goToAboutUs('公司简介')"><a href="#" class="linkscroll" title="公司简介">公司简介</a></dd>
                     <dd ng-click="goToAboutUs('公司文化')"><a href="#" class="linkscroll" title="公司文化">公司文化</a></dd>
                     <dd ng-click="goToAboutUs('公司团队')"><a href="#" class="linkscroll" title="公司团队">公司团队</a></dd>
@@ -150,7 +167,6 @@
         </div>
     </div>
     <div ui-view="main"></div>
-    <!--菜单栏-->
     <div class="col-xs-12" style="background-color: #4d4dc5;">
         <!--导航栏-->
         <div class="text-center" style="margin: 2%">
