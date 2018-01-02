@@ -42,13 +42,17 @@ define([
             };
             //资质动态跳转
             $scope.goToQualifications = function (id) {
-                $state.go('qualificationDynamics', {id: id});
+                $state.go('qualifications', {id: id});
             };
             //代办资质跳转
             $scope.goToQualificationProcess = function (id) {
                 $state.go('qualificationProcess', {id: id});
             };
-            //企业办证
+            //证书培训
+            $scope.goToTraining = function (id) {
+                $state.go('certificateTraining', {id: id});
+            };
+            //资质流程
             $scope.goToEnterpriseService = function (id) {
                 $state.go('enterpriseService', {id: id});
             };
@@ -56,7 +60,6 @@ define([
             $scope.goToAboutUs = function (id) {
                 $state.go('aboutUs', {id: id});
             };
-            $scope.selectedMenu_calss = 'curr';
             //获取颜色
             $scope.selectedMenu = function (id) {
                 $scope.selectedMenu_calss = id;
@@ -201,6 +204,7 @@ define([
                 });
             };
             var init = function () {
+                $scope.selectedMenu_calss = 'curr';
                 $scope.goToHome();//初始化首页
                 $scope.findMenu();//菜单初始化
             };
