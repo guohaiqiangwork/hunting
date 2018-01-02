@@ -42,11 +42,15 @@ require.config({
         'echarts': 'assets/js/echart/echarts',
         'responsive-menu': 'assets/js/js/responsive-menu',
         'slide': 'assets/js/jquery.slide',
-        'snippet': 'assets/js/jquery.snippet.min'
+        'snippet': 'assets/js/jquery.snippet.min',
+        'wow': 'assets/js/wow.min'
     },
     shim: {
         'jquery': {
             exports: 'jquery'
+        },
+        'wow': {
+            exports: 'wow'
         },
         'layer': {
             deps: ['jquery']

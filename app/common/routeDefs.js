@@ -120,6 +120,34 @@ define([
                             }
                         }
                     })
+                    //企业寻证
+                    .state('companiesFind', {
+                        url: "/companiesFind",
+                        cache: false,
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies(['companiesFind/companiesFind.ctrl'])
+                        },
+                        views: {
+                            'main': {
+                                templateUrl: "companiesFind/companiesFind.html",
+                                controller: 'companiesFindCtrl'
+                            }
+                        }
+                    })
+                    //个人挂靠
+                    .state('individualCallings', {
+                        url: "/individualCallings",
+                        cache: false,
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies(['individualCallings/individualCallings.ctrl'])
+                        },
+                        views: {
+                            'main': {
+                                templateUrl: "individualCallings/individualCallings.html",
+                                controller: 'individualCallingsCtrl'
+                            }
+                        }
+                    })
 
 
             }

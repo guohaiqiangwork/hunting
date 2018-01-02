@@ -60,6 +60,15 @@ define([
             $scope.goToAboutUs = function (id) {
                 $state.go('aboutUs', {id: id});
             };
+            //企业寻证
+            $scope.goToCompaniesFind = function () {
+                $state.go('companiesFind');
+            };
+            //企业寻证
+            $scope.goToIndividualCallings = function () {
+                console.log(456789);
+                $state.go('individualCallings');
+            };
             $scope.nihao_calss = 'curr_2';
             //获取颜色
             $scope.nihao = function (id) {

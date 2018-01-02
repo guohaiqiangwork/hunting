@@ -47,7 +47,8 @@
                     'assets/css/neptune-directive.css',
                     'assets/css/css/responsive-menu.css',
                     'assets/css/css/styles.css',
-                    'assets/css/css/base.css'
+                    'assets/css/css/base.css',
+                    'assets/css/animate.min.css'
                 ],
                 window.NEPTUNE.version);
         })();
@@ -84,12 +85,12 @@
         <div id="navwraper" class="center">
             <!-- 导航 -->
             <dl id="nav">
-                <dd class="curr" ng-click="nihao('curr')"><a href="" title="首页">首页</a></dd>
+                <dd class="curr"   ng-click="nihao('curr')"><a href="" title="首页">首页</a></dd>
                 <dd class="curr_1" ng-click="nihao('curr_1')"><a href="" title="JS代码">资质动态</a></dd>
                 <dd class="curr_2" ng-click="nihao('curr_2')"><a href="" title="DIV+CSS样式">代办资质</a><b></b></dd>
                 <dd class="curr_3" ng-click="nihao('curr_3')"><a href="" title="资源工具">证书培训</a></dd>
-                <dd class="curr_4" ng-click="nihao('curr_4')"><a href="" title="资源工具1">企业寻证</a></dd>
-                <dd class="curr_5" ng-click="nihao('curr_5')"><a href="" title="开源框架">个人挂靠</a><b></b></dd>
+                <dd class="curr_4" ng-click="goToCompaniesFind()"><a href="" title="资源工具1">企业寻证</a></dd>
+                <dd class="curr_5" ng-click="goToIndividualCallings()"><a href="" title="开源框架">个人挂靠</a><b></b></dd>
                 <dd class="curr_6" ng-click="nihao('curr_6')"><a href="" title="资源工具2">关于我们</a></dd>
             </dl>
             <!-- 菜单列表 name值对应导航索引 -->
@@ -133,19 +134,8 @@
                     </dd>
                     <dt></dt>
                 </dl>
-                <dl name="4">
-                    <dd><a href="#" class="linkscroll" title="建造师培训">建造师培训</a></dd>
-                    <dd><a href="#" class="linkscroll" title="工程师评审">工程师评审</a></dd>
-                    <dd><a href="#" class="linkscroll" title="岗位证报名">岗位证报名</a></dd>
-                    <dd><a href="#" class="linkscroll" title="技工证办理">技工证办理</a></dd>
-                    <dt></dt>
-                </dl>
-                <dl name="5">
-                    <dd><a href="#" class="linkscroll" title="资质常识">资质常识</a></dd>
-                    <dd><a href="#" class="linkscroll" title="资质政策">资质政策</a></dd>
-                    <dd><a href="#" class="linkscroll" title="资质专栏">资质专栏</a></dd>
-                    <dt></dt>
-                </dl>
+                <dl name="4"></dl>
+                <dl name="5"></dl>
                 <dl name="6">
                     <dd ng-click="goToAboutUs('公司简介')"><a href="#" class="linkscroll" title="公司简介">公司简介</a></dd>
                     <dd ng-click="goToAboutUs('公司文化')"><a href="#" class="linkscroll" title="公司文化">公司文化</a></dd>
