@@ -64,7 +64,7 @@ define([
             $scope.goToCompaniesFind = function () {
                 $state.go('companiesFind');
             };
-            //企业寻证
+            //个人挂靠
             $scope.goToIndividualCallings = function () {
                 console.log(456789);
                 $state.go('individualCallings');
