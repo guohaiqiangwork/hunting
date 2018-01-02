@@ -1,0 +1,61 @@
+<div class="col-xs-12" style="padding: 0">
+    <div class="col-xs-10 col-lg-offset-1">
+        <div class="col-xs-2" style="border: 1px solid silver;padding: 0">
+            <div class="background_blue text-center" style="font-size: 20px;line-height: 2;color: #fff;">
+                项目导航栏
+            </div>
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='总承包'}"
+                 ng-click="switchView('总承包')">
+                总承包资质标准
+            </div>
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='专业承包'}"
+                 ng-click="switchView('专业承包')">
+                专业承包资质标准
+            </div>
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='劳务分包'}"
+                 ng-click="switchView('劳务分包')">
+                劳务分包资质标准
+            </div>
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='安全生产'}"
+                 ng-click="switchView('安全生产')">
+                安全生产许可证
+            </div>
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='房地产'}"
+                 ng-click="switchView('房地产')">
+                房地产开发资质
+            </div>
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='园林绿化'}"
+                 ng-click="switchView('园林绿化')">
+                园林绿化资质
+            </div>
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='设计资质'}"
+                 ng-click="switchView('设计资质')">
+                设计资质标准
+            </div>
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='其他资质'}"
+                 ng-click="switchView('其他资质')">
+                其他资质
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="col-xs-10">
+            <div ng-if="active=='代办资质'" ng-include="'qualificationDynamics/dynamics.html'"></div>
+            <div ng-if="active=='总承包'" ng-include="'qualificationDynamics/generalContract.html'"></div>
+            <div ng-if="active=='专业承包'" ng-include="'qualificationDynamics/major.html'"></div>
+            <div ng-if="active=='劳务分包'" ng-include="'qualificationDynamics/labourServices.html'"></div>
+            <div ng-if="active=='安全生产'" ng-include="'qualificationDynamics/safetyProduction.html'"></div>
+            <div ng-if="active=='房地产'" ng-include="'qualificationDynamics/realEstate.html'"></div>
+            <div ng-if="active=='园林绿化'" ng-include="'qualificationDynamics/landscaping.html'"></div>
+            <div ng-if="active=='设计资质'" ng-include="'qualificationDynamics/designQualification.html'"></div>
+            <div ng-if="active=='其他资质'" ng-include="'qualificationDynamics/otherQualifications.html'"></div>
+        </div>
+    </div>
+</div>

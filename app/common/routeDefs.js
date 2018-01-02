@@ -65,16 +65,16 @@ define([
                         }
                     })
                     //代办资质
-                    .state('qualificationDynamics', {
-                        url: "/qualificationDynamics/:id",
+                    .state('dynamicsList', {
+                        url: "/dynamicsList/:id",
                         cache: false,
                         resolve: {
-                            dummy: $couchPotatoProvider.resolveDependencies(['qualificationDynamics/qualificationDynamics.ctrl'])
+                            dummy: $couchPotatoProvider.resolveDependencies(['qualificationDynamics/dynamicsList.ctrl'])
                         },
                         views: {
                             'main': {
-                                templateUrl: "qualificationDynamics/qualificationDynamics.html?" + window.NEPTUNE.version,
-                                controller: 'qualificationDynamicsCtrl'
+                                templateUrl: "qualificationDynamics/dynamicsList.html?" + window.NEPTUNE.version,
+                                controller: 'dynamicsListCtrl'
                             }
                         }
                     })

@@ -446,3 +446,19 @@
     padding: 0;
 }
 
+.qualificationDynamics_menu {
+    text-align: center;
+    width: 95%;
+    margin-left: 2%;
+    font-size: 18px;
+    color: #166ce0;
+    font-weight: 500;
+    margin-top: 8%;
+    background-color: silver;
+    line-height: 2;
+}
+
+.qualificationDynamics_menu:hover {
+    background-color: #1e4273;
+    color: #ffffff;
+}

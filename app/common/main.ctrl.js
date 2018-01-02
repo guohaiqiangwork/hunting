@@ -41,9 +41,9 @@ define([
                     $rootScope.labelName = labelName;
             };
 
-            $scope.goToQualifications = function (id) {
-                $state.go('qualifications', {id: id});
-            };
+            // $scope.goToQualifications = function (id) {
+            //     $state.go('qualifications', {id: id});
+            // };
             //代办资质跳转
             $scope.goToQualifications = function (id) {
                 $state.go('qualificationDynamics', {id: id});
@@ -64,6 +64,10 @@ define([
             //获取颜色
             $scope.nihao = function (id) {
                 $scope.nihao_calss = id;
+            };
+            //资质动态首页
+            $scope.goToCationList = function (id) {
+                $state.go('dynamicsList', {id: id});
             };
 
             $scope.findMenu = function () {
@@ -196,7 +200,6 @@ define([
                         return false;
                     }
                 });
-
             };
             var init = function () {
                 // $scope.nihao_calss = 'curr';
