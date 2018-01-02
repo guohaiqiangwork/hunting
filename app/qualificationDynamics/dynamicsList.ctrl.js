@@ -8,6 +8,12 @@ define([
         function ($scope, $state, $rootScope, $$neptune, $timeout, $stateParams) {
             $scope.leftTitle = $stateParams.id;
             $scope.active = $scope.leftTitle;
+            $scope.moreList = false;//更多初始化
+            //点击更多
+            $scope.goToMore = function (id) {
+                $scope.moreList = true;
+                //    透过id不同调取不同接口
+            };
             var init = function () {
 
             };
@@ -18,7 +24,6 @@ define([
              */
             $scope.switchView = function (info) {
                 $scope.active = info;
-                console.log($scope.active)
             };
 
             init();

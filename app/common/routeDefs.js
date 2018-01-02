@@ -38,7 +38,7 @@ define([
                     })
                     //首页
                     .state('home', {
-                        url: "/",
+                        url: "/home",
                         cache: false,
                         resolve: {
                             dummy: $couchPotatoProvider.resolveDependencies(['home/home.ctrl'])

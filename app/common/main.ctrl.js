@@ -40,11 +40,7 @@ define([
                 if (labelName)
                     $rootScope.labelName = labelName;
             };
-
-            // $scope.goToQualifications = function (id) {
-            //     $state.go('qualifications', {id: id});
-            // };
-            //代办资质跳转
+            //资质动态跳转
             $scope.goToQualifications = function (id) {
                 $state.go('qualificationDynamics', {id: id});
             };
@@ -52,7 +48,7 @@ define([
             $scope.goToQualificationProcess = function (id) {
                 $state.go('qualificationProcess', {id: id});
             };
-            //代办资质跳转
+            //企业办证
             $scope.goToEnterpriseService = function (id) {
                 $state.go('enterpriseService', {id: id});
             };
@@ -60,16 +56,20 @@ define([
             $scope.goToAboutUs = function (id) {
                 $state.go('aboutUs', {id: id});
             };
-            $scope.nihao_calss = 'curr_2';
+            $scope.selectedMenu_calss = 'curr';
             //获取颜色
-            $scope.nihao = function (id) {
-                $scope.nihao_calss = id;
+            $scope.selectedMenu = function (id) {
+                $scope.selectedMenu_calss = id;
+                $scope.findMenu();
             };
             //资质动态首页
             $scope.goToCationList = function (id) {
                 $state.go('dynamicsList', {id: id});
             };
-
+            //首页
+            $scope.goToHome = function () {
+                $state.go('home');
+            };
             $scope.findMenu = function () {
                 $('.rm-nav').rMenu({
                     minWidth: '960px'
@@ -92,7 +92,7 @@ define([
                     //调用tips
                     fnTips(fnEach($("*[tips]")), speed);
                     //默认样式
-                    navScroll(fnEach($("#navwraper")), fnEach($("#nav")), fnEach($("#navmenu")), "dd", "dt", speed, $scope.nihao_calss);
+                    navScroll(fnEach($("#navwraper")), fnEach($("#nav")), fnEach($("#navmenu")), "dd", "dt", speed, $scope.selectedMenu_calss);
 
                     function fnEach(Dom) {
                         if (Dom.length != 0) {
@@ -150,7 +150,6 @@ define([
                             for (z = 0; z < menuLen; z++) {
                                 var omenu = $menuList.eq(z);
                                 if (Number(omenu.attr("name")) == i) {
-                                    console.log(omenu.attr("name"));
                                     omenu.css("left", nPosX)
                                         .find("dd:last a").css("background", "none");
                                 }
@@ -202,10 +201,9 @@ define([
                 });
             };
             var init = function () {
-                // $scope.nihao_calss = 'curr';
+                $scope.goToHome();//初始化首页
                 $scope.findMenu();//菜单初始化
             };
-
             init();
         }]);
     app.registerFilter('isCollect', function () {
