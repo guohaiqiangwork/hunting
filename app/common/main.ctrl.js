@@ -63,7 +63,7 @@ define([
             //获取颜色
             $scope.selectedMenu = function (id) {
                 $scope.selectedMenu_calss = id;
-                $scope.findMenu();
+                // $scope.findMenu();
             };
             //资质动态首页
             $scope.goToCationList = function (id) {
