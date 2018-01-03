@@ -4,49 +4,44 @@
             <div class="background_blue text-center font_color_black1" style="padding: 8px">
                 项目导航栏
             </div>
-            <div class=" text-left margin_top2"
-                 style="border-bottom: 1px silver dashed;width: 90%;margin-left: 5%;padding: 8px">
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='公司简介'}"
+                 ng-click="switchView('公司简介')">
                 公司简介
             </div>
-            <div class=" text-left margin_top2"
-                 style="border-bottom: 1px silver dashed;width: 90%;margin-left: 5%;padding: 8px">
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='公司文化'}"
+                 ng-click="switchView('公司文化')">
                 公司文化
             </div>
-            <div class=" text-left margin_top2"
-                 style="border-bottom: 1px silver dashed;width: 90%;margin-left: 5%;padding: 8px">
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='公司团队'}"
+                 ng-click="switchView('公司团队')">
                公司团队
             </div>
-            <div class=" text-left margin_top2"
-                 style="width: 90%;margin-left: 5%;padding: 8px">
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='公司资质'}"
+                 ng-click="switchView('公司资质')">
                 公司资质
             </div>
-            <div class=" text-left margin_top2"
-                 style="width: 90%;margin-left: 5%;padding: 8px">
-                各分公司
-            </div>
-            <div class=" text-left margin_top2"
-                 style="width: 90%;margin-left: 5%;padding: 8px">
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='成功案例'}"
+                 ng-click="switchView('成功案例')">
                 成功案例
             </div>
-            <div class=" text-left margin_top2"
-                 style="width: 90%;margin-left: 5%;padding: 8px">
+            <div class="qualificationDynamics_menu"
+                 ng-class="{font_color_black1:active=='联系我们'}"
+                 ng-click="switchView('联系我们')">
                 联系我们
             </div>
-            <div class=" text-left margin_top2"
-                 style="width: 90%;margin-left: 5%;padding: 8px">
-                其他资质
-            </div>
         </div>
-        <div class="col-xs-10">
-            <div style="border: 1px solid silver;" class="wow bounceInDown" data-wow-duration="3s">
-                <div class="text-left" style="background-color: silver">
-                    <span>北京建委政策</span>
-                    <span style="float: right">更多</span>
-                </div>
-                <div>大家发酒疯离开的瞬间放大了看书就犯困了撒</div>
-                <div>大家发酒疯离开的瞬间放大了看书就犯困了撒</div>
-                <div>大家发酒疯离开的瞬间放大了看书就犯困了撒</div>
-            </div>
+        <div class="col-xs-9">
+            <div ng-if="active=='公司简介'" ng-include="'aboutUs/companyJJ.html'"></div>
+            <div ng-if="active=='公司文化'" ng-include="'aboutUs/companyWH.html'"></div>
+            <div ng-if="active=='公司团队'" ng-include="'aboutUs/companyTD.html'"></div>
+            <div ng-if="active=='公司资质'" ng-include="'aboutUs/companyZZ.html'"></div>
+            <div ng-if="active=='成功案例'" ng-include="'aboutUs/successfulCases.html'"></div>
+            <div ng-if="active=='联系我们'" ng-include="'aboutUs/contactUs.html'"></div>
         </div>
     </div>
 </div>
