@@ -6,8 +6,8 @@ define([
 ], function (app, config, constants, layer) {
     app.registerController('dynamicsListCtrl', ['$scope', '$state', '$rootScope', '$$neptune', '$timeout', '$stateParams',
         function ($scope, $state, $rootScope, $$neptune, $timeout, $stateParams) {
-            $scope.leftTitle = $stateParams.id;
-            $scope.active = $scope.leftTitle;
+            $scope.leftTitle = $stateParams.id||'代办资质';
+            $rootScope.active = $scope.leftTitle;
             $scope.moreList = false;//更多初始化
             //点击更多
             $scope.goToMore = function (id) {
@@ -23,7 +23,7 @@ define([
              * @param info
              */
             $scope.switchView = function (info) {
-                $scope.active = info;
+                $rootScope.active = info;
             };
 
             init();
