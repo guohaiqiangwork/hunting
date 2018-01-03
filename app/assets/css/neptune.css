@@ -472,7 +472,9 @@
 }
 .dropdown-inverse{
     background-color: #222;
-    border-color: #080808
+    border-color: #080808;
+    max-height: 251px;
+    overflow-y: hidden;
 }
 .dropdown-inverse>li>a {
     color: #999;
