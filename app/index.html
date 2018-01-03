@@ -78,8 +78,8 @@
     <div class="container">
         <ul class="nav navbar-nav">
             <li ng-class="{'active':activeIndex===0}" ng-click="navClick(0)" ng-mouseover="tabChange(0)" ng-mouseout="tabChange()"><a>首页</a></li>
-            <li class="dropdown" ng-class="{'active':activeIndex===1}" ng-click="navClick(1)" ng-mouseover="tabChange(1)" ng-mouseout="tabChange()">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">资质动态<span class="caret"></span></a>
+            <li class="dropdown" ng-class="{'active':activeIndex===1}" ng-mouseover="tabChange(1)" ng-mouseout="tabChange()">
+                <a class="dropdown-toggle" ng-click="navClick(1)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">资质动态<span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-inverse">
                     <li ng-click="navClick(1,'建设部资质')"><a>建设部资质</a></li>
                     <li ng-click="navClick(1,'北京资质')"><a>北京资质</a></li>
@@ -90,12 +90,12 @@
                     <li ng-click="navClick(1,'河北资质')"><a>河北资质</a></li>
                 </ul>
             </li>
-            <li class="dropdown" ng-class="{'active':activeIndex===2}" ng-click="navClick(2,'代办资质')" ng-mouseover="tabChange(2)" ng-mouseout="tabChange()">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">代办资质<span class="caret"></span></a>
+            <li class="dropdown" ng-class="{'active':activeIndex===2}" ng-mouseover="tabChange(2)" ng-mouseout="tabChange()">
+                <a class="dropdown-toggle" ng-click="navClick(2)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">代办资质<span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-inverse">
                     <li ng-click="navClick(2,'总承包资质标准')"><a>总承包资质标准</a></li>
                     <li ng-click="navClick(2,'专业承包资质标准')"><a>专业承包资质标准</a></li>
-                    <li ng-click="navClick(2,'劳务包资质标准')"><a>劳务包资质标准</a></li>
+                    <li ng-click="navClick(2,'劳务分包资质标准')"><a>劳务分包资质标准</a></li>
                     <li ng-click="navClick(2,'安全生产许可证')"><a>安全生产许可证</a></li>
                     <li ng-click="navClick(2,'房地产开发资质')"><a>房地产开发资质</a></li>
                     <li ng-click="navClick(2,'园林绿化资质')"><a>园林绿化资质</a></li>
@@ -103,8 +103,8 @@
                     <li ng-click="navClick(2,'其他资质')"><a>其他资质</a></li>
                 </ul>
             </li>
-            <li class="dropdown" ng-class="{'active':activeIndex===3}" ng-click="navClick(3)" ng-mouseover="tabChange(3)" ng-mouseout="tabChange()">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">资质流程<span class="caret"></span></a>
+            <li class="dropdown" ng-class="{'active':activeIndex===3}" ng-mouseover="tabChange(3)" ng-mouseout="tabChange()">
+                <a class="dropdown-toggle" ng-click="navClick(3)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">资质流程<span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-inverse">
                     <li ng-click="navClick(3,'建筑企业信息查询')"><a>建筑企业信息查询</a></li>
                     <li ng-click="navClick(3,'企业办事指南')"><a>企业办事指南</a></li>
@@ -112,8 +112,8 @@
                     <li ng-click="navClick(3,'资质转让/收购')"><a>资质转让/收购</a></li>
                 </ul>
             </li>
-            <li class="dropdown" ng-class="{'active':activeIndex===4}" ng-click="navClick(4)" ng-mouseover="tabChange(4)" ng-mouseout="tabChange()">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">证书培训<span class="caret"></span></a>
+            <li class="dropdown" ng-class="{'active':activeIndex===4}" ng-mouseover="tabChange(4)" ng-mouseout="tabChange()">
+                <a class="dropdown-toggle" ng-click="navClick(4)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">证书培训<span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-inverse">
                     <li ng-click="navClick(4,'建造师培训')"><a>建造师培训</a></li>
                     <li ng-click="navClick(4,'工程师评审')"><a>工程师评审</a></li>
@@ -123,8 +123,8 @@
             </li>
             <li ng-class="{'active':activeIndex===5}" ng-click="navClick(5)" ng-mouseover="tabChange(5)" ng-mouseout="tabChange()"><a>企业寻证</a></li>
             <li ng-class="{'active':activeIndex===6}" ng-click="navClick(6)" ng-mouseover="tabChange(6)" ng-mouseout="tabChange()"><a>个人挂靠</a></li>
-            <li class="dropdown" ng-class="{'active':activeIndex===7}" ng-click="navClick(7)" ng-mouseover="tabChange(7)" ng-mouseout="tabChange()">
-                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">关于我们<span class="caret"></span></a>
+            <li class="dropdown" ng-class="{'active':activeIndex===7}" ng-mouseover="tabChange(7)" ng-mouseout="tabChange()">
+                <a class="dropdown-toggle" ng-click="navClick(7)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">关于我们<span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-inverse">
                     <li ng-click="navClick(6,'代办资质服务')"><a>代办资质服务</a></li>
                     <li ng-click="navClick(6,'猎头服务')"><a>猎头服务</a></li>

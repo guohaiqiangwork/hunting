@@ -86,6 +86,11 @@ define([
                         $state.go('aboutUs', {id: navLeftIndex});
                         break;
                 }
+                if(navLeftIndex){
+                    $rootScope.active = navLeftIndex;
+                }
+                console.log(1)
+                return false;
             };
 
             //返回上一个页面

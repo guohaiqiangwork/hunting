@@ -491,6 +491,6 @@
 .navbar .nav > li:hover .dropdown-menu {
     display: block;
 }
-.navbar .nav > li .open>.dropdown-menu {
+.open>.dropdown-menu {
     display: none;
 }
