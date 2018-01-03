@@ -462,35 +462,58 @@
     background-color: #1e4273;
     color: #ffffff;
 }
+
 .grad1 {
-    color:white;
+    color: white;
     padding: 1%;
     background: -webkit-linear-gradient(#187EEA, #0A62BC); /* Safari 5.1 - 6.0 */
     background: -o-linear-gradient(#187EEA, #0A62BC); /* Opera 11.1 - 12.0 */
     background: -moz-linear-gradient(#187EEA, #0A62BC); /* Firefox 3.6 - 15 */
     background: linear-gradient(#187EEA, #0A62BC);
 }
-.dropdown-inverse{
+
+.dropdown-inverse {
     background-color: #222;
     border-color: #080808;
     max-height: 251px;
     overflow-y: hidden;
 }
-.dropdown-inverse>li>a {
+
+.dropdown-inverse > li > a {
     color: #999;
     cursor: pointer;
 }
-.dropdown-inverse>li>a:hover, .dropdown-inverse>li>a:focus {
+
+.dropdown-inverse > li > a:hover, .dropdown-inverse > li > a:focus {
     color: #fff;
     background-color: #080808;
     border-color: #080808;
 }
+
 .navbar .nav > li .dropdown-menu {
     margin: 0;
 }
+
 .navbar .nav > li:hover .dropdown-menu {
     display: block;
 }
-.open>.dropdown-menu {
+
+.open > .dropdown-menu {
     display: none;
+}
+
+.qualificationsList_menu {
+    border-bottom: 1px silver dashed;
+    width: 90%;
+    /*margin-left: 5%;*/
+    line-height: 2;
+}
+
+.qualificationsList_menu_title {
+    background-color: silver;
+    color: #0d99fd;
+    font-weight: 500;
+    font-size: 20px;
+    width: 90%;
+    margin-left: 5%;
 }

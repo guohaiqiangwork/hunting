@@ -59,7 +59,7 @@ define([
                         },
                         views: {
                             'main': {
-                                templateUrl: "qualifications/qualifications.html?" + window.NEPTUNE.version,
+                                templateUrl: "qualifications/qualificationsList.html?" + window.NEPTUNE.version,
                                 controller: 'qualificationsCtrl'
                             }
                         }
