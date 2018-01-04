@@ -60,6 +60,7 @@ define([
              */
             $scope.navClick = function (activeIndex,navLeftIndex) {
                 $scope.activeIndex = activeIndex;
+                console.log($scope.activeIndex)
                 switch (activeIndex){
                     case 0: // 首页
                         $state.go('home');
