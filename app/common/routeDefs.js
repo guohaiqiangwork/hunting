@@ -163,6 +163,20 @@ define([
                             }
                         }
                     })
+                    //查询中心
+                    .state('queryCenter', {
+                        url: "/queryCenter",
+                        cache: false,
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies(['queryCenter/queryCenter.ctrl'])
+                        },
+                        views: {
+                            'main': {
+                                templateUrl: "queryCenter/queryCenter.html",
+                                controller: 'queryCenterCtrl'
+                            }
+                        }
+                    })
 
 
             }

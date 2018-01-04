@@ -123,15 +123,16 @@
             </li>
             <li ng-class="{'active':activeIndex===5}" ng-click="navClick(5)" ng-mouseover="tabChange(5)" ng-mouseout="tabChange()"><a>企业寻证</a></li>
             <li ng-class="{'active':activeIndex===6}" ng-click="navClick(6)" ng-mouseover="tabChange(6)" ng-mouseout="tabChange()"><a>个人挂靠</a></li>
-            <li class="dropdown" ng-class="{'active':activeIndex===7}" ng-mouseover="tabChange(7)" ng-mouseout="tabChange()">
-                <a class="dropdown-toggle" ng-click="navClick(7)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">关于我们<span class="caret"></span></a>
+            <li ng-class="{'active':activeIndex===7}" ng-click="navClick(7)" ng-mouseover="tabChange(7)" ng-mouseout="tabChange()"><a>查询中心</a></li>
+            <li class="dropdown" ng-class="{'active':activeIndex===8}" ng-mouseover="tabChange(8)" ng-mouseout="tabChange()">
+                <a class="dropdown-toggle" ng-click="navClick(8)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">关于我们<span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-inverse">
-                    <li ng-click="navClick(7,'公司简介')"><a>公司简介</a></li>
-                    <li ng-click="navClick(7,'公司文化')"><a>公司文化</a></li>
-                    <li ng-click="navClick(7,'公司团队')"><a>公司团队</a></li>
-                    <li ng-click="navClick(7,'公司资质')"><a>公司资质</a></li>
-                    <li ng-click="navClick(7,'成功案例')"><a>成功案例</a></li>
-                    <li ng-click="navClick(7,'联系我们')"><a>联系我们</a></li>
+                    <li ng-click="navClick(8,'公司简介')"><a>公司简介</a></li>
+                    <li ng-click="navClick(8,'公司文化')"><a>公司文化</a></li>
+                    <li ng-click="navClick(8,'公司团队')"><a>公司团队</a></li>
+                    <li ng-click="navClick(8,'公司资质')"><a>公司资质</a></li>
+                    <li ng-click="navClick(8,'成功案例')"><a>成功案例</a></li>
+                    <li ng-click="navClick(8,'联系我们')"><a>联系我们</a></li>
                 </ul>
             </li>
         </ul>

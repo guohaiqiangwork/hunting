@@ -82,7 +82,10 @@ define([
                     case 6: // 个人挂靠
                         $state.go('individualCallings', {id: navLeftIndex});
                         break;
-                    case 7: // 关于我们
+                    case 7: // 查询中心
+                        $state.go('queryCenter', {id: navLeftIndex});
+                        break;
+                    case 8: // 关于我们
                         $state.go('aboutUs', {id: navLeftIndex});
                         break;
                 }
