@@ -92,7 +92,6 @@ define([
                 if(navLeftIndex){
                     $rootScope.active = navLeftIndex;
                 }
-                console.log(1)
                 return false;
             };
 
