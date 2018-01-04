@@ -1,15 +1,48 @@
-<div class="col-xs-12" style="padding: 0">
-    <div class="col-xs-10 col-lg-offset-1">
-        <div style="float: left;margin-top: 20px;width: 100%;border-bottom: 1px solid #BFBFBF;">
-            <i style="float: left;margin-right: 5px;">
-                <a href="http://www.360zizhi.com/query.php" target="_blank">人才证书查询</a>
-            </i>
-            <i style="float: left;margin-right: 5px;">
-                 <a href="http://www.360zizhi.com/query.php" target="_blank">企业资质查询</a>
-            </i>
-            <i style="float: left;margin-right: 5px;">
-                <a href="http://www.360zizhi.com/query.php" target="_blank">备案业绩查询</a>
-            </i>
+<div class="col-xs-12" style="padding: 0;min-height: 500px">
+    <div class="col-xs-10 padding_0 col-lg-offset-1">
+        <div style="border-bottom:1px solid #ddd;height: 24px">
+            <ul>
+                <li style="float: left;margin-right:2%;background-color: #0D96E7;border-top-left-radius:2px;border-top-right-radius:2px;"
+                    ng-mouseover="goto('1')">人才证书查询</li>
+                <li style="float: left;margin-right:2%;background-color: #0D96E7;border-top-left-radius:2px;border-top-right-radius:2px;"
+                    ng-mouseover="goto('2')">企业资质查询</li>
+                <li style="float: left;margin-right:2%;background-color: #0D96E7;border-top-left-radius:2px;border-top-right-radius:2px;"
+                    ng-mouseover="goto('3')">备案业绩查询</li>
+            </ul>
+        </div>
+        <div ng-show="temp['1']">
+            <a target="_blank" class="queryCenter_a" href="http://jzsgl.coc.gov.cn/archisearch/">注册建造师查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/eportal/ui?pageId=308888">专业人员查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/eportal/ui?pageId=308888">企业负责人查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/eportal/ui?pageId=308888">项目负责人查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/eportal/ui?pageId=308888">专职安全员查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/">监理工程师查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/">造价工程师查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/eportal/ui?pageId=308888">技术工人查询</a>
+        </div>
+        <div ng-show="temp['2']">
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/eportal/ui?pageId=307900">建筑业资质证书查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/eportal/ui?pageId=307900">勘察设计资质查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/eportal/ui?pageId=307900">安全生产许可证查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/eportal/ui?pageId=314402">工程造价企业资质查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/eportal/ui?pageId=314394">监理企业资质查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/eportal/ui?pageId=308932">劳务企业资质查询</a>
+            <a target="_blank" class="queryCenter_a"  href="http://www.bjjs.gov.cn/tabid/2058/Default.aspx">招标代理机构证书查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn">房地产开发资质查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/publish/portal0/">北京市建委</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjchy.gov.cn/">北京市朝阳区建委</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.hdjw.gov.cn/">北京市海淀区建委</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjmtg.gov.cn/">北京市门头沟建委</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjmtg.gov.cn/">北京市丰台区建委</a>
+            <a target="_blank" class="queryCenter_a"  href="http://www.bjxch.gov.cn/XCHIndex.html">北京市西城区建委</a>
+        </div>
+        <div ng-show="temp['3']">
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/bjjs/xxgk/ztzl/jzsc/index.shtml">招投标备案查询</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/bjjs/xxgk/ztzl/jzsc/index.shtml">施工合同备案信息</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/bjjs/xxgk/ztzl/jzsc/index.shtml">合同备案信息</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/bjjs/xxgk/ztzl/jzsc/index.shtml">安全质量评估信息</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/bjjs/xxgk/ztzl/jzsc/index.shtml">竣工备案信息</a>
+            <a target="_blank" class="queryCenter_a" href="http://www.bjjs.gov.cn/bjjs/xxgk/ztzl/jzsc/index.shtml">施工业绩信息</a>
         </div>
     </div>
 </div>
