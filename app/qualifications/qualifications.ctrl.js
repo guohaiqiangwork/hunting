@@ -21,9 +21,9 @@ define([
              * 界面跳转
              * @param info
              */
-            $scope.switchView = function (info, name) {
+            $scope.switchView = function (info, infoName) {
                 $rootScope.active = info;
-                $scope.qualificationsTitle = name
+                $scope.qualificationsTitle = infoName
             };
 
             init();

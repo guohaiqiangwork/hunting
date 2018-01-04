@@ -101,7 +101,7 @@ define([
                         },
                         views: {
                             'main': {
-                                templateUrl: "enterpriseService/enterpriseService.html?" + window.NEPTUNE.version,
+                                templateUrl: "enterpriseService/enterpriseServiceList.html?" + window.NEPTUNE.version,
                                 controller: 'enterpriseServiceCtrl'
                             }
                         }
@@ -115,7 +115,7 @@ define([
                         },
                         views: {
                             'main': {
-                                templateUrl: "certificateTraining/certificateTraining.html?" + window.NEPTUNE.version,
+                                templateUrl: "certificateTraining/certificateTrainingList.html?" + window.NEPTUNE.version,
                                 controller: 'certificateTrainingCtrl'
                             }
                         }
