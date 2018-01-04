@@ -517,3 +517,7 @@
     width: 90%;
     margin-left: 5%;
 }
+
+.mouse_gesture {
+    cursor: pointer!important;
+}

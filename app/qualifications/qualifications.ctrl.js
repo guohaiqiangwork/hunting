@@ -6,7 +6,7 @@ define([
 ], function (app, config, constants, layer) {
     app.registerController('qualificationsCtrl', ['$scope', '$state', '$rootScope', '$$neptune', '$timeout', '$stateParams',
         function ($scope, $state, $rootScope, $$neptune, $timeout, $stateParams) {
-            $scope.leftTitle = $stateParams.id || '资质动态';
+            $scope.leftTitle = $stateParams.id || '资质';
             $rootScope.active = $scope.leftTitle;
             $scope.moreList = false;//更多初始化
             //点击更多
@@ -21,9 +21,9 @@ define([
              * 界面跳转
              * @param info
              */
-            $scope.switchView = function (info, name) {
+            $scope.switchView = function (info, infoName) {
                 $rootScope.active = info;
-                $scope.qualificationsTitle = name
+                $scope.qualificationsTitle = infoName
             };
 
             init();
