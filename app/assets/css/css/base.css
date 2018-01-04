@@ -39,8 +39,8 @@ a:hover {
 body {
     position: relative;
     overflow-x: hidden; /*background:#eee url(../images/bg.gif) repeat-x 0 0;*/
+    font: 14px/1.5 "PingFang SC","Lantinghei SC","Microsoft YaHei","HanHei SC","Helvetica Neue","Open Sans",Arial,"Hiragino Sans GB","微软雅黑",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
 }
-
 #pageLoad {
     background: #0f1923;
     position: fixed;

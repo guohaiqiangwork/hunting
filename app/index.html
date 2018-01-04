@@ -76,10 +76,13 @@
       style="height: 100%;background-color: #F0F0F2;min-width: 1340px;overflow-x: auto;">
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
     <div class="container">
+        <div style="float: left;line-height: 50px;width: 100px;margin: 0 1%">
+            <img src="assets/img/logo1.png" width="100%"/>
+        </div>
         <ul class="nav navbar-nav">
             <li ng-class="{'active':activeIndex===0}" ng-click="navClick(0)" ng-mouseover="tabChange(0)" ng-mouseout="tabChange()"><a>首页</a></li>
             <li class="dropdown" ng-class="{'active':activeIndex===1}" ng-mouseover="tabChange(1)" ng-mouseout="tabChange()">
-                <a class="dropdown-toggle" ng-click="navClick(1)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">资质动态<span class="caret"></span></a>
+                <a class="dropdown-toggle" ng-click="navClick(1)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">资质动态</a>
                 <ul class="dropdown-menu dropdown-inverse">
                     <li ng-click="navClick(1,'建设部资质')"><a>建设部资质</a></li>
                     <li ng-click="navClick(1,'北京资质')"><a>北京资质</a></li>
@@ -91,7 +94,7 @@
                 </ul>
             </li>
             <li class="dropdown" ng-class="{'active':activeIndex===2}" ng-mouseover="tabChange(2)" ng-mouseout="tabChange()">
-                <a class="dropdown-toggle" ng-click="navClick(2)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">代办资质<span class="caret"></span></a>
+                <a class="dropdown-toggle" ng-click="navClick(2)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">代办资质</a>
                 <ul class="dropdown-menu dropdown-inverse">
                     <li ng-click="navClick(2,'总承包资质标准')"><a>总承包资质标准</a></li>
                     <li ng-click="navClick(2,'专业承包资质标准')"><a>专业承包资质标准</a></li>
@@ -104,7 +107,7 @@
                 </ul>
             </li>
             <li class="dropdown" ng-class="{'active':activeIndex===3}" ng-mouseover="tabChange(3)" ng-mouseout="tabChange()">
-                <a class="dropdown-toggle" ng-click="navClick(3)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">资质流程<span class="caret"></span></a>
+                <a class="dropdown-toggle" ng-click="navClick(3)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">资质流程</a>
                 <ul class="dropdown-menu dropdown-inverse">
                     <li ng-click="navClick(3,'建筑企业信息查询')"><a>建筑企业信息查询</a></li>
                     <li ng-click="navClick(3,'企业办事指南')"><a>企业办事指南</a></li>
@@ -113,7 +116,7 @@
                 </ul>
             </li>
             <li class="dropdown" ng-class="{'active':activeIndex===4}" ng-mouseover="tabChange(4)" ng-mouseout="tabChange()">
-                <a class="dropdown-toggle" ng-click="navClick(4)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">证书培训<span class="caret"></span></a>
+                <a class="dropdown-toggle" ng-click="navClick(4)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">证书培训</a>
                 <ul class="dropdown-menu dropdown-inverse">
                     <li ng-click="navClick(4,'建造师培训')"><a>建造师培训</a></li>
                     <li ng-click="navClick(4,'工程师评审')"><a>工程师评审</a></li>
@@ -125,7 +128,7 @@
             <li ng-class="{'active':activeIndex===6}" ng-click="navClick(6)" ng-mouseover="tabChange(6)" ng-mouseout="tabChange()"><a>个人挂靠</a></li>
             <li ng-class="{'active':activeIndex===7}" ng-click="navClick(7)" ng-mouseover="tabChange(7)" ng-mouseout="tabChange()"><a>查询中心</a></li>
             <li class="dropdown" ng-class="{'active':activeIndex===8}" ng-mouseover="tabChange(8)" ng-mouseout="tabChange()">
-                <a class="dropdown-toggle" ng-click="navClick(8)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">关于我们<span class="caret"></span></a>
+                <a class="dropdown-toggle" ng-click="navClick(8)" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">关于我们</a>
                 <ul class="dropdown-menu dropdown-inverse">
                     <li ng-click="navClick(8,'公司简介')"><a>公司简介</a></li>
                     <li ng-click="navClick(8,'公司文化')"><a>公司文化</a></li>
@@ -136,7 +139,11 @@
                 </ul>
             </li>
         </ul>
-    </div>
+        <ul>
+            <li class="dropdown-toggle" style="float: left;line-height: 50px;margin-left: 7%">登陆</li>
+            <li class="dropdown-toggle" style="float: left;margin: 0 1%;line-height: 50px">|</li>
+            <li class="dropdown-toggle" style="float: left;line-height: 50px">注册</li></ul>
+        </div>
 </nav>
 <div class="col-xs-12 cancel_col_padding background_gray2" style="position: relative;width:100%;height:100%">
     <div ui-view="main"></div>

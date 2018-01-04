@@ -4453,8 +4453,7 @@ select[multiple].input-group-sm>.input-group-addon, select[multiple].input-group
 }
 
 .navbar-inverse {
-    background-color: #222;
-    border-color: #080808
+    background-color: #FFD100;
 }
 
 .navbar-inverse .navbar-brand {
@@ -4471,18 +4470,17 @@ select[multiple].input-group-sm>.input-group-addon, select[multiple].input-group
 }
 
 .navbar-inverse .navbar-nav>li>a {
-    color: #999
+    color: #282828
 }
 
 .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
-    color: #fff;
-    background-color: transparent
+    color: #FFD100;
+    background-color: #444
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover,
 .navbar-inverse .navbar-nav>.active>a:focus {
-    color: #fff;
-    background-color: #080808
+    font-weight: bold;
 }
 
 .navbar-inverse .navbar-nav>.disabled>a, .navbar-inverse .navbar-nav>.disabled>a:hover,

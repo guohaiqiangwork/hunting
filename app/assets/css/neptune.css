@@ -473,10 +473,10 @@
 }
 
 .dropdown-inverse {
-    background-color: #222;
-    border-color: #080808;
+    background-color: white;
     max-height: 251px;
     overflow-y: hidden;
+    box-shadow:-1px 0 1px #aaa,1px 0 1px #aaa,0 1px 1px #aaa
 }
 
 .dropdown-inverse > li > a {
@@ -485,9 +485,7 @@
 }
 
 .dropdown-inverse > li > a:hover, .dropdown-inverse > li > a:focus {
-    color: #fff;
-    background-color: #080808;
-    border-color: #080808;
+    background-color: #FFD100;
 }
 
 .navbar .nav > li .dropdown-menu {
