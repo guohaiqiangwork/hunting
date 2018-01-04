@@ -105,6 +105,7 @@ define([
             };
 
             var init = function () {
+                $state.go('home');
             };
             init();
         }]);
