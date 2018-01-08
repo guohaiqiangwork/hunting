@@ -10,6 +10,11 @@ define([
             $rootScope.labelName = '';
             // 产品名称
             $rootScope.headProductName = '';
+            // 导航栏选中索引
+            $scope.activeIndex = localStorageService.get("activeIndex")||0;
+            // 导航栏原始选中索引
+            var oldActiveIndex = 0;
+
             // 提示框配置
             layer.config({
                 path: "assets/js/layer/"
@@ -33,10 +38,6 @@ define([
                 }, 10);
             });
 
-            // 导航栏选中索引
-            $scope.activeIndex = 0;
-            // 导航栏原始选中索引
-            var oldActiveIndex = 0;
             /**
              * 鼠标滑过事件
              * @param activeIndex
@@ -60,6 +61,7 @@ define([
              */
             $scope.navClick = function (activeIndex,navLeftIndex) {
                 $scope.activeIndex = activeIndex;
+                localStorageService.set("activeIndex",activeIndex);
                 switch (activeIndex){
                     case 0: // 首页
                         $state.go('home');
