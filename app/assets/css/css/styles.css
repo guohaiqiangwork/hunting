@@ -248,3 +248,13 @@ h1 {
 .queryCenter_a{
     float: left; padding-left: 30px;line-height: 40px; width: 180px; color: #656565; font-size: 14px;
 }
+.release{
+    float: left;
+    height: 32px;
+    font-size: 14px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 28px;
+    line-height: 30px;
+    text-align: center;
+}

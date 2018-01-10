@@ -15,24 +15,9 @@
                 专业承包资质标准
             </div>
             <div class="qualificationDynamics_menu"
-                 ng-class="{font_color_black1:active=='劳务分包资质标准'}"
-                 ng-click="switchView('劳务分包资质标准')">
-                劳务分包资质标准
-            </div>
-            <div class="qualificationDynamics_menu"
                  ng-class="{font_color_black1:active=='安全生产许可证'}"
                  ng-click="switchView('安全生产许可证')">
                 安全生产许可证
-            </div>
-            <div class="qualificationDynamics_menu"
-                 ng-class="{font_color_black1:active=='房地产开发资质'}"
-                 ng-click="switchView('房地产开发资质')">
-                房地产开发资质
-            </div>
-            <div class="qualificationDynamics_menu"
-                 ng-class="{font_color_black1:active=='园林绿化资质'}"
-                 ng-click="switchView('园林绿化资质')">
-                园林绿化资质
             </div>
             <div class="qualificationDynamics_menu"
                  ng-class="{font_color_black1:active=='设计资质标准'}"
@@ -51,10 +36,7 @@
             <div ng-if="active=='代办资质'" ng-include="'qualificationDynamics/dynamics.html'"></div>
             <div ng-if="active=='总承包资质标准'" ng-include="'qualificationDynamics/generalContract.html'"></div>
             <div ng-if="active=='专业承包资质标准'" ng-include="'qualificationDynamics/major.html'"></div>
-            <div ng-if="active=='劳务分包资质标准'" ng-include="'qualificationDynamics/labourServices.html'"></div>
             <div ng-if="active=='安全生产许可证'" ng-include="'qualificationDynamics/safetyProduction.html'"></div>
-            <div ng-if="active=='房地产开发资质'" ng-include="'qualificationDynamics/realEstate.html'"></div>
-            <div ng-if="active=='园林绿化资质'" ng-include="'qualificationDynamics/landscaping.html'"></div>
             <div ng-if="active=='设计资质标准'" ng-include="'qualificationDynamics/designQualification.html'"></div>
             <div ng-if="active=='其他资质'" ng-include="'qualificationDynamics/otherQualifications.html'"></div>
         </div>
