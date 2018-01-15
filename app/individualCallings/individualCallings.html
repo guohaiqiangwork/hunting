@@ -13,65 +13,27 @@
                 <ul style="width:100%; line-height:30px; padding-top:10px; padding-bottom:10px; overflow:hidden; font-size:14px;border-bottom:1px dotted #dedede;">
                     <li style="float:left; width:75px; padding-left:10px">所有分类</li>
                     <li style="float:right; width:900px">
-                        <div style="width:150px; float:left">一级建造师</div>
-                        <div style="width:150px; float:left">二级建造师</div>
-                        <div style="width:150px; float:left">土木工程师</div>
-                        <div style="width:150px; float:left">结构师</div>
-                        <div style="width:150px; float:left">公用设备工程师</div>
-                        <div style="width:150px; float:left">电气工程师</div>
-                        <div style="width:150px; float:left">监理师</div>
-                        <div style="width:150px; float:left">造价师</div>
-                        <div style="width:150px; float:left">电气工程师</div>
-                        <div style="width:150px; float:left">注册咨询师</div>
-                        <div style="width:150px; float:left">资质办理与升级</div>
-                        <div style="width:150px; float:left">职称证书</div>
-                        <div style="width:150px; float:left">建筑师</div>
-                        <div style="width:150px; float:left">其他执业证书</div>
-                        <div style="width:150px; float:left">一级防护工程师</div>
-                        <div style="width:150px; float:left">二级防护工程师</div>
-                        <div style="width:150px; float:left">注册消防工程师</div>
-                        <div style="width:150px; float:left">八大员</div>
+                        <div style="width:150px; float:left" ng-repeat="item in classificationBigList">{{item.name}}
+                        </div>
                     </li>
                 </ul>
                 <ul style="width:100%; line-height:30px; padding-top:5px; padding-bottom:10px; overflow:hidden; font-size:14px;border-bottom:1px dotted #dedede;">
                     <li style="float:left; width:75px; padding-left:10px">所有小类</li>
                     <li style="float:right; width:900px">
-                        <div style="width:150px; float:left">城市规划师
-                        </div>
-                        <div style="width:150px; float:left">化工工程师
-                        </div>
-                        <div style="width:150px; float:left">环评工程师
-                        </div>
-                        <div style="width:150px; float:left">房地产估价师
-                        </div>
-                        <div style="width:150px; float:left">注册税务师
+                        <div style="width:150px; float:left" ng-repeat="item in classificationSmallList">{{item.name}}
                         </div>
                     </li>
                 </ul>
                 <ul style="width:100%; line-height:30px; padding-top:5px; padding-bottom:10px; overflow:hidden; font-size:14px;border-bottom:1px dotted #dedede;">
                     <li style="float:left; width:75px; padding-left:10px">所有地区</li>
                     <li style="float:right; width:900px">
-                        <div style="width:90px; float:left">北京</div>
-                        <div style="width:90px; float:left">四川</div>
-                        <div style="width:90px; float:left">江苏</div>
-                        <div style="width:90px; float:left">上海</div>
-                        <div style="width:90px; float:left">广东</div>
-                        <div style="width:90px; float:left">山东</div>
-                        <div style="width:90px; float:left">河北</div>
-                        <div style="width:90px; float:left">浙江</div>
-                        <div style="width:90px; float:left">陕西</div>
-                        <div style="width:90px; float:left">安徽</div>
-                        <div style="width:90px; float:left">重庆</div>
-                        <div style="width:90px; float:left">湖北</div>
-                        <div style="width:90px; float:left">河南</div>
-                        <div style="width:90px; float:left">福建</div>
+                        <div style="width:90px; float:left" ng-repeat="item in  allAreasList">{{item.name}}</div>
                     </li>
                 </ul>
                 <ul style="width:100%; line-height:30px; padding-top:5px; overflow:hidden; font-size:14px">
                     <li style="float:left; width:75px; padding-left:10px">二级地区</li>
                     <li style="float:right; width:900px; padding-bottom:10px">
                         请先选择地区大类
-
                     </li>
                 </ul>
             </div>
@@ -80,8 +42,12 @@
         <div class="col-xs-12" style="margin-bottom: 2%">
             <div style="border-bottom:5px solid #007AAC;min-height: 32px">
                 <ul>
-                    <li class="release"  ng-class="{font_color_black1:active=='个人挂证'}"  ng-click="switchView('个人挂证')">个人挂证</li>
-                    <li class="release"  ng-class="{font_color_black1:active=='企业聘证'}"  ng-click="switchView('企业聘证')">企业聘证</li>
+                    <li class="release" ng-class="{font_color_black1:active=='个人挂证'}" ng-click="switchView('个人挂证')">
+                        个人挂证
+                    </li>
+                    <li class="release" ng-class="{font_color_black1:active=='企业聘证'}" ng-click="switchView('企业聘证')">
+                        企业聘证
+                    </li>
                 </ul>
             </div>
         </div>
