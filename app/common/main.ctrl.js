@@ -96,7 +96,11 @@ define([
                 }
                 return false;
             };
-
+            // 登陆
+            $scope.goToLogin=function () {
+                $scope.loginTarge= false;
+                $state.go('login')
+            };
             //返回上一个页面
             $scope.goToPage = function (labelName) {
                 javascript: history.go(-1);
@@ -106,6 +110,7 @@ define([
             };
 
             var init = function () {
+                $scope.loginTarge= true;
                 $state.go('home');
             };
             init();

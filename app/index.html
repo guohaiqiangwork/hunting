@@ -73,20 +73,7 @@
 
 <body id="ng-app" ng-controller="MainCtrl"
       style="height: 100%;background-color: #F0F0F2;min-width: 1340px;overflow-x: auto;">
-<!--<div class="col-xs-12" style="background-color: #f1f1f1;z-index: 99;">-->
-    <!--<div class="col-xs-4 text-center">-->
-        <!--<img src="assets/img/logo1.png" style="width: 50%;margin-top: 2%">-->
-    <!--</div>-->
-    <!--<div class="col-xs-4" style="margin-top: 4%;margin-left: -5%;">-->
-        <!--<div>寻找代理资质申请、资质就位、换证服务机构</div>-->
-        <!--<div>就找华洪顺达咨询有限公司</div>-->
-    <!--</div>-->
-    <!--<div class="col-xs-4 text-center" style="margin-top: 4%;">-->
-        <!--<div>就找华洪顺达咨询有限公司</div>-->
-        <!--<div>联系电话：010 59467717</div>-->
-    <!--</div>-->
-<!--</div>-->
-<nav class="navbar" role="navigation" style="background: white">
+<nav ng-if="loginTarge" class="navbar" role="navigation" style="background: white">
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="" style="padding-top: 3px;">
@@ -162,14 +149,14 @@
             </li>
         </ul>
         <ul>
-            <li class="dropdown-toggle" style="float: left;line-height: 50px;margin-left: 7%">登陆</li>
+            <li class="dropdown-toggle"  ng-click="goToLogin()" style="float: left;line-height: 50px;margin-left: 7%">登陆</li>
             <li class="dropdown-toggle" style="float: left;margin: 0 1%;line-height: 50px">|</li>
             <li class="dropdown-toggle" style="float: left;line-height: 50px">注册</li></ul>
         </div>
 </nav>
 <div class="col-xs-12 cancel_col_padding background_gray2" style="position: relative;width:100%;height:100%">
     <div ui-view="main"></div>
-    <button-border></button-border>
+    <button-border ng-if="loginTarge"></button-border>
 </div>
 <!--动态加载js  -->
 <script>
