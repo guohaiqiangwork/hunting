@@ -72,16 +72,13 @@ define([
                     case 2: // 代办资质
                         $state.go('dynamicsList', {id: navLeftIndex});
                         break;
-                    case 3: // 资质流程
-                        $state.go('enterpriseService', {id: navLeftIndex});
-                        break;
                     case 4: // 证书培训
                         $state.go('certificateTraining', {id: navLeftIndex});
                         break;
-                    case 5: // 企业寻证
+                    case 5: // 全职招聘
                         $state.go('companiesFind', {id: navLeftIndex});
                         break;
-                    case 6: // 个人挂靠
+                    case 6: // 证书服务
                         $state.go('individualCallings', {id: navLeftIndex});
                         break;
                     case 7: // 查询中心
