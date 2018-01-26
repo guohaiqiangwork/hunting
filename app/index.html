@@ -147,6 +147,14 @@
                     <li ng-click="navClick(8,'联系我们')"><a>联系我们</a></li>
                 </ul>
             </li>
+            <li class="dropdown" ng-class="{'navbar-active':activeIndex===9}" ng-mouseover="tabChange(9)"
+                ng-mouseout="tabChange()">
+                <a class="dropdown-toggle" ng-click="navClick(9)" data-toggle="dropdown" role="button"
+                   aria-haspopup="true" aria-expanded="true">网站管理</a>
+                <ul class="dropdown-menu dropdown-inverse">
+                    <li ng-click="navClick(8,'公司文化')"><a>公司文化</a></li>
+                </ul>
+            </li>
         </ul>
         <ul>
             <li class="dropdown-toggle"  ng-click="goToLogin()" style="float: left;line-height: 50px;margin-left: 7%">登陆</li>

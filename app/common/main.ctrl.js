@@ -11,7 +11,7 @@ define([
             // 产品名称
             $rootScope.headProductName = '';
             // 导航栏选中索引
-            $scope.activeIndex = localStorageService.get("activeIndex")||0;
+            $scope.activeIndex = localStorageService.get("activeIndex") || 0;
             // 导航栏原始选中索引
             var oldActiveIndex = 0;
 
@@ -44,9 +44,9 @@ define([
              */
             $scope.mouseChange = function (activeIndex) {
                 // 滑出
-                if(activeIndex===undefined){
+                if (activeIndex === undefined) {
                     $scope.activeIndex = oldActiveIndex;
-                }else{
+                } else {
                     // 滑入
                     // 保留原来选择
                     oldActiveIndex = angular.copy($scope.activeIndex);
@@ -59,10 +59,10 @@ define([
              * @param activeIndex
              * @param navLeftIndex
              */
-            $scope.navClick = function (activeIndex,navLeftIndex) {
+            $scope.navClick = function (activeIndex, navLeftIndex) {
                 $scope.activeIndex = activeIndex;
-                localStorageService.set("activeIndex",activeIndex);
-                switch (activeIndex){
+                localStorageService.set("activeIndex", activeIndex);
+                switch (activeIndex) {
                     case 0: // 首页
                         $state.go('home');
                         break;
@@ -87,15 +87,19 @@ define([
                     case 8: // 关于我们
                         $state.go('aboutUs', {id: navLeftIndex});
                         break;
+                    case 9: // 关于我们
+                        $state.go('management', {id: navLeftIndex});
+
+                        break;
                 }
-                if(navLeftIndex){
+                if (navLeftIndex) {
                     $rootScope.active = navLeftIndex;
                 }
                 return false;
             };
             // 登陆
-            $scope.goToLogin=function () {
-                $scope.loginTarge= false;
+            $scope.goToLogin = function () {
+                $scope.loginTarge = false;
                 $state.go('login')
             };
             //返回上一个页面
@@ -107,7 +111,7 @@ define([
             };
 
             var init = function () {
-                $scope.loginTarge= true;
+                $scope.loginTarge = true;
                 $state.go('home');
             };
             init();

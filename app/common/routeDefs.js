@@ -177,6 +177,20 @@ define([
                             }
                         }
                     })
+                    //查询中心
+                    .state('management', {
+                        url: "/management",
+                        cache: false,
+                        resolve: {
+                            dummy: $couchPotatoProvider.resolveDependencies(['management/management.ctrl'])
+                        },
+                        views: {
+                            'main': {
+                                templateUrl: "management/management.html",
+                                controller: 'managementCtrl'
+                            }
+                        }
+                    })
 
 
             }
