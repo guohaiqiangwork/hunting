@@ -27,10 +27,87 @@ define([
 
             // 数据入参转为后端格式
             var exportRules = {
+                /**
+                 * 资质动态首页
+                 */
+                dynamicHomepage: function (data) {
+                    var _request = {
+                        "data":{},
+                        "pagination":{
+                            "pageIndex":1,
+                            "pageSize":5  }
+                    };
+                    return _request;
+                },
+                /**
+                 * 资质动态首页更多
+                 */
+                dynamicHomepageMore: function (data) {
+                    var _request = {
+                        "data":{},
+                        "pagination":{
+                            "pageIndex":1,
+                            "pageSize":5  }
+                    };
+                    return _request;
+                },
+                /**
+                 * 资质动态某个更多
+                 */
+                dynamicHomepageAMore: function (data) {
+                    var _request = {
+                        "data":{},
+                        "pagination":{
+                            "pageIndex":1,
+                            "pageSize":5  }
+                    };
+                    return _request;
+                },
+                /**
+                 * 资质动态详情
+                 */
+                dynamicHomepageDetails: function (data) {
+                    var _request = {
+                        "data":{},
+                        "pagination":{
+                            "pageIndex":1,
+                            "pageSize":5  }
+                    };
+                    return _request;
+                }
 
             };
             //数据出参转为前端格式
             var importRules = {
+                /**
+                 * 资质动态首页
+                 */
+                dynamicHomepage: function (data) {
+                    var _request = {};
+                    return _request;
+                },
+                /**
+                 * 资质动态首页更多
+                 */
+                dynamicHomepageMore: function (data) {
+                    var _request = {};
+                    return _request;
+                },
+                /**
+                 * 资质动态某个更多
+                 */
+                dynamicHomepageAMore: function (data) {
+                    var _request = {};
+                    return _request;
+                },
+                /**
+                 * 资质动态详情
+                 */
+                dynamicHomepageDetails: function (data) {
+                    var _request = {};
+                    return _request;
+                }
+
             };
             //加载层
             var loadingIndex = undefined, isError = undefined;

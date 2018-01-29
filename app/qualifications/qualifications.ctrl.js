@@ -14,9 +14,6 @@ define([
                 $scope.moreList = true;
                 //    透过id不同调取不同接口
             };
-            var init = function () {
-
-            };
             /**
              * 界面跳转
              * @param info
@@ -25,7 +22,23 @@ define([
                 $rootScope.active = info;
                 $scope.qualificationsTitle = infoName
             };
-
+            /**
+             * 资质动态首页接口
+             */
+            $scope.toObtainDynamic = function () {
+                    var keyword = {};
+                    $$neptune.find(constants.REQUEST_TARGET.DYNAMIC_HOMEPAGE, keyword, {
+                        onSuccess: function (data) {
+                          console.log(data);
+                        },
+                        onError: function (e) {
+                            alert("网络缓慢请稍后重试");
+                        }
+                    });
+            };
+            var init = function () {
+                $scope.toObtainDynamic();
+            };
             init();
         }]);
 
