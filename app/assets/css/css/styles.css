@@ -258,3 +258,41 @@ h1 {
     line-height: 30px;
     text-align: center;
 }
+.theQuery{
+    padding-top:50px;
+    background-color: white;
+    height: 200px;
+}
+.theQuery a{
+    color: #006699;
+    text-decoration:none;
+}
+.theQueryUl{
+    border-bottom:1px solid #ddd;
+    height: 50px;
+}
+.theQueryUl li{
+    padding: 0 2%;
+    font-size: 22px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    margin-right:1%;
+    background-color: #0D96E7;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+.theQueryUl li:hover{
+    cursor:hand;
+    background:#2C4BA6;
+}
+.qqChat{
+    position: fixed;
+    top: 40%;
+    z-index: 99;
+    width: 15%;
+    height: 250px;
+    background-color:#fff;
+    border-radius: 2px;
+}
+

@@ -7,14 +7,14 @@ define([
     app.registerController('queryCenterCtrl', ['$scope', '$state', '$rootScope', 'localStorageService', '$$neptune', '$timeout',
         function ($scope, $state, $rootScope, localStorageService, $$neptune, $timeout) {
             $scope.temp = {};
-            $scope.goto = function (number) {
+            $scope.temp['1']=true;
+            $scope.Switch = function (number) {
                 for (var k in $scope.temp) {
                     if (number !== k) {
                         $scope.temp[k] = false;
                     }
                 }
-                console.log("aaa");
-                $scope.temp[number] = !$scope.temp[number];
+                $scope.temp[number] = true;
             };
 
             var init = function () {

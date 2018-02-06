@@ -7,8 +7,9 @@ define([
     app.registerController('homeCtrl', ['$scope', '$state', '$rootScope', 'localStorageService', '$$neptune', '$timeout',
         function ($scope, $state, $rootScope, localStorageService, $$neptune, $timeout) {
             //打开qq聊天
-            $scope.qqChat = function () {
-                window.open('http://wpa.qq.com/msgrd?v=3&uin=1016075562&site=qq&menu=yes', '_brank');
+            $scope.qqChat = function (qq) {
+                var url='http://wpa.qq.com/msgrd?v=3&uin='+qq+'&site=qq&menu=yes';
+                window.open(url, '_brank');
             };
             //轮播图
             var carouselFigure = function () {
