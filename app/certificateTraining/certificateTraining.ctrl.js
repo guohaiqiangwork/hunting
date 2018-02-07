@@ -53,7 +53,7 @@ define([
                 }, $scope.pagination);
             };
             var init = function () {
-                $scope.getCertificateTraining()//获取首页信息
+                $scope.getCertificateTraining();//获取首页信息
             };
 
             init();

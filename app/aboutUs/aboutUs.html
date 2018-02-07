@@ -16,11 +16,6 @@
                  ng-click="switchView('公司团队')">
                公司团队
             </div>
-            <div class="qualificationDynamics_menu"
-                 ng-class="{font_color_black1:active=='成功案例'}"
-                 ng-click="switchView('成功案例')">
-                成功案例
-            </div>
             <div class="qualificationDynamics_menu" style="margin-bottom: 20px"
                  ng-class="{font_color_black1:active=='联系我们'}"
                  ng-click="switchView('联系我们')">
@@ -31,8 +26,6 @@
             <div ng-if="active=='公司简介'" ng-include="'aboutUs/companyJJ.html'"></div>
             <div ng-if="active=='公司文化'" ng-include="'aboutUs/companyWH.html'"></div>
             <div ng-if="active=='公司团队'" ng-include="'aboutUs/companyTD.html'"></div>
-            <div ng-if="active=='公司资质'" ng-include="'aboutUs/companyZZ.html'"></div>
-            <div ng-if="active=='成功案例'" ng-include="'aboutUs/successfulCases.html'"></div>
             <div ng-if="active=='联系我们'" ng-include="'aboutUs/contactUs.html'"></div>
         </div>
     </div>

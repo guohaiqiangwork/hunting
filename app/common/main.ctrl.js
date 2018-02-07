@@ -87,10 +87,6 @@ define([
                     case 8: // 关于我们
                         $state.go('aboutUs', {id: navLeftIndex});
                         break;
-                    case 9: // 关于我们
-                        $state.go('management', {id: navLeftIndex});
-
-                        break;
                 }
                 if (navLeftIndex) {
                     $rootScope.active = navLeftIndex;

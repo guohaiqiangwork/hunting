@@ -44,8 +44,11 @@ define([
                  * 资质动态首页更多
                  */
                 dynamicHomepageMore: function (data) {
+                    console.log(data);
                     var _request = {
-                        "data": {},
+                        "data": {
+                            "dynamicAddress":data.keyWords.dynamicAddress
+                        },
                         "pagination": {
                             "pageIndex": 1,
                             "pageSize": 5

@@ -14,6 +14,17 @@ define([
             $scope.goToMore = function (id) {
                 $scope.moreList = true;
                 //    透过id不同调取不同接口
+                var keyword = {
+                    "dynamicAddress":id
+                };
+                $$neptune.find(constants.REQUEST_TARGET.DYNAMIC_HOMEPAGE_MORE, keyword, {
+                    onSuccess: function (data) {
+                       console.log(data);
+                    },
+                    onError: function (e) {
+                        alert("网络缓慢请稍后重试");
+                    }
+                });
             };
             /**
              * 界面跳转

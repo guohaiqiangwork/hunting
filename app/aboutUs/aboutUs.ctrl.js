@@ -7,10 +7,9 @@ define([
 ], function (app, config, constants, layer) {
     app.registerController('aboutUsCtrl', ['$scope', '$state', '$rootScope', '$$neptune', '$timeout', '$stateParams',
         function ($scope, $state, $rootScope, $$neptune, $timeout, $stateParams) {
-            $scope.leftTitle = $stateParams.id;
+            $scope.leftTitle = $stateParams.id||"公司简介";
             $scope.active = $scope.leftTitle;
             $scope.newDay=new Date();
-            console.log($scope.newDay);
             /**
              * 界面跳转
              * @param info

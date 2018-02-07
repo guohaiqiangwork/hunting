@@ -149,9 +149,9 @@ define([
                             }
                         }
                     })
-                    //个人挂靠
+                    //证书服务
                     .state('individualCallings', {
-                        url: "/individualCallings",
+                        url: "/individualCallings/:id",
                         cache: false,
                         resolve: {
                             dummy: $couchPotatoProvider.resolveDependencies(['individualCallings/individualCallings.ctrl'])
