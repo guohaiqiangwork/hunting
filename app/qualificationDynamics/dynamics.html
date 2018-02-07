@@ -9,12 +9,9 @@
             </div>
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
-            <ul class="panel-content">
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
-                </li>
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
-                </li>
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
+            <ul class="panel-content" ng-repeat="item in ordersZCList">
+                <li><a href="" ng-click="goToDetails(item.idStandard)" class="text-black">{{item.title}} <span
+                        class="pull-right font_size_12">{{item.time |date:"yyyy-MM-dd"}}</span></a>
                 </li>
             </ul>
         </div>
@@ -29,12 +26,9 @@
             </div>
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
-            <ul class="panel-content">
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
-                </li>
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
-                </li>
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
+            <ul class="panel-content" ng-repeat="item in ordersZYList">
+                <li><a href="" class="text-black">{{item.title}} <span
+                        class="pull-right font_size_12">{{item.time |date:"yyyy-MM-dd"}}</span></a>
                 </li>
             </ul>
         </div>
@@ -49,12 +43,9 @@
             </div>
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
-            <ul class="panel-content">
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
-                </li>
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
-                </li>
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
+            <ul class="panel-content" ng-repeat="item in ordersAQList">
+                <li><a href="" class="text-black">{{item.title}} <span
+                        class="pull-right font_size_12">{{item.time |date:"yyyy-MM-dd"}}</span></a>
                 </li>
             </ul>
         </div>
@@ -69,12 +60,9 @@
             </div>
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
-            <ul class="panel-content">
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
-                </li>
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
-                </li>
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
+            <ul class="panel-content" ng-repeat="item in ordersSJList">
+                <li><a href="" class="text-black">{{item.title}} <span
+                        class="pull-right font_size_12">{{item.time |date:"yyyy-MM-dd"}}</span></a>
                 </li>
             </ul>
         </div>
@@ -89,12 +77,9 @@
             </div>
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
-            <ul class="panel-content">
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
-                </li>
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
-                </li>
-                <li><a href="" class="text-black">助推扶贫攻坚服务三农 <span class="pull-right font_size_12">2017-08-23 09:30:23</span></a>
+            <ul class="panel-content" ng-repeat="item in ordersQTList">
+                <li><a href="" class="text-black">{{item.title}} <span
+                        class="pull-right font_size_12">{{item.time |date:"yyyy-MM-dd"}}</span></a>
                 </li>
             </ul>
         </div>

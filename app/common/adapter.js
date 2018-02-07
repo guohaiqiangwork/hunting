@@ -32,10 +32,11 @@ define([
                  */
                 dynamicHomepage: function (data) {
                     var _request = {
-                        "data":{},
-                        "pagination":{
-                            "pageIndex":1,
-                            "pageSize":5  }
+                        "data": {},
+                        "pagination": {
+                            "pageIndex": 1,
+                            "pageSize": 5
+                        }
                     };
                     return _request;
                 },
@@ -44,10 +45,11 @@ define([
                  */
                 dynamicHomepageMore: function (data) {
                     var _request = {
-                        "data":{},
-                        "pagination":{
-                            "pageIndex":1,
-                            "pageSize":5  }
+                        "data": {},
+                        "pagination": {
+                            "pageIndex": 1,
+                            "pageSize": 5
+                        }
                     };
                     return _request;
                 },
@@ -56,10 +58,11 @@ define([
                  */
                 dynamicHomepageAMore: function (data) {
                     var _request = {
-                        "data":{},
-                        "pagination":{
-                            "pageIndex":1,
-                            "pageSize":5  }
+                        "data": {},
+                        "pagination": {
+                            "pageIndex": 1,
+                            "pageSize": 5
+                        }
                     };
                     return _request;
                 },
@@ -68,10 +71,46 @@ define([
                  */
                 dynamicHomepageDetails: function (data) {
                     var _request = {
-                        "data":{},
-                        "pagination":{
-                            "pageIndex":1,
-                            "pageSize":5  }
+                        "data": {},
+                        "pagination": {
+                            "pageIndex": 1,
+                            "pageSize": 5
+                        }
+                    };
+                    return _request;
+                },
+
+                /**
+                 * 代办资质
+                 * @param data
+                 * @returns {{data: {}, pagination: {pageIndex: number, pageSize: number}}}
+                 */
+                getDynamicsFind: function (data) {
+                    var _request = {
+                        "data": {
+                            type: data.keyWords.type
+                        },
+                        "pagination": {
+                            "pageIndex": data.pagination.pageIndex,
+                            "pageSize": data.pagination.pageSize
+                        }
+                    };
+                    return _request;
+                },
+                /**
+                 * 证书培训
+                 * @param data
+                 * @returns {{data: {type}, pagination: {pageIndex: number|*, pageSize: number|*}}}
+                 */
+                getCertificateTrainingFind: function (data) {
+                    var _request = {
+                        "data": {
+                            type: data.keyWords.type
+                        },
+                        "pagination": {
+                            "pageIndex": data.pagination.pageIndex,
+                            "pageSize": data.pagination.pageSize
+                        }
                     };
                     return _request;
                 }
@@ -102,8 +141,85 @@ define([
                  */
                 dynamicHomepageDetails: function (data) {
                     return data.data;
-                }
+                },
+                /**
+                 * 代办资质
+                 * @param data
+                 */
+                getDynamicsFind: function (data) {
+                    var dataList = data.data;
+                    var _result = {
+                        ordersZC: [],
+                        ordersZY: [],
+                        ordersLW: [],
+                        ordersAQ: [],
+                        ordersFD: [],
+                        ordersYL: [],
+                        ordersSJ: [],
+                        ordersQT: []
+                    };
+                    angular.forEach(dataList, function (data, index, array) {
+                        if (dataList[index].type == '1') {
+                            _result.ordersZC.push(data)
+                        }
+                        if (dataList[index].type == '2') {
+                            _result.ordersZY.push(data)
+                        }
+                        if (dataList[index].type == '3') {
+                            _result.ordersLW.push(data)
+                        }
+                        if (dataList[index].type == '4') {
+                            _result.ordersAQ.push(data)
+                        }
+                        if (dataList[index].type == '5') {
+                            _result.ordersFD.push(data)
+                        }
+                        if (dataList[index].type == '6') {
+                            _result.ordersYL.push(data)
+                        }
+                        if (dataList[index].type == '7') {
+                            _result.ordersSJ.push(data)
+                        }
+                        if (dataList[index].type == '8') {
+                            _result.ordersQT.push(data)
+                        }
+                    });
+                    console.log(_result);
+                    return _result;
 
+                },
+
+                /**
+                 * 证书培训
+                 * @param data
+                 * @returns {{qualificationsBS: Array, qualificationsBJ: Array, qualificationsZR: Array, qualificationsCX: Array}}
+                 */
+                getCertificateTrainingFind: function (data) {
+                    var qualificationsList = data.data;
+                    var _result = {
+                        qualificationsBS: [],
+                        qualificationsBJ: [],
+                        qualificationsZR: [],
+                        qualificationsCX: []
+                    };
+                    angular.forEach(qualificationsList, function (data, index) {
+                        if (qualificationsList[index].type == '1') {
+                            _result.qualificationsBS.push(data)
+                        }
+                        if (qualificationsList[index].type == '2') {
+                            _result.qualificationsBJ.push(data)
+                        }
+                        if (qualificationsList[index].type == '3') {
+                            _result.qualificationsZR.push(data)
+                        }
+                        if (qualificationsList[index].type == '4') {
+                            _result.qualificationsCX.push(data)
+                        }
+
+                    });
+                    return _result;
+
+                }
             };
             //加载层
             var loadingIndex = undefined, isError = undefined;

@@ -16,7 +16,7 @@
     },
     //请求路径
     backend: {
-        ip: 'http://baoxiantest.enn.cn:9003/zipm/zkr/api/v1/'
+        ip: 'http://10.2.66.253:8081/hunting/'//佳龙本地ip
     },
     auth:{
         isLogin:false,

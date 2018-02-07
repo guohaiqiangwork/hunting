@@ -3,16 +3,21 @@ define(
         var backend = {
                 // 服务器ip地址
                 SERVER_IP: config.backend.ip,
-                SERVER_LOGIN_IP: config.backend.loginIp,
-                SERVER_ORDER_IP: config.backend.orderIp,
-                SERVER_PAY_IP: config.backend.payIp,
-                SERVER_DOCUMENT_IP: config.backend.documentIp,
 
                 // SERVER_IP: 'http://192.168.17.2:8080/',
                 // 接口
                 REQUEST_METHOD: {
                     //批量支付查询
-                    QUERY_PAY_STATUS: 'p1/queryPayBatchResult'
+                    QUERY_PAY_STATUS: 'p1/queryPayBatchResult',
+                    /**
+                     * 代办资质首页
+                     */
+                    GET_DYNAMICS: 'standard/getStandards',
+                    /**
+                     * 证书培训
+                     */
+                    GET_CERTIFICATE_TRAINING_FIND: 'standard/getStandards'
+
                 }
             }
         ;
@@ -62,6 +67,22 @@ define(
                 DYNAMIC_HOMEPAGE_DETAILS: {
                     TARGET: 'dynamicHomepageDetails',
                     URL: '10.2.66.249:8181/hunting/dynamic/getDynamic',
+                    METHOD: 'POST'
+                },
+                /**
+                 * 代办资质
+                 */
+                GET_DYNAMICS_FIND: {
+                    TARGET: 'getDynamicsFind',
+                    URL: backend.SERVER_IP + backend.REQUEST_METHOD.GET_DYNAMICS,
+                    METHOD: 'POST'
+                },
+                /**
+                 * 证书培训
+                 */
+                GET_CERTIFICATE_TRAINING_FIND: {
+                    TARGET: 'getCertificateTrainingFind',
+                    URL: backend.SERVER_IP + backend.REQUEST_METHOD.GET_CERTIFICATE_TRAINING_FIND,
                     METHOD: 'POST'
                 }
             }
