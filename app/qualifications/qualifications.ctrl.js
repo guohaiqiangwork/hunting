@@ -6,6 +6,7 @@ define([
 ], function (app, config, constants, layer) {
     app.registerController('qualificationsCtrl', ['$scope', '$state', '$rootScope', '$$neptune', '$timeout', '$stateParams',
         function ($scope, $state, $rootScope, $$neptune, $timeout, $stateParams) {
+            $scope.dynamicQualifications=[];
             $scope.leftTitle = $stateParams.id || '资质动态';
             $rootScope.active = $scope.leftTitle;
             $scope.moreList = false;//更多初始化
@@ -29,6 +30,7 @@ define([
                     var keyword = {};
                     $$neptune.find(constants.REQUEST_TARGET.DYNAMIC_HOMEPAGE, keyword, {
                         onSuccess: function (data) {
+                            $scope.dynamicQualifications=data;
                           console.log(data);
                         },
                         onError: function (e) {

@@ -250,6 +250,9 @@
     color: gray;
     line-height: 200%;
 }
+.font_size_20 {
+    font-size: 26px;
+}
 
 .hand {
     cursor: pointer;

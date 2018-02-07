@@ -40,16 +40,10 @@ define(
                 ERROR: false
             },
             REQUEST_TARGET: {
-                //单证使用效验
-                DOCUMENT_MULTIPLE: {
-                    TARGET: 'documentMultiple',
-                    URL: backend.SERVER_DOCUMENT_IP + "receive/checkCertify",
-                    METHOD: 'POST'
-                },
                 //资质动态首页
                 DYNAMIC_HOMEPAGE: {
                     TARGET: 'dynamicHomepage',
-                    URL: '10.2.66.249:8181/hunting/dynamic/getDynamics',
+                    URL: 'http://127.0.0.1:8081/hunting/dynamic/getDynamics',
                     METHOD: 'POST'
                 },
                 //资质动态首页更多

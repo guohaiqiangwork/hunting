@@ -83,29 +83,25 @@ define([
                  * 资质动态首页
                  */
                 dynamicHomepage: function (data) {
-                    var _request = {};
-                    return _request;
+                    return data.data;
                 },
                 /**
                  * 资质动态首页更多
                  */
                 dynamicHomepageMore: function (data) {
-                    var _request = {};
-                    return _request;
+                    return data.data;
                 },
                 /**
                  * 资质动态某个更多
                  */
                 dynamicHomepageAMore: function (data) {
-                    var _request = {};
-                    return _request;
+                    return data.data;
                 },
                 /**
                  * 资质动态详情
                  */
                 dynamicHomepageDetails: function (data) {
-                    var _request = {};
-                    return _request;
+                    return data.data;
                 }
 
             };

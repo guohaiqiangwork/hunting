@@ -9,6 +9,8 @@ define([
         function ($scope, $state, $rootScope, $$neptune, $timeout, $stateParams) {
             $scope.leftTitle = $stateParams.id;
             $scope.active = $scope.leftTitle;
+            $scope.newDay=new Date();
+            console.log($scope.newDay);
             /**
              * 界面跳转
              * @param info
@@ -17,7 +19,6 @@ define([
                 $scope.active = info;
             };
             var init = function () {
-                console.log('关于我们');
                 new WOW({
                     boxClass: 'wow',
                     animateClass: 'animated',
