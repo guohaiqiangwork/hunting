@@ -16,8 +16,15 @@ define(
                     /**
                      * 证书培训
                      */
-                    GET_CERTIFICATE_TRAINING_FIND: 'standard/getStandards'
-
+                    GET_CERTIFICATE_TRAINING_FIND: 'standard/getStandards',
+                    /**
+                     * 获取地区信息
+                     */
+                    GET_REGIONAL_FIND:'areaAndClassification/getAreaAndClassifications',
+                    /**
+                     * 信息发布
+                     */
+                    RELEASE_INFO_LIST:'information/addInformation'
                 }
             }
         ;
@@ -83,6 +90,22 @@ define(
                 GET_CERTIFICATE_TRAINING_FIND: {
                     TARGET: 'getCertificateTrainingFind',
                     URL: backend.SERVER_IP + backend.REQUEST_METHOD.GET_CERTIFICATE_TRAINING_FIND,
+                    METHOD: 'POST'
+                },
+                /**
+                 * 获取地区信息
+                 */
+                GET_REGIONAL_FIND: {
+                    TARGET: 'getRegionalFind',
+                    URL: backend.SERVER_IP + backend.REQUEST_METHOD.GET_REGIONAL_FIND,
+                    METHOD: 'POST'
+                },
+                /**
+                 * 发布信息
+                 */
+                RELEASE_INFO_LIST:{
+                    TARGET: 'releaseInfoList',
+                    URL: backend.SERVER_IP + backend.REQUEST_METHOD.RELEASE_INFO_LIST,
                     METHOD: 'POST'
                 }
             }

@@ -13,7 +13,7 @@ define([
                             keyWords: keyWords,
                             pagination: pagination
                         };
-                        if(target.METHOD){
+                        if (target.METHOD) {
                             config.httpPackage.method = target.METHOD;
                         }
                         // 请求地址

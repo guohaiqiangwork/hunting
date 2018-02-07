@@ -116,7 +116,44 @@ define([
                         }
                     };
                     return _request;
+                },
+                /**
+                 * 获取地区信息
+                 * @param data
+                 * @returns {{}}
+                 */
+                getRegionalFind: function (data) {
+                    var _request = {};
+                    return _request;
+                },
+                /**
+                 * 信息发布
+                 * @param data
+                 * @returns {{}}
+                 */
+                releaseInfoList: function (data) {
+                    console.log(data);
+                    var _request = {
+                        "data": {
+                            "title": "",
+                            "type": "",// 类型：1个人挂靠，2企业寻证，3全球招聘
+                            "QQ": "", // QQ
+                            "WX": "", // 微信
+                            "name": "", // 名字
+                            "address": "", // 地址
+                            "sex": "", // 性别
+                            "phone": "",
+                            "mailbox": "",
+                            "registrationType": "", // 注册类型
+                            "company": "", // 公司名称
+                            "certificateCode": "", // 证书类型编码
+                            "idClassification": "", // 职业分类:选择小类就传小类code，若没选择小类就传大类code
+                            "idArea": "" // 地区分类：选择市就传市code，若没选择市就传省code
+                        }
+                    };
+                    return _request;
                 }
+
 
             };
             //数据出参转为前端格式
@@ -229,7 +266,22 @@ define([
                     });
                     return _result;
 
+                },
+                /**
+                 * 获取地区信息
+                 * @param data
+                 */
+                getRegionalFind: function (data) {
+                    return data.data;
+                },
+                /**
+                 * 信息发布
+                 * @param data
+                 */
+                releaseInfoList: function (data) {
+                    return data.data;
                 }
+
             };
             //加载层
             var loadingIndex = undefined, isError = undefined;
