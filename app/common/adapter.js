@@ -122,7 +122,14 @@ define([
                  * 资质动态首页
                  */
                 dynamicHomepage: function (data) {
-                    return data.data;
+                   var dynamics = {};
+                    $.each(data.data,function(index,item){
+                        if(!dynamics[item.dynamicAddress]){
+                            dynamics[item.dynamicAddress] = [];
+                        }
+                        dynamics[item.dynamicAddress].push(item);
+                    });
+                    return dynamics;
                 },
                 /**
                  * 资质动态首页更多

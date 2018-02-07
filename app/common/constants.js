@@ -54,19 +54,19 @@ define(
                 //资质动态首页更多
                 DYNAMIC_HOMEPAGE_MORE: {
                     TARGET: 'dynamicHomepageMore',
-                    URL: '10.2.66.249:8181/hunting/dynamic/getDynamics',
+                    URL: 'http://127.0.0.1:8081/hunting/dynamic/getDynamics',
                     METHOD: 'POST'
                 },
                 //资质动态某个更多
                 DYNAMIC_HOMEPAGE_A_MORE: {
                     TARGET: 'dynamicHomepageAMore',
-                    URL: '10.2.66.249:8181/hunting/dynamic/getDynamics',
+                    URL: 'http://127.0.0.1:8081/hunting/dynamic/getDynamics',
                     METHOD: 'POST'
                 },
                 //资质动态详情
                 DYNAMIC_HOMEPAGE_DETAILS: {
                     TARGET: 'dynamicHomepageDetails',
-                    URL: '10.2.66.249:8181/hunting/dynamic/getDynamic',
+                    URL: 'http://127.0.0.1:8081/hunting/dynamic/getDynamic',
                     METHOD: 'POST'
                 },
                 /**

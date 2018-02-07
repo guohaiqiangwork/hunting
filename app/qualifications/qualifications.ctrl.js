@@ -30,8 +30,8 @@ define([
                     var keyword = {};
                     $$neptune.find(constants.REQUEST_TARGET.DYNAMIC_HOMEPAGE, keyword, {
                         onSuccess: function (data) {
+                            console.log(angular.copy(data));
                             $scope.dynamicQualifications=data;
-                          console.log(data);
                         },
                         onError: function (e) {
                             alert("网络缓慢请稍后重试");
