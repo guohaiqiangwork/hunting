@@ -44,7 +44,6 @@ define([
                  * 资质动态首页更多
                  */
                 dynamicHomepageMore: function (data) {
-                    console.log(data);
                     var _request = {
                         "data": {
                             "dynamicAddress":data.keyWords.dynamicAddress
@@ -74,11 +73,7 @@ define([
                  */
                 dynamicHomepageDetails: function (data) {
                     var _request = {
-                        "data": {},
-                        "pagination": {
-                            "pageIndex": 1,
-                            "pageSize": 5
-                        }
+                        "idDynamic":data.keyWords.idDynamic
                     };
                     return _request;
                 },

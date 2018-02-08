@@ -37,7 +37,11 @@ define([
                     $state.go('login');
                 }, 10);
             });
-
+            //打开qq聊天
+            $scope.qqChat = function (qq) {
+                var url = 'http://wpa.qq.com/msgrd?v=3&uin=' + qq + '&site=qq&menu=yes';
+                window.open(url, '_brank');
+            };
             /**
              * 鼠标滑过事件
              * @param activeIndex

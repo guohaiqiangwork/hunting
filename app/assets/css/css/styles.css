@@ -296,4 +296,20 @@ h1 {
     border-radius: 2px;
     border: 1px solid #4587E8;
 }
-
+.slowlySliding{
+    transition-duration: 0.6s;
+    /*     以下三值为默认值，稍后会详细介绍 */
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.slowlySliding:hover{
+    color: pink;
+    padding-left: 15px;
+}
+.slowly li:first-child{
+ border-top: solid 1px #ddd;
+}
+.slowly{
+    margin-top: 20px;
+}

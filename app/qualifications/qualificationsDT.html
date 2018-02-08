@@ -6,15 +6,35 @@
             <div class="col-xs-8">
                 {{key}}
             </div>
-            <div class="col-xs-4 text-right" ng-click="goToMore(key)">
+            <div class="col-xs-4 text-right slowlySliding" ng-click="goToMore(key)">
                 更多>>
             </div>
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff;border-radius: 0 0 4px 4px;">
             <ul class="panel-content">
-                <li ng-if="dynamicQualification[0]"><a class="text-black">{{dynamicQualification[0].title}} <span class="font_size_12 pull-right">{{dynamicQualification[0].time|date:'yyyy-MM-dd'}}</span></a></li>
-                <li ng-if="dynamicQualification[1]"><a class="text-black">{{dynamicQualification[1].title}} <span class="font_size_12 pull-right">{{dynamicQualification[1].time|date:'yyyy-MM-dd'}}</span></a></li>
-                <li ng-if="dynamicQualification[2]"><a class="text-black">{{dynamicQualification[2].title}} <span class="font_size_12 pull-right">{{dynamicQualification[2].time|date:'yyyy-MM-dd'}}</span></a></li>
+                <li ng-if="dynamicQualification[0]">
+                    <a class="text-black slowlySliding" ng-click="goToDynamicDetails(dynamicQualification[0].idDynamic)">
+                        {{dynamicQualification[0].title}}
+                        <span class="font_size_12 pull-right">{{dynamicQualification[0].time|date:'yyyy-MM-dd'}}
+                        </span>
+                    </a>
+                </li>
+                <li ng-if="dynamicQualification[1]">
+                    <a class="text-black slowlySliding" ng-click="goToDynamicDetails(dynamicQualification[1].idDynamic)">
+                        {{dynamicQualification[1].title}}
+                    <span class="font_size_12 pull-right">
+                        {{dynamicQualification[1].time|date:'yyyy-MM-dd'}}
+                    </span>
+                </a>
+                </li>
+                <li ng-if="dynamicQualification[2]">
+                    <a class="text-black slowlySliding"  ng-click="goToDynamicDetails(dynamicQualification[2].idDynamic)">
+                        {{dynamicQualification[2].title}}
+                    <span class="font_size_12 pull-right">
+                        {{dynamicQualification[2].time|date:'yyyy-MM-dd'}}
+                    </span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
