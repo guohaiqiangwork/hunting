@@ -13,16 +13,58 @@ define([
                 $("pre.jsCodeNum").snippet("javascript", {style: "custom_js"});
             };
             /**
-             * 初始化数据
+             * 初始化数据-企业
              */
             $scope.areaHome = {
-                "title": "标题",
+                "title": "",
                 "type": "1",// 类型：1个人挂靠，2企业寻证，3全球招聘
                 "QQ": "", // QQ
                 "WX": "", // 微信
                 "name": "", // 名字
                 "address": "", // 地址
+                "sex": "", // 性别
+                "phone": "",
+                "mailbox": "",
+                "registrationType": "1", // 注册类型
+                "company": "", // 公司名称
+                "certificateCode": "", // 证书类型编码
+                "idClassification": "", //类型下拉框
+                "idClassifications": "", // 输入框
+                "idArea": "" // 地区分类：选择市就传市code，若没选择市就传省code
+            };
+            /**
+             * 初始化数据-个人
+             * @type {{title: string, type: string, QQ: string, WX: string, name: string, address: string, sex: string, phone: string, mailbox: string, registrationType: string, company: string, certificateCode: string, idClassification: string, idClassifications: string, idArea: string}}
+             */
+            $scope.areaHome1 = {
+                "title": "",
+                "type": "2",// 类型：1个人挂靠，2企业寻证，3全球招聘
+                "QQ": "", // QQ
+                "WX": "", // 微信
+                "name": "", // 名字
+                "address": "", // 地址
                 "sex": "男", // 性别
+                "phone": "",
+                "mailbox": "",
+                "registrationType": "1", // 注册类型
+                "company": "", // 公司名称
+                "certificateCode": "", // 证书类型编码
+                "idClassification": "", //类型下拉框
+                "idClassifications": "", // 输入框
+                "idArea": "" // 地区分类：选择市就传市code，若没选择市就传省code
+            };
+            /**
+             * 初始化数据-全职
+             * @type {{title: string, type: string, QQ: string, WX: string, name: string, address: string, sex: string, phone: string, mailbox: string, registrationType: string, company: string, certificateCode: string, idClassification: string, idClassifications: string, idArea: string}}
+             */
+            $scope.areaHome2 = {
+                "title": "",
+                "type": "3",// 类型：1个人挂靠，2企业寻证，3全球招聘
+                "QQ": "", // QQ
+                "WX": "", // 微信
+                "name": "", // 名字
+                "address": "", // 地址
+                "sex": "", // 性别
                 "phone": "",
                 "mailbox": "",
                 "registrationType": "1", // 注册类型
@@ -69,10 +111,20 @@ define([
              * 发布信息
              */
             $scope.releaseInfo = function (id) {
-                $scope.areaHome.type = id;
-                $$neptune.$release.releaseInfo($scope.areaHome, {
+                var keywords = {};
+                if (id == '1') {
+                    keywords = $scope.areaHome
+                }
+                if (id == '2') {
+                    keywords = $scope.areaHome1
+                }
+                if (id == '3') {
+                    keywords = $scope.areaHome2
+                }
+                $$neptune.$release.releaseInfo(keywords, {
                     onSuccess: function (data) {
-                        console.log(data)
+                        if(data)
+                        layer.msg('发布成功', {time: 1000})
                     },
                     onError: function (e) {
                         layer.msg("网络缓慢，请联系管理员", {time: 1000})
@@ -82,8 +134,8 @@ define([
             };
             var init = function () {
                 carouselFigure();//初始化加载轮播图
-                $scope.getRegional()//获取地区信息
-                $scope.releaseInfo()
+                $scope.getRegional();//获取地区信息
+
             };
 
             init();

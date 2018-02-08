@@ -46,7 +46,7 @@ define([
                 dynamicHomepageMore: function (data) {
                     var _request = {
                         "data": {
-                            "dynamicAddress":data.keyWords.dynamicAddress
+                            "dynamicAddress": data.keyWords.dynamicAddress
                         },
                         "pagination": {
                             "pageIndex": 1,
@@ -73,7 +73,7 @@ define([
                  */
                 dynamicHomepageDetails: function (data) {
                     var _request = {
-                        "idDynamic":data.keyWords.idDynamic
+                        "idDynamic": data.keyWords.idDynamic
                     };
                     return _request;
                 },
@@ -127,24 +127,21 @@ define([
                  * @returns {{}}
                  */
                 releaseInfoList: function (data) {
-                    console.log(data);
                     var _request = {
-                        "data": {
-                            "title": "",
-                            "type": "",// 类型：1个人挂靠，2企业寻证，3全球招聘
-                            "QQ": "", // QQ
-                            "WX": "", // 微信
-                            "name": "", // 名字
-                            "address": "", // 地址
-                            "sex": "", // 性别
-                            "phone": "",
-                            "mailbox": "",
-                            "registrationType": "", // 注册类型
-                            "company": "", // 公司名称
-                            "certificateCode": "", // 证书类型编码
-                            "idClassification": "", // 职业分类:选择小类就传小类code，若没选择小类就传大类code
-                            "idArea": "" // 地区分类：选择市就传市code，若没选择市就传省code
-                        }
+                        "title": data.title,
+                        "type": data.type,// 类型：1个人挂靠，2企业寻证，3全球招聘
+                        "QQ": data.QQ, // QQ
+                        "WX": data.WX, // 微信
+                        "name": data.name, // 名字
+                        "address": data.address, // 地址
+                        "sex": data.sex, // 性别
+                        "phone": data.phone,
+                        "mailbox": data.mailbox,
+                        "registrationType": data.registrationType, // 注册类型
+                        "company": data.company, // 公司名称
+                        "certificateCode": data.certificateCode, // 证书类型编码
+                        "idClassification": data.idClassification, // 职业分类:选择小类就传小类code，若没选择小类就传大类code
+                        "idArea": data.idArea // 地区分类：选择市就传市code，若没选择市就传省code
                     };
                     return _request;
                 }
@@ -157,9 +154,9 @@ define([
                  * 资质动态首页
                  */
                 dynamicHomepage: function (data) {
-                   var dynamics = {};
-                    $.each(data.data,function(index,item){
-                        if(!dynamics[item.dynamicAddress]){
+                    var dynamics = {};
+                    $.each(data.data, function (index, item) {
+                        if (!dynamics[item.dynamicAddress]) {
                             dynamics[item.dynamicAddress] = [];
                         }
                         dynamics[item.dynamicAddress].push(item);
