@@ -13,8 +13,21 @@ define([
              */
             $scope.switchView = function (info) {
                 $scope.active = info;
+                $scope.getInfoList();
             };
-
+            $scope.getInfoList= function () {
+                var keyword={
+                    "type":$scope.active
+                };
+                $$neptune.find(constants.REQUEST_TARGET.GET_INFORMATION_LIST, keyword, {
+                    onSuccess: function (data) {
+                        $scope.informationLists=data
+                    },
+                    onError: function (e) {
+                        alert("网络缓慢请稍后重试");
+                    }
+                });
+            };
             /**
              * 所有分类数据
              */

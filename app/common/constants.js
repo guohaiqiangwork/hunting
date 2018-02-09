@@ -52,6 +52,12 @@ define(
                 ERROR: false
             },
             REQUEST_TARGET: {
+                //获取信息列表
+                GET_INFORMATION_LIST: {
+                    TARGET: 'getInformationList',
+                    URL: 'http://127.0.0.1:8081/hunting/information/getInformations',
+                    METHOD: 'POST'
+                },
                 //资质动态首页
                 DYNAMIC_HOMEPAGE: {
                     TARGET: 'dynamicHomepage',
@@ -61,12 +67,6 @@ define(
                 //资质动态首页更多
                 DYNAMIC_HOMEPAGE_MORE: {
                     TARGET: 'dynamicHomepageMore',
-                    URL: 'http://127.0.0.1:8081/hunting/dynamic/getDynamics',
-                    METHOD: 'POST'
-                },
-                //资质动态某个更多
-                DYNAMIC_HOMEPAGE_A_MORE: {
-                    TARGET: 'dynamicHomepageAMore',
                     URL: 'http://127.0.0.1:8081/hunting/dynamic/getDynamics',
                     METHOD: 'POST'
                 },

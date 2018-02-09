@@ -28,6 +28,22 @@ define([
             // 数据入参转为后端格式
             var exportRules = {
                 /**
+                 * 获取信息列表
+                 */
+                getInformationList: function (data) {
+                    console.log(data);
+                    var _request = {
+                        "data":{
+                            "type":data.keyWords.type=="个人挂证"?1:2
+                        },
+                        "pagination":{
+                            "pageIndex":1,
+                            "pageSize":5
+                        }
+                    };
+                    return _request;
+                },
+                /**
                  * 资质动态首页
                  */
                 dynamicHomepage: function (data) {
@@ -48,19 +64,6 @@ define([
                         "data": {
                             "dynamicAddress": data.keyWords.dynamicAddress
                         },
-                        "pagination": {
-                            "pageIndex": 1,
-                            "pageSize": 5
-                        }
-                    };
-                    return _request;
-                },
-                /**
-                 * 资质动态某个更多
-                 */
-                dynamicHomepageAMore: function (data) {
-                    var _request = {
-                        "data": {},
                         "pagination": {
                             "pageIndex": 1,
                             "pageSize": 5
@@ -164,15 +167,15 @@ define([
                     return dynamics;
                 },
                 /**
-                 * 资质动态首页更多
+                 * 获取信息列表
                  */
-                dynamicHomepageMore: function (data) {
+                getInformationList: function (data) {
                     return data.data;
                 },
                 /**
-                 * 资质动态某个更多
+                 * 资质动态首页更多
                  */
-                dynamicHomepageAMore: function (data) {
+                dynamicHomepageMore: function (data) {
                     return data.data;
                 },
                 /**
