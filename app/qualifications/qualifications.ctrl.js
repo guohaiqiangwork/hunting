@@ -6,25 +6,22 @@ define([
 ], function (app, config, constants, layer) {
     app.registerController('qualificationsCtrl', ['$scope', '$state', '$rootScope', '$$neptune', '$timeout', '$stateParams',
         function ($scope, $state, $rootScope, $$neptune, $timeout, $stateParams) {
-            $scope.dynamicQualifications=[];
-            if($stateParams.id){
-                $rootScope.active = "资质";
-                $scope.qualificationsTitle=$stateParams.id;
-            }else{
-                $rootScope.active ="资质动态"
-            }
-            $scope.moreList = false;//更多初始化
             //点击更多
             $scope.goToMore = function (id) {
                 $scope.moreList = true;
                 //    透过id不同调取不同接口
                 $rootScope.active="单个地区";
-                $scope.qualificationsTitle=id;
+                if(id){
+                    $scope.qualificationsTitle=id;
+                }else{
+                    $scope.qualificationsTitle=$stateParams.id;
+                }
                 var keyword = {
-                    "dynamicAddress":id
+                    "dynamicAddress":id||$stateParams.id
                 };
                 $$neptune.find(constants.REQUEST_TARGET.DYNAMIC_HOMEPAGE_MORE, keyword, {
                     onSuccess: function (data) {
+                        console.log(data);
                         $scope.singles=data;
                     },
                     onError: function (e) {
@@ -32,6 +29,14 @@ define([
                     }
                 });
             };
+            $scope.dynamicQualifications=[];
+            if($stateParams.id){
+                $scope.qualificationsTitle=$stateParams.id;
+                $scope.goToMore()
+            }else{
+                $rootScope.active ="资质动态"
+            }
+            $scope.moreList = false;//更多初始化
             /**
              * 界面跳转
              * @param info
