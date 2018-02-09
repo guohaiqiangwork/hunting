@@ -63,25 +63,25 @@ define(
                 //获取信息列表
                 GET_INFORMATION_LIST: {
                     TARGET: 'getInformationList',
-                    URL: 'http://127.0.0.1:8081/hunting/'+ backend.REQUEST_METHOD.GET_INFORMATION_LIST,
+                    URL: backend.SERVER_IP+ backend.REQUEST_METHOD.GET_INFORMATION_LIST,
                     METHOD: 'POST'
                 },
                 //资质动态首页
                 DYNAMIC_HOMEPAGE: {
                     TARGET: 'dynamicHomepage',
-                    URL: 'http://127.0.0.1:8081/hunting/'+ backend.REQUEST_METHOD.DYNAMIC_HOMEPAGE,
+                    URL: backend.SERVER_IP+ backend.REQUEST_METHOD.DYNAMIC_HOMEPAGE,
                     METHOD: 'POST'
                 },
                 //资质动态首页更多
                 DYNAMIC_HOMEPAGE_MORE: {
                     TARGET: 'dynamicHomepageMore',
-                    URL: 'http://127.0.0.1:8081/hunting/'+ backend.REQUEST_METHOD.DYNAMIC_HOMEPAGE_MORE,
+                    URL:backend.SERVER_IP+ backend.REQUEST_METHOD.DYNAMIC_HOMEPAGE_MORE,
                     METHOD: 'POST'
                 },
                 //资质动态详情
                 DYNAMIC_HOMEPAGE_DETAILS: {
                     TARGET: 'dynamicHomepageDetails',
-                    URL: 'http://127.0.0.1:8081/hunting/'+ backend.REQUEST_METHOD.DYNAMIC_HOMEPAGE_DETAILS,
+                    URL: backend.SERVER_IP+ backend.REQUEST_METHOD.DYNAMIC_HOMEPAGE_DETAILS,
                     METHOD: 'POST'
                 },
                 /**

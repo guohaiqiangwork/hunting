@@ -16,7 +16,7 @@
     },
     //请求路径
     backend: {
-        ip: 'http://10.2.66.233:8081/hunting/'//佳龙本地ip
+        ip: 'http://127.0.0.1:8081/hunting/'//佳龙本地ip
     },
     auth:{
         isLogin:false,

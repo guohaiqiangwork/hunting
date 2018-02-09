@@ -292,6 +292,7 @@ h1 {
 .qqChat{
     position: fixed;
     top: 40%;
+    right:1px;
     z-index: 99;
     width: 15%;
     height: 250px;

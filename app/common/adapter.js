@@ -33,7 +33,7 @@ define([
                 getInformationList: function (data) {
                     var _request = {
                         "data":{
-                            "type":data.keyWords.type=="个人挂证"?1:2,
+                            "type":data.keyWords.type=="个人挂证"?1:data.keyWords.type=="企业聘证"?2:3,
                             "idClassification":data.keyWords.idClassification,
                             "idArea":data.keyWords.idArea
                         },
