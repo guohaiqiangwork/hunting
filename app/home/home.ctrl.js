@@ -100,12 +100,32 @@ define([
                 $$neptune.find(constants.REQUEST_TARGET.GET_REGIONAL_FIND, "", {
                     onSuccess: function (data) {
                         $scope.regionalList = data.area;
-                        $scope.classificationList = data.classification
+                        $scope.classificationList = data.classification;
+                        $scope.regionalLists = [];
+                        angular.forEach($scope.regionalList, function (data, index) {
+                            if ($scope.regionalList[index].areaType == 1) {
+                                $scope.regionalLists.push(data)
+                            }
+                        });
+                       console.log($scope.regionalLists)
                     },
                     onError: function (e) {
                         layer.msg("网络缓慢请稍后重试", {time: 1000});
                     }
                 });
+            };
+            /**
+             * 获取二级
+             * @param id
+             */
+            $scope.getQuYu = function (id) {
+                $scope.quYuList = [];
+                angular.forEach($scope.regionalList, function (data, index) {
+                    if ($scope.regionalList[index].relation == id) {
+                        $scope.quYuList.push(data)
+                    }
+                });
+                console.log($scope.quYuList)
             };
             /**
              * 发布信息
@@ -123,8 +143,8 @@ define([
                 }
                 $$neptune.$release.releaseInfo(keywords, {
                     onSuccess: function (data) {
-                        if(data)
-                        layer.msg('发布成功', {time: 1000})
+                        if (data)
+                            layer.msg('发布成功', {time: 1000})
                     },
                     onError: function (e) {
                         layer.msg("网络缓慢，请联系管理员", {time: 1000})
