@@ -33,10 +33,10 @@ define([
             $scope.getRegional = function () {
                 $$neptune.find(constants.REQUEST_TARGET.GET_REGIONAL_FIND, "", {
                     onSuccess: function (data) {
-                        $scope.regionalList = data.area;
-                        $scope.classificationList = data.classification;
                         $scope.regionalLists = [];
                         $scope.classificationLists = [];
+                        $scope.regionalList = data.area;
+                        $scope.classificationList = data.classification;
                         angular.forEach($scope.regionalList, function (data, index) {
                             if ($scope.regionalList[index].areaType == 1) {
                                 $scope.regionalLists.push(data)

@@ -31,6 +31,35 @@ define([
             };
 
             /**
+             * 获取地区信息
+             */
+            $scope.getRegional = function () {
+                $$neptune.find(constants.REQUEST_TARGET.GET_REGIONAL_FIND, "", {
+                    onSuccess: function (data) {
+                        console.log(data);
+                        $scope.regionalList = data.area;
+                        $scope.classificationList = data.classification;
+                        $scope.regionalLists = [];
+                        $scope.classificationLists = [];
+                        angular.forEach($scope.regionalList, function (data, index) {
+                            if ($scope.regionalList[index].areaType == 1) {
+                                $scope.regionalLists.push(data)
+                            }
+                        });
+                        angular.forEach($scope.classificationList, function (data, index) {
+                            if ($scope.classificationList[index].classType == 1) {
+                                $scope.classificationLists.push(data)
+                            }
+                        });
+
+                    },
+                    onError: function (e) {
+                        layer.msg("网络缓慢请稍后重试", {time: 1000});
+                    }
+                });
+            };
+
+            /**
              * 所有分类数据
              */
             $scope.classificationBigList = [
@@ -94,17 +123,33 @@ define([
                 {name: '顺义区', findName: ''},
                 {name: '延庆县', findName: ''}
             ];
-            $scope.updateInfoList= function (key,item) {
-                console.log(key+"=="+item);
+            $scope.updateInfoList= function (key,item,idArea) {
                 switch (key) {
                     case 1: // 所有大分类
                         $scope.infoList.idClassification1=item;
+                        $scope.zYList = [];
+                        $scope.infoList.idClassification2="";
+                        angular.forEach($scope.classificationList, function (data, index) {
+                            if ($scope.classificationList[index].relation == idArea) {
+                                $scope.zYList.push(data);
+                            }
+
+                            console.log($scope.classificationList);
+                            console.log($scope.zYList);
+                        });
                         break;
                     case 2: // 所有晓分类
                         $scope.infoList.idClassification2=item;
                         break;
                     case 3: // 所有大区
                         $scope.infoList.idArea1=item;
+                            $scope.quYuList = [];
+                            $scope.infoList.idArea2="";
+                            angular.forEach($scope.regionalList, function (data, index) {
+                                if ($scope.regionalList[index].relation == idArea) {
+                                    $scope.quYuList.push(data)
+                                }
+                            });
                         break;
                     case 4: // 所有小地区
                         $scope.infoList.idArea2=item;
@@ -120,7 +165,6 @@ define([
                 };
                 $$neptune.find(constants.REQUEST_TARGET.GET_INFORMATION_LIST, keyword, {
                     onSuccess: function (data) {
-                        console.log(data);
                         $scope.informationLists=data
                     },
                     onError: function (e) {
@@ -147,6 +191,7 @@ define([
                 $scope.getInfoList();
             }
             var init = function () {
+                $scope.getRegional()
             };
             init();
         }]);

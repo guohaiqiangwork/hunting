@@ -16,10 +16,10 @@
                     </div>
                    <div class="col-xs-11">
                        <li class="queryCenter_a"
-                           ng-click="updateInfoList(1,item.name)"
-                           ng-repeat="item in classificationBigList"
+                           ng-click="updateInfoList(1,item.className,item.idClassification)"
+                           ng-repeat="item in classificationLists"
                            ng-init="a()">
-                           {{item.name}}
+                           {{item.className}}
                        </li>
                    </div>
                 </ul>
@@ -32,10 +32,10 @@
                     </div>
                    <div class="col-xs-11">
                        <li class="queryCenter_a"
-                           ng-repeat="item in classificationSmallList"
-                           ng-click="updateInfoList(2,item.name)"
+                           ng-repeat="item in zYList"
+                           ng-click="updateInfoList(2,item.className)"
                            ng-init="a()">
-                           {{item.name}}
+                           {{item.className}}
                        </li>
                    </div>
                 </ul>
@@ -47,27 +47,27 @@
                     </div>
                    <div class="col-xs-11">
                        <li class="queryCenter_b"
-                           ng-repeat="item in allAreasList"
-                           ng-click="updateInfoList(3,item.name)"
+                           ng-repeat="item in regionalLists"
+                           ng-click="updateInfoList(3,item.areaName,item.idArea)"
                            ng-init="a()">
-                           {{item.name}}
+                           {{item.areaName}}
                        </li>
                    </div>
                 </ul>
 
 
                 <ul class="row test"
-                    ng-if="infoList.idArea1"
+                    ng-if="quYuList.length"
                     style="width:100%; line-height:30px; padding-top:10px; padding-bottom:10px; overflow:hidden; font-size:14px;border-bottom:1px dotted #dedede;">
                     <div class="col-xs-1">
                         <p style="float:left; width:90px; padding-left:10px;font-weight: bold;color: #008EC8">二级地区</p>
                     </div>
                    <div class="col-xs-11">
-                       <li  ng-repeat="item in allAreasList1"
+                       <li  ng-repeat="item in quYuList"
                             class="queryCenter_b"
-                            ng-click="updateInfoList(4,item.name)"
+                            ng-click="updateInfoList(4,item.areaName)"
                             ng-init="a()">
-                           {{item.name}}
+                           {{item.areaName}}
                        </li>
                    </div>
                 </ul>
