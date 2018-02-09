@@ -31,10 +31,11 @@ define([
                  * 获取信息列表
                  */
                 getInformationList: function (data) {
-                    console.log(data);
                     var _request = {
                         "data":{
-                            "type":data.keyWords.type=="个人挂证"?1:2
+                            "type":data.keyWords.type=="个人挂证"?1:2,
+                            "idClassification":data.keyWords.idClassification,
+                            "idArea":data.keyWords.idArea
                         },
                         "pagination":{
                             "pageIndex":1,

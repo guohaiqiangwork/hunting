@@ -24,71 +24,21 @@
         </div>
         <div style="width:1000px; overflow:hidden">
 
-            <ul style="line-height:30px">
-                <li style="width:365px; float:left; font-size:14px; padding-left:5px"><a
-                        href="/info/1830387.html" target="_blank" title="个人注册化工证书在手寻单位，初始注册">个人注册化工证书在手寻单位，初始注册</a>
+            <ul style="line-height:30px" ng-repeat="informationList in informationLists">
+                <li style="width:365px; float:left; font-size:14px; padding-left:5px">
+                    <a  target="_blank" title="{{informationList.title}}">
+                        {{informationList.title}}
+                    </a>
                 </li>
-                <li style="width:160px; float:left; padding-left:10px" title="郭">郭</li>
-                <li style="width:140px; float:left; padding-left:10px">四川-成都市</li>
-                <li style="width:90px; float:left; padding-left:10px">初始注册</li>
-                <li style="width:70px; float:left; padding-left:10px">面议</li>
-                <li style="width:120px; float:left; padding-left:10px; font-size:12px">2018-1-10 14:16:00
-                </li>
+                <li style="width:160px; float:left; padding-left:10px" title="{{informationList.name}}">{{informationList.name}}</li>
+                <li style="width:140px; float:left; padding-left:10px">{{informationList.idArea}}</li>
+                <li style="width:90px; float:left; padding-left:10px">{{informationList.registrationType}}</li>
+                <li style="width:70px; float:left; padding-left:10px">{{informationList.salary}}</li>
+                <li style="width:120px; float:left; padding-left:10px; font-size:12px">{{informationList.time|date:'yyyy-MM-dd'}}</li>
             </ul>
 
 
-            <ul style="line-height:30px">
-                <li style="width:365px; float:left; font-size:14px; padding-left:5px"><a
-                        href="/info/1830375.html" target="_blank"
-                        title="个人注册化工证书在手寻单位，初始">个人注册化工证书在手寻单位，初始</a></li>
-                <li style="width:160px; float:left; padding-left:10px" title="郭">郭</li>
-                <li style="width:140px; float:left; padding-left:10px">四川-成都市</li>
-                <li style="width:90px; float:left; padding-left:10px">初始注册</li>
-                <li style="width:70px; float:left; padding-left:10px">面议</li>
-                <li style="width:120px; float:left; padding-left:10px; font-size:12px">2018-1-10 14:13:41
-                </li>
-            </ul>
 
-
-            <ul style="line-height:30px">
-                <li style="width:365px; float:left; font-size:14px; padding-left:5px"><a
-                        href="/info/1830025.html" target="_blank" title="29期拍卖师寻求挂靠">29期拍卖师寻求挂靠</a></li>
-                <li style="width:160px; float:left; padding-left:10px" title="T">T</li>
-                <li style="width:140px; float:left; padding-left:10px">河北-石家庄市</li>
-                <li style="width:90px; float:left; padding-left:10px">初始注册</li>
-                <li style="width:70px; float:left; padding-left:10px">面议</li>
-                <li style="width:120px; float:left; padding-left:10px; font-size:12px">2018-1-10 12:57:26
-                </li>
-            </ul>
-
-
-            <ul style="line-height:30px">
-                <li style="width:365px; float:left; font-size:14px; padding-left:5px"><a
-                        href="/info/1829816.html" target="_blank" title="河北 公路 材料 两科试验检测员 费用低">河北 公路 材料
-                    两科试验检测员 费用低</a></li>
-                <li style="width:160px; float:left; padding-left:10px" title="朱先生">朱先生</li>
-                <li style="width:140px; float:left; padding-left:10px">河北-石家庄市</li>
-                <li style="width:90px; float:left; padding-left:10px">初始注册</li>
-                <li style="width:70px; float:left; padding-left:10px">面议</li>
-                <li style="width:120px; float:left; padding-left:10px; font-size:12px">2018-1-10 11:46:57
-                </li>
-            </ul>
-
-
-            <ul style="line-height:30px">
-                <li style="width:365px; float:left; font-size:14px; padding-left:5px"><a
-                        href="/info/1828844.html" target="_blank"
-                        title="寻找税务师税务师挂靠税务师证书">寻找税务师税务师挂靠税务师证书</a></li>
-                <li style="width:160px; float:left; padding-left:10px" title="张淑坤">张淑坤</li>
-                <li style="width:140px; float:left; padding-left:10px">新疆-喀什</li>
-                <li style="width:90px; float:left; padding-left:10px">初始注册</li>
-                <li style="width:70px; float:left; padding-left:10px">1-2万元</li>
-                <li style="width:120px; float:left; padding-left:10px; font-size:12px">2018-1-9 16:37:49
-                </li>
-            </ul>
-            <ul style="width:1000px; overflow:hidden">
-                <li style="height:10px;border-bottom:#dfdfdf 1px dotted;margin-bottom:10px"></li>
-            </ul>
           </div>
         </div>
     </div>

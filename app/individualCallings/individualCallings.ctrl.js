@@ -6,28 +6,30 @@ define([
 ], function (app, config, constants, layer) {
     app.registerController('individualCallingsCtrl', ['$scope', '$state', '$rootScope', 'localStorageService', '$$neptune', '$timeout','$stateParams',
         function ($scope, $state, $rootScope, localStorageService, $$neptune, $timeout,$stateParams) {
-            $scope.active = $stateParams.id||"个人挂证";
-            /**
-             * 界面跳转
-             * @param info
-             */
-            $scope.switchView = function (info) {
-                $scope.active = info;
-                $scope.getInfoList();
+            $scope.infoList={
+                "idClassification1":"",
+                "idClassification2":"",
+                "idArea1":"",
+                "idArea2":""
             };
-            $scope.getInfoList= function () {
-                var keyword={
-                    "type":$scope.active
+            $scope.Initialize= function () {
+                $scope.infoList={
+                    "idClassification1":"",
+                    "idClassification2":"",
+                    "idArea1":"",
+                    "idArea2":""
                 };
-                $$neptune.find(constants.REQUEST_TARGET.GET_INFORMATION_LIST, keyword, {
-                    onSuccess: function (data) {
-                        $scope.informationLists=data
-                    },
-                    onError: function (e) {
-                        alert("网络缓慢请稍后重试");
-                    }
+            };
+            $scope.a= function () {
+                $(".test li").click(function() {
+                    $(this).siblings('li').removeClass('colorSelected');  // 删除其他兄弟元素的样式
+                    $(this).addClass('colorSelected');                            // 添加当前元素的样式
                 });
             };
+            $scope.b= function () {
+                $(".test li").removeClass('colorSelected');
+            };
+
             /**
              * 所有分类数据
              */
@@ -82,11 +84,70 @@ define([
                 {name: '河南', findName: ''},
                 {name: '福建', findName: ''}
             ];
-
-            var init = function () {
-
+            $scope.allAreasList1 = [
+                {name: '丰台区', findName: ''},
+                {name: '海淀区', findName: ''},
+                {name: '门头沟', findName: ''},
+                {name: '朝阳区', findName: ''},
+                {name: '通州区', findName: ''},
+                {name: '东城区', findName: ''},
+                {name: '顺义区', findName: ''},
+                {name: '延庆县', findName: ''}
+            ];
+            $scope.updateInfoList= function (key,item) {
+                console.log(key+"=="+item);
+                switch (key) {
+                    case 1: // 所有大分类
+                        $scope.infoList.idClassification1=item;
+                        break;
+                    case 2: // 所有晓分类
+                        $scope.infoList.idClassification2=item;
+                        break;
+                    case 3: // 所有大区
+                        $scope.infoList.idArea1=item;
+                        break;
+                    case 4: // 所有小地区
+                        $scope.infoList.idArea2=item;
+                        break;
+                }
+                $scope.getInfoList();
+            };
+            $scope.getInfoList= function () {
+                var keyword={
+                    "type":$scope.active,
+                    "idClassification":$scope.infoList.idClassification2?$scope.infoList.idClassification2:$scope.infoList.idClassification1,
+                    "idArea":$scope.infoList.idArea2?$scope.infoList.idArea2:$scope.infoList.idArea1
+                };
+                $$neptune.find(constants.REQUEST_TARGET.GET_INFORMATION_LIST, keyword, {
+                    onSuccess: function (data) {
+                        console.log(data);
+                        $scope.informationLists=data
+                    },
+                    onError: function (e) {
+                        alert("网络缓慢请稍后重试");
+                    }
+                });
+            };
+            /**
+             * 界面跳转
+             * @param info
+             */
+            $scope.switchView = function (info) {
+                $scope.active = info;
+                $scope.getInfoList();
+                $scope.Initialize();
+                $scope.b()
             };
 
+            if($stateParams.id){
+                $scope.active = $stateParams.id;
+                $scope.getInfoList();
+            }else{
+                $scope.active="个人挂证";
+                $scope.getInfoList();
+            }
+            var init = function () {
+            };
             init();
         }]);
 

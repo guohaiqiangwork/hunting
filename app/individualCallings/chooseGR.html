@@ -24,16 +24,16 @@
         </div>
         <div style="width:1000px; overflow:hidden">
 
-            <ul style="line-height:30px">
-                <li style="width:365px; float:left; font-size:14px; padding-left:5px" ng-repeat="informationList in informationLists">
-                    <a href="/info/1830387.html" target="_blank" title="{{informationList.title}}">
+            <ul style="line-height:30px" ng-repeat="informationList in informationLists">
+                <li style="width:365px; float:left; font-size:14px; padding-left:5px">
+                    <a target="_blank" title="{{informationList.title}}">
                         {{informationList.title}}
                     </a>
                 </li>
                 <li style="width:160px; float:left; padding-left:10px" title="{{informationList.name}}">{{informationList.name}}</li>
-                <li style="width:140px; float:left; padding-left:10px">{{informationList.idArea}}</li>
+                <li style="width:140px; float:left; padding-left:10px">{{informationList.areaName}}</li>
                 <li style="width:90px; float:left; padding-left:10px">{{informationList.registrationType}}</li>
-                <li style="width:70px; float:left; padding-left:10px">{{}}</li>
+                <li style="width:70px; float:left; padding-left:10px">{{informationList.salary}}</li>
                 <li style="width:120px; float:left; padding-left:10px; font-size:12px">{{informationList.time|date:'yyyy-MM-dd'}}</li>
             </ul>
 

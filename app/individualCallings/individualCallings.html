@@ -10,32 +10,68 @@
                 </ul>
             </div>
             <div style="border:1px solid #dedede; margin-bottom:15px; overflow:hidden">
-                <ul style="width:100%; line-height:30px; padding-top:10px; padding-bottom:10px; overflow:hidden; font-size:14px;border-bottom:1px dotted #dedede;">
-                    <li style="float:left; width:75px; padding-left:10px">所有分类</li>
-                    <li style="float:right; width:900px">
-                        <div style="width:150px; float:left" ng-repeat="item in classificationBigList">{{item.name}}
-                        </div>
-                    </li>
+                <ul class="row test" style="width:100%; line-height:30px; padding-top:10px; padding-bottom:10px; overflow:hidden; font-size:14px;border-bottom:1px dotted #dedede;">
+                    <div class="col-xs-1">
+                        <p style="float:left; width:90px; padding-left:10px;font-weight: bold;color: #008EC8">所有分类</p>
+                    </div>
+                   <div class="col-xs-11">
+                       <li class="queryCenter_a"
+                           ng-click="updateInfoList(1,item.name)"
+                           ng-repeat="item in classificationBigList"
+                           ng-init="a()">
+                           {{item.name}}
+                       </li>
+                   </div>
                 </ul>
-                <ul style="width:100%; line-height:30px; padding-top:5px; padding-bottom:10px; overflow:hidden; font-size:14px;border-bottom:1px dotted #dedede;">
-                    <li style="float:left; width:75px; padding-left:10px">所有小类</li>
-                    <li style="float:right; width:900px">
-                        <div style="width:150px; float:left" ng-repeat="item in classificationSmallList">{{item.name}}
-                        </div>
-                    </li>
+
+                <ul class="row test"
+                    ng-if="infoList.idClassification1"
+                    style="width:100%; line-height:30px; padding-top:10px; padding-bottom:10px; overflow:hidden; font-size:14px;border-bottom:1px dotted #dedede;">
+                    <div class="col-xs-1">
+                        <p style="float:left; width:90px; padding-left:10px;font-weight: bold;color: #008EC8">所有小类</p>
+                    </div>
+                   <div class="col-xs-11">
+                       <li class="queryCenter_a"
+                           ng-repeat="item in classificationSmallList"
+                           ng-click="updateInfoList(2,item.name)"
+                           ng-init="a()">
+                           {{item.name}}
+                       </li>
+                   </div>
                 </ul>
-                <ul style="width:100%; line-height:30px; padding-top:5px; padding-bottom:10px; overflow:hidden; font-size:14px;border-bottom:1px dotted #dedede;">
-                    <li style="float:left; width:75px; padding-left:10px">所有地区</li>
-                    <li style="float:right; width:900px">
-                        <div style="width:90px; float:left" ng-repeat="item in  allAreasList">{{item.name}}</div>
-                    </li>
+
+
+                <ul class="row test" style="width:100%; line-height:30px; padding-top:10px; padding-bottom:10px; overflow:hidden; font-size:14px;border-bottom:1px dotted #dedede;">
+                    <div class="col-xs-1">
+                        <p style="float:left; width:90px; padding-left:10px;font-weight: bold;color: #008EC8">所有地区</p>
+                    </div>
+                   <div class="col-xs-11">
+                       <li class="queryCenter_b"
+                           ng-repeat="item in allAreasList"
+                           ng-click="updateInfoList(3,item.name)"
+                           ng-init="a()">
+                           {{item.name}}
+                       </li>
+                   </div>
                 </ul>
-                <ul style="width:100%; line-height:30px; padding-top:5px; overflow:hidden; font-size:14px">
-                    <li style="float:left; width:75px; padding-left:10px">二级地区</li>
-                    <li style="float:right; width:900px; padding-bottom:10px">
-                        请先选择地区大类
-                    </li>
+
+
+                <ul class="row test"
+                    ng-if="infoList.idArea1"
+                    style="width:100%; line-height:30px; padding-top:10px; padding-bottom:10px; overflow:hidden; font-size:14px;border-bottom:1px dotted #dedede;">
+                    <div class="col-xs-1">
+                        <p style="float:left; width:90px; padding-left:10px;font-weight: bold;color: #008EC8">二级地区</p>
+                    </div>
+                   <div class="col-xs-11">
+                       <li  ng-repeat="item in allAreasList1"
+                            class="queryCenter_b"
+                            ng-click="updateInfoList(4,item.name)"
+                            ng-init="a()">
+                           {{item.name}}
+                       </li>
+                   </div>
                 </ul>
+
             </div>
         </div>
 
