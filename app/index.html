@@ -153,9 +153,19 @@
             </li>
         </ul>
         <ul>
-            <li class="dropdown-toggle"  ng-click="goToLogin()" style="float: left;line-height: 50px;margin-left: 7%">登陆</li>
-            <li class="dropdown-toggle" style="float: left;margin: 0 1%;line-height: 50px">|</li>
-            <li class="dropdown-toggle" style="float: left;line-height: 50px">注册</li></ul>
+            <li data-toggle="modal"
+                data-target="#myModal"
+                ng-click="goToLogin()"
+                class="dropdown-toggle"
+                ng-click="goToLogin()"
+                style="float: left;line-height: 50px;margin-left: 7%">
+                <a>登陆 </a>
+            </li>
+            <li class="dropdown-toggle" style="float: left;margin: 0 3px;line-height: 50px">|</li>
+            <li class="dropdown-toggle" style="float: left;line-height: 50px"  ng-click="goToRegistered()">
+                <a>注册 </a>
+            </li>
+        </ul>
         </div>
 </nav>
 <!--聊天-->
@@ -164,21 +174,21 @@
         <img style="position: absolute;width: 38%;height: 80px" class="" src="assets/img/customerService.jpg"/>
         <span style="position: absolute;top: 11%;right: 30px;font-size: 20px;font-weight: bold;color: white">qq在线客服</span>
     </div>
-    <div class="row" style="margin-top: 10px" ng-click="qqChat('1979202959')">
+    <div class="row" style="margin-top: 10px" ng-click="qqChat('511421249')">
         <div class="col-xs-7 col-xs-offset-2 content text-center"
              style="height:34px;line-height:34px;border: 1px solid #ddd;border-radius:25px;padding: 0 0 0 5%;background-color: #CBDAFF">
             <img style="position: absolute;top: 0;left: -2px" src="assets/img/qqq.png"/>
             李老师
         </div>
     </div>
-    <div class="row" style="margin-top: 10px" ng-click="qqChat('1979202959')">
+    <div class="row" style="margin-top: 10px" ng-click="qqChat('849060463 ')">
         <div class="col-xs-7 col-xs-offset-2 content text-center"
              style="height:34px;line-height:34px;border: 1px solid #ddd;border-radius:25px;padding: 0 0 0 5%;background-color: #CBDAFF">
             <img style="position: absolute;top: 0;left: -2px" src="assets/img/qqq.png"/>
             张老师
         </div>
     </div>
-    <div class="row" style="margin-top: 10px" ng-click="qqChat('1979202959')">
+    <div class="row" style="margin-top: 10px" ng-click="qqChat('820093796')">
         <div class="col-xs-7 col-xs-offset-2 content text-center"
              style="height:34px;line-height:34px;border: 1px solid #ddd;border-radius:25px;padding: 0 0 0 5%;background-color: #CBDAFF">
             <img style="position: absolute;top: 0;left: -2px" src="assets/img/qqq.png"/>
