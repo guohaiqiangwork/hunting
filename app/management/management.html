@@ -1,83 +1,77 @@
 <div class="col-xs-12">
     <div class="col-xs-10 col-xs-offset-2">
         <div class="col-xs-12 margin_top3" multiple-form is-verification="isVerification"
-             is-complete="isComplete" cue-way="layer" result="successResult()" >
-            <!--<div class="col-xs-2">-->
-            <!--发布文章：<input type="text"/>-->
-            <!--</div>-->
-            <div class="col-xs-3">
-                标题：<input type="text" ng-model="$scope.organization.surrender.title">
-            </div>
-            <div class="col-xs-3">
-                请输入来源：<input type="text" ng-model="$scope.organization.surrender.source">
-            </div>
-            <div class="col-xs-3">
-                请选择类型：
-                <select name="" id="" ng-model="$scope.organization.surrender.type">
-                    <option value="2">fjdaslk</option>
-                    <option value="2">fjdaslk</option>
-                    <option value="2">fjdaslk</option>
-                </select>
-            </div>
+             is-complete="isComplete" cue-way="layer" result="successResult()">
+            标题：<input type="text" ng-model="organization.surrender.title">
+            请输入来源：<input type="text" ng-model="organization.surrender.source">
+            代办资质发布：
+            <select ng-model="organization.surrender.type">
+                <option value="1">总承包资质标准</option>
+                <option value="2">专业承包资质标准</option>
+                <option value="3">劳务分包资质标准</option>
+                <option value="4">安全生产许可证</option>
+                <option value="5">房地产开发资质</option>
+                <option value="6">园林绿化资质</option>
+                <option value="7">设计资质标准</option>
+                <option value="8">其他资质标准</option>
+            </select>
         </div>
         <div class="col-xs-12">
             <div class="col-xs-8  margin_top2">
-                <input type="text" style="width: 40%;margin-left: 6%" class=" input-small neptune_height30 fl"
+                <input type="text" style="width: 40%;margin-left:4%" class=" input-small neptune_height30 fl"
                        name="textfield"
                        id="condolences1" disabled="true"/>
                 <button id="browse" class="btn btn-primary" ng-click="uploadClick()">选择文件</button>
                 <button id="start_upload" class="btn btn-primary" ng-click="getSignOut()">
-                    发布文章
+                    代办资质发布
                 </button>
             </div>
         </div>
     </div>
-
-
     <!--<div class="col-xs-10 col-xs-offset-2">-->
-        <!--<div class="col-xs-12">-->
-            <!--<div class="col-xs-2">-->
-                <!--删除文章：-->
-            <!--</div>-->
-            <!--<div class="col-xs-3">-->
-                <!--<select name="">-->
-                    <!--<option value="">代办资质</option>-->
-                    <!--<option value="">资质动态</option>-->
-                <!--</select>-->
-            <!--</div>-->
-        <!--</div>-->
+    <!--<div class="col-xs-12">-->
+    <!--<div class="col-xs-2">-->
+    <!--删除文章：-->
+    <!--</div>-->
+    <!--<div class="col-xs-3">-->
+    <!--<select name="">-->
+    <!--<option value="">代办资质</option>-->
+    <!--<option value="">资质动态</option>-->
+    <!--</select>-->
+    <!--</div>-->
+    <!--</div>-->
     <!--</div>-->
     <!--<div class="col-xs-10 col-xs-offset-2">-->
-        <!--<div class="col-xs-12">-->
-            <!--<div class="col-xs-2">-->
-                <!--查看发布：-->
-            <!--</div>-->
-            <!--<div class="col-xs-3">-->
-                <!--<select name="">-->
-                    <!--<option value="">个人</option>-->
-                    <!--<option value="">企业</option>-->
-                <!--</select>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-xs-12">-->
-            <!--<table class="table table-striped">-->
-                <!--<tr>-->
-                    <!--<th>姓名</th>-->
-                    <!--<th>联系方式</th>-->
-                    <!--<th>事项</th>-->
-                <!--</tr>-->
-                <!--<tr>-->
-                    <!--<td>张三</td>-->
-                    <!--<td>1372391273</td>-->
-                    <!--<td>寻证</td>-->
-                <!--</tr>-->
-            <!--</table>-->
-        <!--</div>-->
-        <!--<div>-->
-            <!--<div>-->
-                <!--标题：<input type="text"/>-->
-            <!--</div>-->
+    <!--<div class="col-xs-12">-->
+    <!--<div class="col-xs-2">-->
+    <!--查看发布：-->
+    <!--</div>-->
+    <!--<div class="col-xs-3">-->
+    <!--<select name="">-->
+    <!--<option value="">个人</option>-->
+    <!--<option value="">企业</option>-->
+    <!--</select>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-xs-12">-->
+    <!--<table class="table table-striped">-->
+    <!--<tr>-->
+    <!--<th>姓名</th>-->
+    <!--<th>联系方式</th>-->
+    <!--<th>事项</th>-->
+    <!--</tr>-->
+    <!--<tr>-->
+    <!--<td>张三</td>-->
+    <!--<td>1372391273</td>-->
+    <!--<td>寻证</td>-->
+    <!--</tr>-->
+    <!--</table>-->
+    <!--</div>-->
+    <!--<div>-->
+    <!--<div>-->
+    <!--标题：<input type="text"/>-->
+    <!--</div>-->
 
-        <!--</div>-->
+    <!--</div>-->
     <!--</div>-->
 </div>

@@ -16,7 +16,9 @@
     },
     //请求路径
     backend: {
+        // ip: 'http://huahongshunda.applinzi.com/'//佳龙本地ip
         ip: 'http://192.168.0.105:8081/hunting/'//佳龙本地ip
+
     },
     auth:{
         isLogin:false,

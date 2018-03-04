@@ -105,7 +105,6 @@ define([
             uploader.init();
             //实例化一个plupload上传对象
             $scope.getSignOut = function () {
-                debugger;
                 $scope.isComplete = true;
                 return false
             };
