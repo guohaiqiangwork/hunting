@@ -28,6 +28,20 @@ define([
             // 数据入参转为后端格式
             var exportRules = {
                 /**
+                 * 注册
+                 */
+                registered: function (data) {
+                    var _request = data.keyWords;
+                    return _request;
+                },
+                /**
+                 * 登陆
+                 */
+                logined: function (data) {
+                    var _request = data.keyWords;
+                    return _request;
+                },
+                /**
                  * 获取信息列表
                  */
                 getInformationList: function (data) {
@@ -163,6 +177,18 @@ define([
             };
             //数据出参转为前端格式
             var importRules = {
+                /**
+                 * 注册
+                 */
+                registered: function (data) {
+                    return data.data;
+                },
+                /**
+                 * 登陆
+                 */
+                logined: function (data) {
+                    return data;
+                },
                 /**
                  * 资质动态首页
                  */

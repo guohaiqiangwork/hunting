@@ -301,7 +301,7 @@ h1 {
     border: 1px solid #4587E8;
 }
 .slowlySliding{
-    transition-duration: 0.6s;
+    transition-duration: 0.3s;
     /*     以下三值为默认值，稍后会详细介绍 */
     transition-property: all;
     transition-timing-function: ease;
@@ -323,4 +323,12 @@ h1 {
 .colorSelected{
     font-weight:bold;
     color:#EF5301;
+}
+.overflow_ZZDT{
+    color: #006699;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    width: 271px;
+    float: left
 }

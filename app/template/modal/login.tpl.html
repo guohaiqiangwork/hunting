@@ -8,16 +8,19 @@
             <p>账号</p>
         </div>
         <div style="width: 50%;margin-left: 28%;">
-            <input class="form-control input-sm disabled" placeholder="请输入账号"/>
+            <input ng-model="login.phone" ng-keyup="detection()" class="form-control input-sm disabled" placeholder="请输入账号"/>
         </div>
         <div style="width: 50%;margin-left: 28%;padding-top: 20px">
             <p>密码</p>
         </div>
         <div style="width: 50%;margin-left: 28%;">
-            <input class="form-control input-sm disabled" placeholder="请输入密码"/>
+            <input ng-model="login.password"  ng-keyup="detection()" class="form-control input-sm disabled" placeholder="请输入密码"/>
+        </div>
+        <div style="width: 50%;margin-left: 28%;color:red;text-align: center;font-size: 12px;margin-top: 5px">
+            {{prompt.prompts}}
         </div>
         <div style="width: 50%;margin-left: 28%;padding-top: 20px">
-            <button type="button" class="btn btn-default active" style="width: 88%;">立即登录</button>
+            <button ng-click="goLogin()" type="button" class="btn btn-default active" style="width: 88%;">立即登录</button>
         </div>
     </div>
 </div>

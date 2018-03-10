@@ -6,6 +6,10 @@ define([
 ], function (app, config, constants, layer) {
     app.controller('MainCtrl', ['$scope', '$$neptune', '$rootScope', '$state', '$timeout', 'localStorageService', '$modal',
         function ($scope, $$neptune, $rootScope, $state, $timeout, localStorageService, $modal) {
+            //登录信息
+            $rootScope.userZZ = {
+                userRanking: ""
+            };
             // 标签名字
             $rootScope.labelName = '';
             // 产品名称
@@ -102,24 +106,54 @@ define([
             };
             // 登陆
             $scope.goToLogin = function () {
-              $modal.open({
-                backdrop: 'static',
-                animation: true,
-                resolve: {},
-                templateUrl: 'template/modal/login.tpl.html',
-                controller: function ($scope, $modalInstance, $state, $timeout) {
+                $modal.open({
+                    backdrop: 'static',
+                    animation: true,
+                    resolve: {},
+                    templateUrl: 'template/modal/login.tpl.html',
+                    controller: function ($scope, $modalInstance, $state, $timeout) {
+                        $scope.login = {
+                            phone: "",
+                            password: ""
+                        };
+                        $scope.prompt = {
+                            prompts: ""
+                        };
+                        $scope.detection = function () {
+                            if ($scope.login.phone && $scope.login.password) {
+                                $scope.prompt.prompts = ""
+                            }
+                        };
+                        $scope.goLogin = function () {
+                            $$neptune.find(constants.REQUEST_TARGET.LOGINED, $scope.login, {
+                                onSuccess: function (data) {
+                                    console.log(data);
+                                    if (data.message == 'success!') {
+                                        $scope.close();
+                                        $rootScope.user.userRanking = data.data;
+                                        localStorageService.set('userZZ', $rootScope.user.userRanking);
+                                        $rootScope.userZZ = localStorageService.get('userZZ');
+                                        console.log($rootScope.user);
+                                    } else {
+                                        $scope.prompt.prompts = "账号密码错误"
+                                    }
+                                },
+                                onError: function (e) {
+                                    alert("网络缓慢请稍后重试");
+                                }
+                            });
+                        }
+                        var init = function () {
 
-                    var init = function () {
+                        };
 
-                    };
+                        $scope.close = function () {
+                            $modalInstance.dismiss();
+                        };
 
-                    $scope.close = function () {
-                        $modalInstance.dismiss();
-                    };
-
-                    init();
-                 }
-              });
+                        init();
+                    }
+                });
             };
             //返回上一个页面
             $scope.goToPage = function (labelName) {
@@ -136,7 +170,35 @@ define([
                     resolve: {},
                     templateUrl: 'template/modal/registered.tpl.html',
                     controller: function ($scope, $modalInstance, $state, $timeout) {
-
+                        $scope.registeredList = {
+                            phone: "",
+                            password: "",
+                            passwords: "",
+                            mailbox: "",
+                            name: ""
+                        };
+                        $scope.passwordverify = {
+                            trues: ""
+                        };
+                        $scope.verifyPassword = function () {
+                            if ($scope.registeredList.password) {
+                                if ($scope.registeredList.password !== $scope.registeredList.passwords) {
+                                    $scope.passwordverify.trues = '密码错误'
+                                } else {
+                                    $scope.passwordverify.trues = ''
+                                }
+                            }
+                        };
+                        $scope.registered = function () {
+                            $$neptune.find(constants.REQUEST_TARGET.REGISTERED, $scope.registeredList, {
+                                onSuccess: function (data) {
+                                    console.log(data)
+                                },
+                                onError: function (e) {
+                                    alert("网络缓慢请稍后重试");
+                                }
+                            });
+                        };
                         var init = function () {
 
                         };
@@ -178,5 +240,10 @@ define([
             }
             return data;
         }
-    });
+    })
+        .filter('to_trusted', ['$sce', function ($sce) {
+            return function (text) {
+                return $sce.trustAsHtml(text);
+            };
+        }]);
 });

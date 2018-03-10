@@ -486,7 +486,7 @@ define([
                     // _userInLocalStorage.loginState = _user.loginState;
                     // _userInLocalStorage.isClaim = _user.isClaim;
 
-                    localStorageService.set(constants.OPERATE_TYPE.LOCAL_USER, _user);
+                    localStorageService.set('ssss', _user);
                 };
                 /**
                  * 初始化

@@ -30,6 +30,14 @@ define(
                      * 信息发布
                      */
                     RELEASE_INFO_LIST:'information/addInformation',
+                    /**
+                     * 注册
+                     */
+                    REGISTERED:'account/register',
+                    /**
+                     * 登陆
+                     */
+                    LOGINED:'account/login',
                     //资质动态首页
                     DYNAMIC_HOMEPAGE:'dynamic/getDynamics',
                     //获取信息列表
@@ -127,6 +135,22 @@ define(
                 RELEASE_INFO_LIST:{
                     TARGET: 'releaseInfoList',
                     URL: backend.SERVER_IP + backend.REQUEST_METHOD.RELEASE_INFO_LIST,
+                    METHOD: 'POST'
+                },
+                /**
+                 * 注册
+                 */
+                REGISTERED:{
+                    TARGET: 'registered',
+                    URL: backend.SERVER_IP + backend.REQUEST_METHOD.REGISTERED,
+                    METHOD: 'POST'
+                },
+                /**
+                 * 登陆
+                 */
+                LOGINED:{
+                    TARGET: 'logined',
+                    URL: backend.SERVER_IP + backend.REQUEST_METHOD.LOGINED,
                     METHOD: 'POST'
                 }
             }

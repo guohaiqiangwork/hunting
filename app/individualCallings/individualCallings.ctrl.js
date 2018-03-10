@@ -133,9 +133,6 @@ define([
                             if ($scope.classificationList[index].relation == idArea) {
                                 $scope.zYList.push(data);
                             }
-
-                            console.log($scope.classificationList);
-                            console.log($scope.zYList);
                         });
                         break;
                     case 2: // 所有晓分类
