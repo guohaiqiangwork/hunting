@@ -1,12 +1,11 @@
-<div class="col-xs-12">
-    <div class="col-xs-12 margin_top3">
-        <div class="col-xs-12 panel-body" style="background-color: #ffffff">
-            <ul class="panel-content">
-                我是-工程师
-                <li ng-repeat="item in qualificationsBJList"><a href="" class="text-black">{{item.title}}<span
-                        class="pull-right">{{item.time | date:"yyyy-MM-ss"}}</span></a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<div class="col-xs-12" style="background-color: rgba(85, 85, 85, 0.01);min-height:300px;">
+    <div style="margin: 2% 0 0 2%;font-size: 20px">{{singlesZ}}</div>
+    <ul class="slowly">
+        <li class="row" style="margin-left: 2%;font-size: 20px;border-bottom: solid 1px #ddd;height: 40px;line-height: 40px"
+            ng-repeat="single in singles">
+            <a class="col-xs-10 text-left slowlySliding"
+               ng-click="goToDynamicDetails(single.idTrain)">{{single.title}}</a>
+            <span class="col-xs-2 text-right">{{single.time|date:'yyyy-MM-dd'}}</span>
+        </li>
+    </ul>
 </div>

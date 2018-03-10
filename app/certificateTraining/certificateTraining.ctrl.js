@@ -18,7 +18,8 @@ define([
              * @param info
              */
             $scope.switchView = function (info, type) {
-                $rootScope.active = info;
+                $scope.singlesZ=info;
+                $rootScope.active = '单个';
                 $scope.trainingData.type = type;
                 $scope.getCertificateTraining()
             };
@@ -42,11 +43,18 @@ define([
             $scope.getCertificateTraining = function () {
                 $$neptune.find(constants.REQUEST_TARGET.GET_CERTIFICATE_TRAINING_FIND, $scope.trainingData, {
                     onSuccess: function (data) {
-                        console.log(data);
                         $scope.qualificationsBSList = data.qualificationsBS;
                         $scope.qualificationsBJList = data.qualificationsBJ;
                         $scope.qualificationsZRList = data.qualificationsZR;
                         $scope.qualificationsCXList = data.qualificationsCX;
+                        if($scope.trainingData.type){
+                            angular.forEach(data, function (data, index) {
+                                if (data[0]) {
+                                    $scope.singles=data;
+                                    console.log($scope.singles)
+                                }
+                            });
+                        }
                     },
                     onError: function (e) {
                         layer.msg('网络缓慢请联系管理员', {time: 1000})
