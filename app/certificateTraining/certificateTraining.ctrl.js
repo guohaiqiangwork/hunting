@@ -53,6 +53,21 @@ define([
                     }
                 }, $scope.pagination);
             };
+            //详情
+            $scope.goToDynamicDetails= function (key) {
+                var keyword = {
+                    "idTrain":key
+                };
+                $rootScope.active = "详情";
+                $$neptune.find(constants.REQUEST_TARGET.GET_CERTIFICATE_TRAINING, keyword, {
+                    onSuccess: function (data) {
+                        $scope.details=data;
+                    },
+                    onError: function (e) {
+                        alert("网络缓慢请稍后重试");
+                    }
+                });
+            };
             var init = function () {
                 $scope.getCertificateTraining();//获取首页信息
             };

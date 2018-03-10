@@ -117,6 +117,15 @@ define([
                     return _request;
                 },
                 /**
+                 * 证书培训详情
+                 */
+                getCertificateTraining: function (data) {
+                    var _request = {
+                        "idProcess": data.keyWords.idTrain
+                    };
+                    return _request;
+                },
+                /**
                  * 获取地区信息
                  * @param data
                  * @returns {{}}
@@ -227,7 +236,6 @@ define([
                             _result.ordersQT.push(data)
                         }
                     });
-                    console.log(_result);
                     return _result;
 
                 },
@@ -262,6 +270,13 @@ define([
                     });
                     return _result;
 
+                },
+                /**
+                 * 证书培训详情
+                 * @param data
+                 */
+                getCertificateTraining: function (data) {
+                    return data.data;
                 },
                 /**
                  * 获取地区信息

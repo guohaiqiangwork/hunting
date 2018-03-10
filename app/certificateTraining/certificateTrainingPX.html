@@ -10,8 +10,11 @@
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
             <ul class="panel-content">
-                <li  ng-repeat="item in qualificationsBSList"><a href="" class="text-black">{{item.title}} <span
-                        class="pull-right font_size_12">{{item.time | date:"yyyy-mm-ss"}}</span></a>
+                <li  ng-repeat="item in qualificationsBSList">
+                    <a href="" class="text-black" ng-click="goToDynamicDetails(item.idTrain)">
+                      {{item.title}}
+                      <span class="pull-right font_size_12">{{item.time | date:"yyyy-mm-ss"}}</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -27,7 +30,7 @@
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
             <ul class="panel-content">
-                <li ng-repeat="item in qualificationsBJList"><a href="" class="text-black">{{item.title}} <span
+                <li ng-repeat="item in qualificationsBJList"><a  ng-click="goToDynamicDetails(item.idTrain)" href="" class="text-black">{{item.title}} <span
                         class="pull-right font_size_12">{{item.time | date:"yyyy-MM-ss"}}</span></a>
                 </li>
 
@@ -45,7 +48,7 @@
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
             <ul class="panel-content">
-                <li ng-repeat="item in qualificationsZRList"><a href="" class="text-black">{{item.title}} <span
+                <li ng-repeat="item in qualificationsZRList"><a  ng-click="goToDynamicDetails(item.idTrain)" href="" class="text-black">{{item.title}} <span
                         class="pull-right font_size_12">{{item.time | date:"yyyy-MM-ss"}}</span></a>
                 </li>
             </ul>
@@ -62,7 +65,7 @@
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
             <ul class="panel-content">
-                <li ng-repeat="item in qualificationsCXList"><a href="" class="text-black">{{item.title}}<span
+                <li ng-repeat="item in qualificationsCXList"><a  ng-click="goToDynamicDetails(item.idTrain)" href="" class="text-black">{{item.title}}<span
                         class="pull-right font_size_12">{{item.time | date:"yyyy-MM-ss"}}</span></a>
                 </li>
             </ul>
