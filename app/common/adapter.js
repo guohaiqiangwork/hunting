@@ -105,11 +105,17 @@ define([
                     var _request = {
                         "data": {
                             type: data.keyWords.type
-                        },
-                        "pagination": {
-                            "pageIndex": data.pagination.pageIndex,
-                            "pageSize": data.pagination.pageSize
                         }
+                    };
+                    return _request;
+                },
+                /**
+                 * 代办资质详情
+                 * @param data
+                 */
+                getDynamicsFinds: function (data) {
+                    var _request = {
+                        idStandard: data.keyWords.idStandard
                     };
                     return _request;
                 },
@@ -222,10 +228,12 @@ define([
                 },
                 /**
                  * 代办资质
+                 *   _result[index].type='总承包资质标准'
                  * @param data
                  */
                 getDynamicsFind: function (data) {
                     var dataList = data.data;
+                    var _results = dataList;
                     var _result = {
                         ordersZC: [],
                         ordersZY: [],
@@ -238,34 +246,64 @@ define([
                     };
                     angular.forEach(dataList, function (data, index, array) {
                         if (dataList[index].type == '1') {
-                            _result.ordersZC.push(data)
+                            _results[index].type='总承包资质标准'
                         }
                         if (dataList[index].type == '2') {
-                            _result.ordersZY.push(data)
+                            _results[index].type='专业承包资质标准'
                         }
                         if (dataList[index].type == '3') {
-                            _result.ordersLW.push(data)
+                            _results[index].type='劳务分包资质标准'
                         }
                         if (dataList[index].type == '4') {
-                            _result.ordersAQ.push(data)
+                            _results[index].type='安全生产许可证'
                         }
                         if (dataList[index].type == '5') {
-                            _result.ordersFD.push(data)
+                            _results[index].type='房地产开发资质'
                         }
                         if (dataList[index].type == '6') {
-                            _result.ordersYL.push(data)
+                            _results[index].type='园林绿化资质'
                         }
                         if (dataList[index].type == '7') {
-                            _result.ordersSJ.push(data)
+                            _results[index].type='设计资质标准'
                         }
                         if (dataList[index].type == '8') {
+                            _results[index].type='其他资质标准'
+                        }
+                    });
+                    angular.forEach(_results, function (data, index, array) {
+                        if (dataList[index].type == '总承包资质标准') {
+                            _result.ordersZC.push(data)
+                        }
+                        if (dataList[index].type == '专业承包资质标准') {
+                            _result.ordersZY.push(data)
+                        }
+                        if (dataList[index].type == '劳务分包资质标准') {
+                            _result.ordersLW.push(data)
+                        }
+                        if (dataList[index].type == '安全生产许可证') {
+                            _result.ordersAQ.push(data)
+                        }
+                        if (dataList[index].type == '房地产开发资质') {
+                            _result.ordersFD.push(data)
+                        }
+                        if (dataList[index].type == '园林绿化资质') {
+                            _result.ordersYL.push(data)
+                        }
+                        if (dataList[index].type == '设计资质标准') {
+                            _result.ordersSJ.push(data)
+                        }
+                        if (dataList[index].type == '其他资质标准') {
                             _result.ordersQT.push(data)
                         }
                     });
                     return _result;
-
                 },
-
+                /**
+                 * daibazizhi详情
+                 */
+                getDynamicsFinds: function (data) {
+                    return data.data;
+                },
                 /**
                  * 证书培训
                  * @param data

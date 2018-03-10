@@ -10,6 +10,7 @@ define([
             $rootScope.userZZ = {
                 userRanking: ""
             };
+            $rootScope.userZZ = localStorageService.get('userZZ');
             // 标签名字
             $rootScope.labelName = '';
             // 产品名称

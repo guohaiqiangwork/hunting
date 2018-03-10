@@ -1,0 +1,11 @@
+<div class="col-xs-12" style="background-color: rgba(85, 85, 85, 0.01);min-height:300px;">
+    <div style="margin: 2% 0 0 2%;font-size: 20px">{{qualificationsTitle}}</div>
+    <ul class="slowly">
+        <li class="row" style="margin-left: 2%;font-size: 20px;border-bottom: solid 1px #ddd;height: 40px;line-height: 40px"
+            ng-repeat="single in singles">
+            <a class="col-xs-10 text-left slowlySliding"
+               ng-click="goToDynamicDetails(single.idDynamic)">{{single.title}}</a>
+            <span class="col-xs-2 text-right">{{single.time|date:'yyyy-MM-dd'}}</span>
+        </li>
+    </ul>
+</div>

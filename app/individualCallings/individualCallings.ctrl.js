@@ -36,7 +36,6 @@ define([
             $scope.getRegional = function () {
                 $$neptune.find(constants.REQUEST_TARGET.GET_REGIONAL_FIND, "", {
                     onSuccess: function (data) {
-                        console.log(data);
                         $scope.regionalList = data.area;
                         $scope.classificationList = data.classification;
                         $scope.regionalLists = [];

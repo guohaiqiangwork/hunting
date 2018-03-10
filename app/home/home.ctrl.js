@@ -107,7 +107,6 @@ define([
                                 $scope.regionalLists.push(data)
                             }
                         });
-                       console.log($scope.regionalLists)
                     },
                     onError: function (e) {
                         layer.msg("网络缓慢请稍后重试", {time: 1000});

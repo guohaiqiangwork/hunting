@@ -12,7 +12,11 @@ define(
                     /**
                      * 代办资质首页
                      */
-                    GET_DYNAMICS: 'standard/getStandards',
+                    GET_DYNAMICS_FIND: 'standard/getStandards',
+                    /**
+                     * 代办资质xiangqing
+                     */
+                    GET_DYNAMICS_FINDS: 'standard/getStandard',
                     /**
                      * 证书培训
                      */
@@ -102,7 +106,15 @@ define(
                  */
                 GET_DYNAMICS_FIND: {
                     TARGET: 'getDynamicsFind',
-                    URL: backend.SERVER_IP + backend.REQUEST_METHOD.GET_DYNAMICS,
+                    URL: backend.SERVER_IP + backend.REQUEST_METHOD.GET_DYNAMICS_FIND,
+                    METHOD: 'POST'
+                },
+                /**
+                 * 代办资质详情
+                 */
+                GET_DYNAMICS_FINDS: {
+                    TARGET: 'getDynamicsFinds',
+                    URL: backend.SERVER_IP + backend.REQUEST_METHOD.GET_DYNAMICS_FINDS,
                     METHOD: 'POST'
                 },
                 /**
