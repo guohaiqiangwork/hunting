@@ -102,8 +102,52 @@ define([
             };
             // 登陆
             $scope.goToLogin = function () {
-                $scope.loginTarge = false;
-                $state.go('login')
+              $modal.open({
+                backdrop: 'static',
+                animation: true,
+                resolve: {},
+                templateUrl: 'template/modal/login.tpl.html',
+                controller: function ($scope, $modalInstance, $state, $timeout) {
+
+                    var init = function () {
+
+                    };
+
+                    $scope.close = function () {
+                        $modalInstance.dismiss();
+                    };
+
+                    init();
+                 }
+              });
+            };
+            //返回上一个页面
+            $scope.goToPage = function (labelName) {
+                javascript: history.go(-1);
+                // 删除标签
+                if (labelName)
+                    $rootScope.labelName = labelName;
+            };
+            // 注册
+            $scope.goToRegistered = function () {
+                $modal.open({
+                    backdrop: 'static',
+                    animation: true,
+                    resolve: {},
+                    templateUrl: 'template/modal/registered.tpl.html',
+                    controller: function ($scope, $modalInstance, $state, $timeout) {
+
+                        var init = function () {
+
+                        };
+
+                        $scope.close = function () {
+                            $modalInstance.dismiss();
+                        };
+
+                        init();
+                    }
+                });
             };
             //返回上一个页面
             $scope.goToPage = function (labelName) {

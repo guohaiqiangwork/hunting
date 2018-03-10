@@ -5734,7 +5734,6 @@ button.close {
     left: 0;
     z-index: 1040;
     /*background-color: #000*/
-    background: url(../images/Tblack.png) repeat left top;
     filter:none!important;
 }
 
