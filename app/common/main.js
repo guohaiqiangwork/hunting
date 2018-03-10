@@ -39,7 +39,6 @@ require.config({
         'jquery-qrcode': 'assets/js/jquery/jquery.qrcode.min',
         'MD5': 'assets/js/MD5',
         'bootstrap-treeview': 'assets/js/bootstrap-treeview/bootstrap-treeview',
-        'echarts': 'assets/js/echart/echarts',
         'responsive-menu': 'assets/js/js/responsive-menu',
         'slide': 'assets/js/jquery.slide',
         'snippet': 'assets/js/jquery.snippet.min',
@@ -116,9 +115,6 @@ require.config({
         'jquery-qrcode': {
             deps: ['jquery']
         },
-        'echarts': {
-            exports: 'echarts'
-        },
         'slide': {
             deps: ['jquery']
         },
@@ -131,7 +127,6 @@ require.config({
         'angular',
         'app-init',
         'mainCtrl',
-        'echarts',
         'responsive-menu',
         'slide',
         'snippet'
@@ -142,7 +137,6 @@ require(['jquery',
         'app-init',
         'respond',
         'mainCtrl',
-        'echarts',
         'responsive-menu',
         'slide',
         'snippet'],
