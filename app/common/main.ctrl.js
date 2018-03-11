@@ -11,6 +11,7 @@ define([
                 userRanking: ""
             };
             $rootScope.userZZ = localStorageService.get('userZZ');
+            console.log($rootScope.userZZ);
             // 标签名字
             $rootScope.labelName = '';
             // 产品名称
@@ -24,6 +25,23 @@ define([
             layer.config({
                 path: "assets/js/layer/"
             });
+            $scope.mouseOut= function () {
+                document.all.Layer1.style.visibility="hidden"
+            };
+            $scope.mouseOver= function () {
+                $scope.zzz=true;
+                document.all.Layer1.style.visibility=""
+            };
+            $scope.tuichu= function () {
+                $rootScope.userZZ={
+                    idAccount:"",
+                    jurisdiction: null,
+                    mailbox: "",
+                    name:"",
+                    password: "",
+                    phone: ""
+                }
+            };
             // 返回失败监听
             $rootScope.$on(constants.EVENTS.BACKEND_EXCEPTION, function (event, args) {
                 layer.msg(args.message, {time: 2000});

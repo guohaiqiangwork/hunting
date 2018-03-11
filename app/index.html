@@ -6,8 +6,10 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache,must-revalidate">
-    <meta HTTP-EQUIV="expires" CONTENT="0"><!--清缓存测试-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/><!--清缓存测试ie9-->
+    <meta HTTP-EQUIV="expires" CONTENT="0">
+    <!--清缓存测试-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!--清缓存测试ie9-->
     <meta name="renderer" content="webkit">
 
 
@@ -31,25 +33,25 @@
             };
 
             loadStylesWithVersion([
-                    'assets/css/bootstrap.3.1.1.css',
-                    'assets/css/jedate.css',
-                    'assets/css/switch-buttons.css',
-                    'assets/css/multi-editor.css',
-                    'assets/css/font-awesome.min.css',
-                    'assets/css/neptune.css',
-                    'assets/css/color.css',
-                    'assets/css/mc.bakery-0.0.2.css',
-                    'assets/css/neptune_base.css',
-                    'assets/css/neptune_fonts.css',
-                    'assets/css/color.css',
-                    'assets/css/login.css',
-                    'assets/css/neptune-directive.css',
-                    'assets/css/css/responsive-menu.css',
-                    'assets/css/css/styles.css',
-                    'assets/css/css/base.css',
-                    'assets/css/animate.min.css'
-                ],
-                window.NEPTUNE.version);
+                        'assets/css/bootstrap.3.1.1.css',
+                        'assets/css/jedate.css',
+                        'assets/css/switch-buttons.css',
+                        'assets/css/multi-editor.css',
+                        'assets/css/font-awesome.min.css',
+                        'assets/css/neptune.css',
+                        'assets/css/color.css',
+                        'assets/css/mc.bakery-0.0.2.css',
+                        'assets/css/neptune_base.css',
+                        'assets/css/neptune_fonts.css',
+                        'assets/css/color.css',
+                        'assets/css/login.css',
+                        'assets/css/neptune-directive.css',
+                        'assets/css/css/responsive-menu.css',
+                        'assets/css/css/styles.css',
+                        'assets/css/css/base.css',
+                        'assets/css/animate.min.css'
+                    ],
+                    window.NEPTUNE.version);
         })();
     </script>
     <!--兼容ie8-->
@@ -163,20 +165,39 @@
                 <a>登录</a>
             </li>
             <li class="dropdown-toggle" style="float: left;margin: 0 3px;line-height: 50px">|</li>
-            <li class="dropdown-toggle" style="float: left;line-height: 50px"  ng-click="goToRegistered()">
+            <li class="dropdown-toggle" style="float: left;line-height: 50px" ng-click="goToRegistered()">
                 <a>注册 </a>
             </li>
         </ul>
 
         <ul ng-if="userZZ.name">
             <li style="float: left;line-height: 50px;margin-left: 7%">
-                <img src="images/name.jpg" style="width: 47%;"/>
+                <div style="width:40px">
+                    <img src="images/name.jpg" style="width: 80%;"/>
+                </div>
             </li>
-            <li style="float: left;line-height: 50px;margin-left: 1%">
-                {{userZZ.name}}
+            <li style="float: left;line-height: 50px;margin-left: 1%;"
+                ng-mouseOut="mouseOut()"
+                ng-mouseOver="mouseOver()">
+                <a style="border-bottom: 1px solid #ddd"
+                        >{{userZZ.phone}} <i class="glyphicon glyphicon-chevron-down" style="font-size: 12px"></i>
+                    <a id="Layer1"
+                       ng-click="tuichu()"
+                       style="position:absolute;
+                              width:50px;
+                            height:40px;
+                            line-height: 40px;
+                            z-index:1;
+                            font-size: 12px;
+                            background-color: white;
+                            layer-background-color: white;
+                            border: 1px none #000000;
+                            text-align: center;
+                            visibility: hidden">退出</a>
+                </a>
             </li>
         </ul>
-        </div>
+    </div>
 </nav>
 <!--聊天-->
 <div class="qqChat" ng-if="loginTarge">
