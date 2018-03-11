@@ -332,3 +332,7 @@ h1 {
     width: 271px;
     float: left
 }
+.color_white{
+    font-weight: bold;
+    color:##fff;
+}
