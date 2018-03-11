@@ -179,7 +179,8 @@ define([
                             name: ""
                         };
                         $scope.passwordverify = {
-                            trues: ""
+                            trues: "",
+                            phones:""
                         };
                         $scope.verifyPassword = function () {
                             if ($scope.registeredList.password) {
@@ -199,6 +200,26 @@ define([
                                     alert("网络缓慢请稍后重试");
                                 }
                             });
+                        };
+                        $scope.verifyPhone= function () {
+                            if($scope.registeredList.phone.length==0)
+                            {
+                                $scope.passwordverify.phones='请输入手机号';
+                                return false;
+                            }
+                            if( $scope.registeredList.phone.length!=11)
+                            {
+                                $scope.passwordverify.phones='手机号无效';
+                                return false;
+                            }
+                            var myreg = /^1[3|5][0-9]\d{4,8}$/;
+                            if(!myreg.test($scope.registeredList.phone))
+                            {
+                                $scope.passwordverify.phones='手机号无效';
+                                return false;
+                            }else{
+                                $scope.passwordverify.phones='';
+                            }
                         };
                         var init = function () {
 

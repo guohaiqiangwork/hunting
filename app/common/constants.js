@@ -20,11 +20,11 @@ define(
                     /**
                      * 证书培训
                      */
-                    GET_CERTIFICATE_TRAINING_FIND: '/train/getTrains',
+                    GET_CERTIFICATE_TRAINING_FIND: 'train/getTrains',
                     /**
                      * 证书培训详情
                      */
-                    GET_CERTIFICATE_TRAINING: '/train/getTrain',
+                    GET_CERTIFICATE_TRAINING: 'train/getTrain',
                     /**
                      *
                      * 获取地区信息

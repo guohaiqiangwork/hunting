@@ -7,8 +7,12 @@
         <div style="width: 50%;margin-left: 28%;padding-top: 20px">
             <input ng-model="registeredList.name" class="form-control input-sm disabled" placeholder="请输入姓名"/>
         </div>
-        <div style="width: 50%;margin-left: 28%;padding-top: 20px">
-            <input ng-model="registeredList.phone" class="form-control input-sm disabled" placeholder="请输入手机号"/>
+        <div style="width: 50%;margin-left: 28%;padding-top: 20px;position: relative">
+            <input ng-model="registeredList.phone"
+                   class="form-control input-sm disabled"
+                   ng-keyup="verifyPhone()"
+                   placeholder="请输入手机号"/>
+            <div style="color:red;font-size: 12px;position: absolute;top: 52%;right: -13%;">{{passwordverify.phones}}</div>
         </div>
         <div style="width: 50%;margin-left: 28%;padding-top: 20px">
             <input ng-model="registeredList.mailbox" class="form-control input-sm disabled" placeholder="请输入QQ/Email"/>

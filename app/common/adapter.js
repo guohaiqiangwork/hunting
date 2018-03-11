@@ -146,7 +146,7 @@ define([
                  */
                 getCertificateTraining: function (data) {
                     var _request = {
-                        "idProcess": data.keyWords.idTrain
+                        "idTrain": data.keyWords.idTrain
                     };
                     return _request;
                 },
