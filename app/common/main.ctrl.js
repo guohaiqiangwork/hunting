@@ -11,6 +11,7 @@ define([
                 userRanking: ""
             };
             $rootScope.userZZ = localStorageService.get('userZZ');
+            $scope.nicheng="*****"+ $rootScope.userZZ.phone.slice(7);
             console.log($rootScope.userZZ);
             // 标签名字
             $rootScope.labelName = '';
