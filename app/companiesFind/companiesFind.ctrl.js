@@ -113,7 +113,8 @@ define([
             };
 
             var init = function () {
-                $scope.getRegional()
+                $scope.getRegional();
+                $scope.updateInfoList();
             };
 
             init();

@@ -13,27 +13,45 @@
         <div class="col-xs-12 panel-body" style="background-color: #ffffff;border-radius: 0 0 4px 4px;">
             <ul class="panel-content">
                 <li ng-if="dynamicQualification[0]">
-                    <a class="text-black slowlySliding" ng-click="goToDynamicDetails(dynamicQualification[0].idStandard)">
+                    <!--<a class="overflow_ZZDT text-black slowlySliding" ng-click="goToDynamicDetails(dynamicQualification[0].idStandard)">-->
+                        <!--{{dynamicQualification[0].title}}-->
+                        <!--<span class="font_size_12 pull-right">{{dynamicQualification[0].time|date:'yyyy-MM-dd'}}-->
+                        <!--</span>-->
+                    <!--</a>-->
+                    <div  class="overflow_ZZDT text-black slowlySliding" style="cursor: pointer;" ng-click="goToDynamicDetails(dynamicQualification[0].idStandard)">
                         {{dynamicQualification[0].title}}
-                        <span class="font_size_12 pull-right">{{dynamicQualification[0].time|date:'yyyy-MM-dd'}}
-                        </span>
-                    </a>
+                    </div>
+                    <div class="font_size_12" style="float: left">
+                        {{dynamicQualification[0].time|date:'yyyy-MM-dd'}}
+                    </div>
                 </li>
                 <li ng-if="dynamicQualification[1]">
-                    <a class="text-black slowlySliding" ng-click="goToDynamicDetails(dynamicQualification[1].idDynamic)">
+                    <!--<a class="overflow_ZZDT text-black slowlySliding" ng-click="goToDynamicDetails(dynamicQualification[1].idDynamic)">-->
+                        <!--{{dynamicQualification[1].title}}-->
+                    <!--<span class="font_size_12 pull-right">-->
+                        <!--{{dynamicQualification[1].time|date:'yyyy-MM-dd'}}-->
+                    <!--</span>-->
+                    <!--</a>-->
+                    <div  class="overflow_ZZDT text-black slowlySliding" style="cursor: pointer;" ng-click="goToDynamicDetails(dynamicQualification[1].idDynamic)">
                         {{dynamicQualification[1].title}}
-                    <span class="font_size_12 pull-right">
+                    </div>
+                    <div class="font_size_12" style="float: left">
                         {{dynamicQualification[1].time|date:'yyyy-MM-dd'}}
-                    </span>
-                    </a>
+                    </div>
                 </li>
                 <li ng-if="dynamicQualification[2]">
-                    <a class="text-black slowlySliding"  ng-click="goToDynamicDetails(dynamicQualification[2].idDynamic)">
+                    <!--<a class="overflow_ZZDT text-black slowlySliding"  ng-click="goToDynamicDetails(dynamicQualification[2].idDynamic)">-->
+                        <!--{{dynamicQualification[2].title}}-->
+                    <!--<span class="font_size_12 pull-right">-->
+                        <!--{{dynamicQualification[2].time|date:'yyyy-MM-dd'}}-->
+                    <!--</span>-->
+                    <!--</a>-->
+                    <div  class="overflow_ZZDT text-black slowlySliding" style="cursor: pointer;" ng-click="goToDynamicDetails(dynamicQualification[2].idDynamic)">
                         {{dynamicQualification[2].title}}
-                    <span class="font_size_12 pull-right">
+                    </div>
+                    <div class="font_size_12" style="float: left">
                         {{dynamicQualification[2].time|date:'yyyy-MM-dd'}}
-                    </span>
-                    </a>
+                    </div>
                 </li>
             </ul>
         </div>

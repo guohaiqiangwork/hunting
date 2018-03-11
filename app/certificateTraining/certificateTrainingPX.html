@@ -11,10 +11,12 @@
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
             <ul class="panel-content">
                 <li  ng-repeat="item in qualificationsBSList">
-                    <a href="" class="text-black" ng-click="goToDynamicDetails(item.idTrain)">
-                      {{item.title}}
-                      <span class="pull-right font_size_12">{{item.time | date:"yyyy-mm-ss"}}</span>
-                    </a>
+                    <div  class="overflow_ZZDT text-black slowlySliding" style="cursor:pointer " ng-click="goToDynamicDetails(item.idTrain)">
+                        {{item.title}}
+                    </div>
+                    <div class="font_size_12" style="float: left">
+                        {{item.time|date:'yyyy-MM-dd'}}
+                    </div>
                 </li>
             </ul>
         </div>
@@ -30,8 +32,13 @@
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
             <ul class="panel-content">
-                <li ng-repeat="item in qualificationsBJList"><a  ng-click="goToDynamicDetails(item.idTrain)" href="" class="text-black">{{item.title}} <span
-                        class="pull-right font_size_12">{{item.time | date:"yyyy-MM-ss"}}</span></a>
+                <li ng-repeat="item in qualificationsBJList">
+                    <div  class="overflow_ZZDT text-black slowlySliding" style="cursor:pointer " ng-click="goToDynamicDetails(item.idTrain)">
+                        {{item.title}}
+                    </div>
+                    <div class="font_size_12" style="float: left">
+                        {{item.time|date:'yyyy-MM-dd'}}
+                    </div>
                 </li>
 
             </ul>
@@ -48,8 +55,13 @@
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
             <ul class="panel-content">
-                <li ng-repeat="item in qualificationsZRList"><a  ng-click="goToDynamicDetails(item.idTrain)" href="" class="text-black">{{item.title}} <span
-                        class="pull-right font_size_12">{{item.time | date:"yyyy-MM-ss"}}</span></a>
+                <li ng-repeat="item in qualificationsZRList">
+                    <div  class="overflow_ZZDT text-black slowlySliding" style="cursor:pointer " ng-click="goToDynamicDetails(item.idTrain)">
+                        {{item.title}}
+                    </div>
+                    <div class="font_size_12" style="float: left">
+                        {{item.time|date:'yyyy-MM-dd'}}
+                    </div>
                 </li>
             </ul>
         </div>
@@ -65,8 +77,13 @@
         </div>
         <div class="col-xs-12 panel-body" style="background-color: #ffffff">
             <ul class="panel-content">
-                <li ng-repeat="item in qualificationsCXList"><a  ng-click="goToDynamicDetails(item.idTrain)" href="" class="text-black">{{item.title}}<span
-                        class="pull-right font_size_12">{{item.time | date:"yyyy-MM-ss"}}</span></a>
+                <li ng-repeat="item in qualificationsCXList">
+                    <div  class="overflow_ZZDT text-black slowlySliding" style="cursor:pointer " ng-click="goToDynamicDetails(item.idTrain)">
+                        {{item.title}}
+                    </div>
+                    <div class="font_size_12" style="float: left">
+                        {{item.time|date:'yyyy-MM-dd'}}
+                    </div>
                 </li>
             </ul>
         </div>

@@ -105,20 +105,16 @@
                     <div style="width:1000px; overflow:hidden">
                         <ul style="line-height:30px" ng-repeat="informationList in informationLists">
                             <li style="width:365px; float:left; font-size:14px; padding-left:5px">
-                                <a target="_blank" title="{{informationList.title}}">
+                                <a target="_blank" title=" {{informationList.title}}">
                                     {{informationList.title}}
                                 </a>
                             </li>
-                            <li style="width:160px; float:left; padding-left:10px" title="{{informationList.name}}">
-                                {{informationList.name}}
-                            </li>
-                            <li style="width:140px; float:left; padding-left:10px">{{informationList.areaName}}</li>
-                            <li style="width:90px; float:left; padding-left:10px">{{informationList.registrationType}}
-                            </li>
-                            <li style="width:70px; float:left; padding-left:10px">{{informationList.salary}}</li>
-                            <li style="width:120px; float:left; padding-left:10px; font-size:12px">
-                                {{informationList.time|date:'yyyy-MM-dd'}}
-                            </li>
+                            <li style="width:160px; float:left; padding-left:10px" title="&nbsp;{{informationList.name}}">{{informationList.name}}</li>
+                            <li style="width:156px; float:left; padding-left:10px"> &nbsp;{{informationList.areaName}}</li>
+                            <li style="width:156px; float:left; padding-left:10px">&nbsp;{{informationList.registrationType}}</li>
+                            <li style="width:70px; float:left; padding-left:10px"> &nbsp;{{informationList.salary}}</li>
+                            <li style="width:70px; float:left; padding-left:10px"> &nbsp;{{informationList.salary}}</li>
+                            <li style="width:120px; float:left; padding-left:10px"> {{informationList.time|date:'yyyy-MM-dd'}}</li>
                         </ul>
                     </div>
                 </div>

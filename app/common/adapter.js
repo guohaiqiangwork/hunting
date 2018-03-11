@@ -238,14 +238,12 @@ define([
                  */
                 getDynamicsFind: function (data) {
                     var dataList = data.data;
+                    console.log(data);
                     var _results = dataList;
                     var _result = {
                         ordersZC: [],
                         ordersZY: [],
-                        ordersLW: [],
                         ordersAQ: [],
-                        ordersFD: [],
-                        ordersYL: [],
                         ordersSJ: [],
                         ordersQT: []
                     };
@@ -257,21 +255,12 @@ define([
                             _results[index].type='专业承包资质标准'
                         }
                         if (dataList[index].type == '3') {
-                            _results[index].type='劳务分包资质标准'
-                        }
-                        if (dataList[index].type == '4') {
                             _results[index].type='安全生产许可证'
                         }
-                        if (dataList[index].type == '5') {
-                            _results[index].type='房地产开发资质'
-                        }
-                        if (dataList[index].type == '6') {
-                            _results[index].type='园林绿化资质'
-                        }
-                        if (dataList[index].type == '7') {
+                        if (dataList[index].type == '4') {
                             _results[index].type='设计资质标准'
                         }
-                        if (dataList[index].type == '8') {
+                        if (dataList[index].type == '5') {
                             _results[index].type='其他资质标准'
                         }
                     });
@@ -282,17 +271,8 @@ define([
                         if (dataList[index].type == '专业承包资质标准') {
                             _result.ordersZY.push(data)
                         }
-                        if (dataList[index].type == '劳务分包资质标准') {
-                            _result.ordersLW.push(data)
-                        }
                         if (dataList[index].type == '安全生产许可证') {
                             _result.ordersAQ.push(data)
-                        }
-                        if (dataList[index].type == '房地产开发资质') {
-                            _result.ordersFD.push(data)
-                        }
-                        if (dataList[index].type == '园林绿化资质') {
-                            _result.ordersYL.push(data)
                         }
                         if (dataList[index].type == '设计资质标准') {
                             _result.ordersSJ.push(data)
