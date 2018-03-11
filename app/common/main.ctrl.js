@@ -180,7 +180,9 @@ define([
                         };
                         $scope.passwordverify = {
                             trues: "",
-                            phones:""
+                            phones:"",
+                            name:"",
+                            mailbox:""
                         };
                         $scope.verifyPassword = function () {
                             if ($scope.registeredList.password) {
@@ -219,6 +221,31 @@ define([
                                 return false;
                             }else{
                                 $scope.passwordverify.phones='';
+                            }
+                        };
+                        /*验证姓名*/
+                        $scope.verifyName= function () {
+                            if($scope.registeredList.name.length==0)
+                            {
+                                $scope.passwordverify.name='姓名不能为空';
+                                return false;
+                            }
+                            if( $scope.registeredList.name.length==8)
+                            {
+                                $scope.passwordverify.name='姓名不超过8位';
+                                return false;
+                            }
+                        };
+                        /*验证邮箱或者QQ*/
+                        $scope.verifyMailbox= function () {
+                            var myreg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+                            var myregs = /[1-9][0-9]{4,}/;
+                            if(!myreg.test($scope.registeredList.mailbox)&&!myregs.test($scope.registeredList.mailbox))
+                            {
+                                $scope.passwordverify.mailbox='格式不正确';
+                                return false;
+                            }else{
+                                $scope.passwordverify.mailbox='';
                             }
                         };
                         var init = function () {
