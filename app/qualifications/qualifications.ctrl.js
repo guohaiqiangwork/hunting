@@ -21,7 +21,6 @@ define([
                 };
                 $$neptune.find(constants.REQUEST_TARGET.DYNAMIC_HOMEPAGE_MORE, keyword, {
                     onSuccess: function (data) {
-                        console.log(data);
                         $scope.singles=data;
                     },
                     onError: function (e) {
@@ -63,15 +62,18 @@ define([
                 var keyword = {
                     "idDynamic":key
                 };
-                $rootScope.active = "详情";
-                $$neptune.find(constants.REQUEST_TARGET.DYNAMIC_HOMEPAGE_DETAILS, keyword, {
-                    onSuccess: function (data) {
-                        $scope.details=data;
-                    },
-                    onError: function (e) {
-                        alert("网络缓慢请稍后重试");
-                    }
-                });
+                if(key){
+                    $rootScope.active = "详情";
+                    $$neptune.find(constants.REQUEST_TARGET.DYNAMIC_HOMEPAGE_DETAILS, keyword, {
+                        onSuccess: function (data) {
+                            $scope.details=data;
+                        },
+                        onError: function (e) {
+                            alert("网络缓慢请稍后重试");
+                        }
+                    });
+                }
+
             };
             var init = function () {
                 $scope.toObtainDynamic();

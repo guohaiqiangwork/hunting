@@ -84,7 +84,6 @@ define([
                 $scope.infoList.idClassification2="";
                 angular.forEach($scope.classificationList, function (data, index) {
                     if ($scope.classificationList[index].relation == id) {
-                        console.log($scope.classificationList[index]);
                         $scope.zYList.push(data);
                     }
                 });
@@ -103,7 +102,6 @@ define([
                 };
                 $$neptune.find(constants.REQUEST_TARGET.GET_INFORMATION_LIST, keyword, {
                     onSuccess: function (data) {
-                        console.log(data);
                         $scope.informationLists=data
                     },
                     onError: function (e) {

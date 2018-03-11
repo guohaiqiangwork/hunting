@@ -138,7 +138,6 @@ define([
                                             $rootScope.user.userRanking = data.data;
                                             localStorageService.set('userZZ', $rootScope.user.userRanking);
                                             $rootScope.userZZ = localStorageService.get('userZZ');
-                                            console.log($rootScope.user);
                                         } else {
                                             $scope.prompt.prompts = "账号密码错误"
                                         }
@@ -219,7 +218,6 @@ define([
                                 $scope.prompt.promp = '';
                                 $$neptune.find(constants.REQUEST_TARGET.REGISTERED, $scope.registeredList, {
                                     onSuccess: function (data) {
-                                        console.log(data);
                                         if (data.message == 'success!') {
                                             $scope.close();
                                             $rootScope.user.userRanking = data.data;

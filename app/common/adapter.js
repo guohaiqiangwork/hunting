@@ -121,7 +121,6 @@ define([
                     var _request = {
                         idStandard: data.keyWords.idStandard
                     };
-                    console.log(_request);
                     return _request;
                 },
                 /**
@@ -238,7 +237,6 @@ define([
                  */
                 getDynamicsFind: function (data) {
                     var dataList = data.data;
-                    console.log(data);
                     var _results = dataList;
                     var _result = {
                         ordersZC: [],

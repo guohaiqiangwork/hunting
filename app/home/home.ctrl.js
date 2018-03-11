@@ -124,7 +124,6 @@ define([
                         $scope.quYuList.push(data)
                     }
                 });
-                console.log($scope.quYuList)
             };
             /**
              * 发布信息

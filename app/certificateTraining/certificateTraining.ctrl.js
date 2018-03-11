@@ -51,7 +51,6 @@ define([
                             angular.forEach(data, function (data, index) {
                                 if (data[0]) {
                                     $scope.singles=data;
-                                    console.log($scope.singles)
                                 }
                             });
                         }

@@ -8,7 +8,7 @@ define([
         function ($scope, $state, $rootScope, $$neptune, $timeout, $stateParams) {
             $scope.leftTitle = $stateParams.id;
             var init = function () {
-                console.log('建筑企业信息')
+
             };
 
             init();
