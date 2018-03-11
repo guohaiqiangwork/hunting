@@ -104,7 +104,11 @@ define([
                 getDynamicsFind: function (data) {
                     var _request = {
                         "data": {
-                            type: data.keyWords.type
+                            'type': data.keyWords.type? data.keyWords.type:""
+                        },
+                        "pagination":{
+                            "pageIndex":1,
+                            "pageSize":10
                         }
                     };
                     return _request;
@@ -117,6 +121,7 @@ define([
                     var _request = {
                         idStandard: data.keyWords.idStandard
                     };
+                    console.log(_request);
                     return _request;
                 },
                 /**

@@ -10,7 +10,8 @@ define([
             //点击更多
             $scope.goToMore = function (id) {
                 //    透过id不同调取不同接口
-                $rootScope.active="单个地区";
+                $scope.active="单个地区";
+                $scope.qualificationsTitles=id;
                 if(id){
                     switch(id)
                     {
@@ -37,7 +38,13 @@ define([
                 };
                 $$neptune.find(constants.REQUEST_TARGET.GET_DYNAMICS_FIND, keyword, {
                     onSuccess: function (data) {
-                        $scope.singles=data;
+                        if($scope.qualificationsTitle){
+                            angular.forEach(data, function (data, index) {
+                                if (data[0]) {
+                                    $scope.singles=data;
+                                }
+                            });
+                        }
                     },
                     onError: function (e) {
                         alert("网络缓慢请稍后重试");
