@@ -126,23 +126,28 @@ define([
                             }
                         };
                         $scope.goLogin = function () {
-                            $$neptune.find(constants.REQUEST_TARGET.LOGINED, $scope.login, {
-                                onSuccess: function (data) {
-                                    console.log(data);
-                                    if (data.message == 'success!') {
-                                        $scope.close();
-                                        $rootScope.user.userRanking = data.data;
-                                        localStorageService.set('userZZ', $rootScope.user.userRanking);
-                                        $rootScope.userZZ = localStorageService.get('userZZ');
-                                        console.log($rootScope.user);
-                                    } else {
-                                        $scope.prompt.prompts = "账号密码错误"
+                            if(!$scope.login.phone){
+                                $scope.prompt.prompts = "请输入账号"
+                            }else if(!$scope.login.password){
+                                $scope.prompt.prompts = "请输入密码"
+                            } else{
+                                $$neptune.find(constants.REQUEST_TARGET.LOGINED, $scope.login, {
+                                    onSuccess: function (data) {
+                                        if (data.message == 'success!') {
+                                            $scope.close();
+                                            $rootScope.user.userRanking = data.data;
+                                            localStorageService.set('userZZ', $rootScope.user.userRanking);
+                                            $rootScope.userZZ = localStorageService.get('userZZ');
+                                            console.log($rootScope.user);
+                                        } else {
+                                            $scope.prompt.prompts = "账号密码错误"
+                                        }
+                                    },
+                                    onError: function (e) {
+                                        alert("网络缓慢请稍后重试");
                                     }
-                                },
-                                onError: function (e) {
-                                    alert("网络缓慢请稍后重试");
-                                }
-                            });
+                                });
+                            }
                         }
                         var init = function () {
 
@@ -184,6 +189,9 @@ define([
                             name:"",
                             mailbox:""
                         };
+                        $scope.prompt = {
+                            promp:""
+                        };
                         $scope.verifyPassword = function () {
                             if ($scope.registeredList.password) {
                                 if ($scope.registeredList.password !== $scope.registeredList.passwords) {
@@ -194,14 +202,39 @@ define([
                             }
                         };
                         $scope.registered = function () {
-                            $$neptune.find(constants.REQUEST_TARGET.REGISTERED, $scope.registeredList, {
-                                onSuccess: function (data) {
-                                    console.log(data)
-                                },
-                                onError: function (e) {
-                                    alert("网络缓慢请稍后重试");
-                                }
-                            });
+                            if(!$scope.registeredList.name){
+                                $scope.prompt.promp = '请输入姓名'
+                            }else if(!$scope.registeredList.phone||$scope.passwordverify.phones=='手机号无效'){
+                                $scope.prompt.promp = '请输入手机号'
+                            }
+                            else if(!$scope.registeredList.mailbox||$scope.passwordverify.mailbox=='格式不正确'){
+                                $scope.prompt.promp = '请输入邮箱/qq'
+                            }
+                            else if(!$scope.registeredList.password){
+                                $scope.prompt.promp = '请输入密码'
+                            }
+                            else if(!$scope.registeredList.passwords|| $scope.passwordverify.trues == '密码错误'){
+                                $scope.prompt.promp = '请验证密码'
+                            }else{
+                                $scope.prompt.promp = '';
+                                $$neptune.find(constants.REQUEST_TARGET.REGISTERED, $scope.registeredList, {
+                                    onSuccess: function (data) {
+                                        console.log(data);
+                                        if (data.message == 'success!') {
+                                            $scope.close();
+                                            $rootScope.user.userRanking = data.data;
+                                            localStorageService.set('userZZ', $rootScope.user.userRanking);
+                                            $rootScope.userZZ = localStorageService.get('userZZ');
+                                            alert("已登陆");
+                                        } else {
+                                            $scope.prompt.promp = data.data
+                                        }
+                                    },
+                                    onError: function (e) {
+                                        alert("网络缓慢请稍后重试");
+                                    }
+                                });
+                            }
                         };
                         $scope.verifyPhone= function () {
                             if($scope.registeredList.phone.length==0)

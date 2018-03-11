@@ -17,7 +17,7 @@
         </div>
         <div style="width: 50%;margin-left: 28%;padding-top: 20px">
             <input ng-model="registeredList.mailbox" class="form-control input-sm disabled" ng-change="verifyMailbox()" placeholder="请输入QQ/Email"/>
-            <div style="color:red;font-size: 12px;position: absolute;top: 46%;right: 13%;">{{passwordverify.mailbox}}</div>
+            <div style="color:red;font-size: 12px;position: absolute;top: 43%;right: 13%;">{{passwordverify.mailbox}}</div>
         </div>
         <div style="width: 50%;margin-left: 28%;padding-top: 20px">
             <input ng-model="registeredList.password" ng-keyup="verifyPassword()" class="form-control input-sm disabled" placeholder="设置密码"/>
@@ -26,8 +26,11 @@
             <input ng-model="registeredList.passwords" ng-keyup="verifyPassword()" class="form-control input-sm disabled" placeholder="重复密码"/>
             <span style="color:red;font-size: 12px;position: absolute;top: 52%;right: -8%;">{{passwordverify.trues}}</span>
         </div>
+        <div style="width: 50%;margin-left: 28%;color:red;text-align: center;font-size: 12px;margin-top: 5px">
+            {{prompt.promp}}
+        </div>
         <div style="width: 50%;margin-left: 28%;padding-top: 20px">
-            <button ng-class="!registeredList.name &&!registeredList.phone && !registeredList.mailbox && !registeredList.password && !registeredList.passwords:button_colorHide" ng-click="registered()" type="button" class="btn btn-default active" style="width: 88%;">立即注册</button>
+            <button  ng-click="registered()" type="button" class="btn btn-default active" style="width: 88%;">立即注册</button>
         </div>
     </div>
 </div>

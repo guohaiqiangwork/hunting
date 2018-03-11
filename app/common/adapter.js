@@ -192,7 +192,7 @@ define([
                  * 注册
                  */
                 registered: function (data) {
-                    return data.data;
+                    return data;
                 },
                 /**
                  * 登陆
